@@ -12,7 +12,10 @@
          */
         modules: [
             { route: '/', name: 'Login', path: 'Login' },
-            { route: '/Main', name: 'Main', path: 'Main' }
+            { route: '/Main', name: 'Main', path: 'Main' },
+            { route: '/Main/Student', name: 'Main_Student', path: 'Student' },
+            { route: '/Main/Bedroom', name: 'Main_Bedroom', path: 'Bedroom' },
+            { route: '/Main/Greades', name: 'Main_Greades', path: 'Greades' }
         ],
         map: function(dispose) {
             return this.modules.map(dispose);

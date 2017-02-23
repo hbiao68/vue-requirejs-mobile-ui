@@ -1,0 +1,100 @@
+.cs-Greades {
+    * {
+        box-sizing: border-box;
+    }
+    .img-header {
+        width: toRem(58);
+        height: toRem(58);
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 50%;
+        position: relative;
+        .header {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            right: toRem(0);
+            top: toRem(0);
+        }
+        .msg-box,
+        .msg {
+            width: toRem(28);
+            height: toRem(28);
+            line-height: toRem(20);
+            text-align: center;
+            color: $color-white;
+            position: absolute;
+            right: toRem(-12);
+            top: toRem(-7);
+            font-size: toRem(11);
+        }
+    }
+    .section-container {
+        .big-title {
+            height: toRem(100);
+            line-height: toRem(100);
+            font-size: toRem(24);
+            img {
+                width: toRem(56);
+                height: toRem(48);
+            }
+        }
+        .content-box {
+            .content {
+                width: 50%;
+                padding: toRem(20);
+                float: left;
+            }
+            .show-img {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                .state {
+                    height: toRem(26);
+                    line-height: toRem(26);
+                    border-radius: toRem(13);
+                    padding: 0 toRem(10);
+                    position: absolute;
+                    top: toRem(14);
+                    right: toRem(14);
+                    color: $color-white;
+                    font-size: toRem(14);
+                }
+            }
+        }
+        .state1 {
+            background: $color-blue;
+        }
+        .state2 {
+            background: $warning-color;
+        }
+        .state3 {
+            background: $cell-value-color;
+        }
+        .state-list {
+            height: toRem(60);
+            line-height: toRem(60);
+            font-size: toRem(16);
+            display: flex;
+            span {
+                flex: .3;
+            }
+            .Progress-bar {
+                flex: 1;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .line {
+        width: toRem(1);
+        height: toRem(70);
+        background: $cell-value-color;
+        display: inline-block;
+    }
+}
