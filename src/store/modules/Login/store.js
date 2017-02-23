@@ -22,7 +22,12 @@ define(function() {
         this.actions = {
             verify: function(content, opt) {
                 return new Promise(function(resolve, reject) {
-                    $.get('/api/verify', { username: opt.username, password: opt.password }).then(function(data) {
+                    setTimeout(function() {
+                        var data = {
+                            state: true,
+                            auth: 'aa'
+                        }
+
                         if (data.state) {
                             content.commit('success', data.auth);
                             resolve();
@@ -30,15 +35,26 @@ define(function() {
                             content.commit('fail');
                             reject();
                         }
-                    }, function() {
-                        content.commit('fail');
-                        reject("服务器错误！请联系管理员");
+
                     });
+                    // $.get('/api/verify', { username: opt.username, password: opt.password }).then(function(data) {
+                    //     if (data.state) {
+                    //         content.commit('success', data.auth);
+                    //         resolve();
+                    //     } else {
+                    //         content.commit('fail');
+                    //         reject();
+                    //     }
+                    // }, function() {
+                    //     content.commit('fail');
+                    //     reject("服务器错误！请联系管理员");
+                    // });
                 })
             },
             auth: function(content) {
                 return new Promise(function(resolve, reject) {
-                    $.get('/api/auth', { auth: content.state.auth }).then(function(data) {
+                    setTimeout(function() {
+                        var data = "aa";
                         if (data) {
                             content.commit('success');
                             resolve(data);
@@ -47,6 +63,15 @@ define(function() {
                             reject();
                         }
                     });
+                    // $.get('/api/auth', { auth: content.state.auth }).then(function(data) {
+                    //     if (data) {
+                    //         content.commit('success');
+                    //         resolve(data);
+                    //     } else {
+                    //         content.commit('fail');
+                    //         reject();
+                    //     }
+                    // });
                 });
             }
         }
