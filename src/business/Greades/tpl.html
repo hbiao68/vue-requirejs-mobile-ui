@@ -1,5 +1,5 @@
 <transition :name="transitionName">
-    <cs-page class="cs-Greades" :class="{ 'top-layer':topLayer }">
+    <cs-page class="cs-Greades common-style-1" :class="{ 'top-layer':topLayer }">
         <cs-header title="班级评价">
             <router-link to="/Main/FormComponents" slot="left">
                 <div class="img-header">
@@ -10,6 +10,11 @@
             </router-link>
             <router-link to="/" slot="right">
                 <cs-button icon="fa fa-search"></cs-button>
+            </router-link>
+            <router-link to="/" slot="right">
+                <cs-button class="line"></cs-button>
+            </router-link>
+            <router-link to="/" slot="right">
                 <cs-button icon="fa fa-bars"></cs-button>
             </router-link>
         </cs-header>
@@ -89,14 +94,15 @@
                     </li>
                 </ul>
             </div>
-            <cs-tabbar v-model="active">
-                <cs-tab-item id="tab-container1">
-                    <img slot="icon" src="http://placehold.it/100x100"> tab1
-                </cs-tab-item>
-                <cs-tab-item id="tab-container3">
-                    <img slot="icon" src="http://placehold.it/100x100"> tab3
-                </cs-tab-item>
-            </cs-tabbar>
         </cs-contenter>
+        <cs-footer>
+            <router-link to="/">
+                <img src="/assets/system/icon-Greades06.png" class="msg" alt="">统计分析
+            </router-link>
+            <span class="line"></span>
+            <router-link to="/">
+                <img src="/assets/system/icon-Greades07.png" class="msg" alt="">发布公告
+            </router-link>
+        </cs-footer>
     </cs-page>
 </transition>

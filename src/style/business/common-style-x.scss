@@ -1,0 +1,55 @@
+.common-style-1 {
+    * {
+        box-sizing: border-box;
+    }
+    background: #f1f1f1;
+    // 年级评价、学生评价、寝室评价
+    .cs-header {
+        .img-header {
+            width: toRem(58);
+            height: toRem(58);
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 50%;
+            position: relative;
+            .header {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                position: absolute;
+                right: toRem(0);
+                top: toRem(0);
+            }
+            .msg-box,
+            .msg {
+                width: toRem(28);
+                height: toRem(28);
+                line-height: toRem(20);
+                text-align: center;
+                color: $color-white;
+                position: absolute;
+                right: toRem(-12);
+                top: toRem(-7);
+                font-size: toRem(11);
+            }
+        }
+        .line {
+            width: 1px;
+            height: toRem(36);
+            background: $color-white;
+            margin: 0 toRem(30);
+        }
+        .cs-button {
+            font-size: toRem(36);
+            vertical-align: middle;
+        }
+    }
+    .cs-footer {
+        background: #f8f9fb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        font-size: toRem(22);
+    }
+}

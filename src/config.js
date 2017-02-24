@@ -14,6 +14,10 @@
             { route: '/', name: 'Login', path: 'Login' },
             { route: '/Main', name: 'Main', path: 'Main' },
             { route: '/Main/Student', name: 'Main_Student', path: 'Student' },
+            { route: '/Main/StudentMul', name: 'Main_Student_StudentMul', path: 'Student/StudentMul' },
+            { route: '/Main/chooseAnnouncementObject', name: 'Main_Student_chooseAnnouncementObject', path: 'Student/chooseAnnouncementObject' },
+            { route: '/Main/announcement', name: 'Main_Student_announcement', path: 'Student/announcement' },
+            { route: '/Main/search', name: 'Main_Student_search', path: 'Student/search' },
             { route: '/Main/Bedroom', name: 'Main_Bedroom', path: 'Bedroom' },
             { route: '/Main/Greades', name: 'Main_Greades', path: 'Greades' }
         ],
