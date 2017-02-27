@@ -19,7 +19,11 @@
             { route: '/Main/Student/chooseAnnouncementObject/announcement', name: 'Main_Student_chooseAnnouncementObject_announcement', path: 'Student/chooseAnnouncementObject/announcement' },
 
             { route: '/Main/Bedroom', name: 'Main_Bedroom', path: 'Bedroom' },
-            { route: '/Main/Greades', name: 'Main_Greades', path: 'Greades' }
+            { route: '/Main/Bedroom/bedroomMul', name: 'Main_Bedroom_bedroomMul', path: 'Bedroom/bedroomMul' },
+
+            { route: '/Main/Greades', name: 'Main_Greades', path: 'Greades' },
+            { route: '/Main/Greades/greadesMul', name: 'Main_Greades_greadesMul', path: 'Greades/greadesMul' },
+            { route: '/Main/Greades/class', name: 'Main_Greades_class', path: 'Greades/class' }
         ],
         map: function(dispose) {
             return this.modules.map(dispose);

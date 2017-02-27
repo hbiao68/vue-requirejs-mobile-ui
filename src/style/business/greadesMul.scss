@@ -1,0 +1,97 @@
+.cs-greadesMul {
+    .section-container {
+        .content-box {
+            .content {
+                width: 25%;
+                padding: toRem(10);
+                float: left;
+            }
+            .show-img {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                .score {
+                    width: toRem(36);
+                    height: toRem(36);
+                    line-height: toRem(36);
+                    text-align: center;
+                    border-radius: 50%;
+                    display: block;
+                    position: absolute;
+                    right: toRem(4);
+                    font-size: toRem(12);
+                }
+                .score1 {
+                    background: #b6ebdb;
+                    color: #45937b;
+                    top: toRem(4);
+                }
+                .score2 {
+                    background: #fae0d3;
+                    color: #bc4644;
+                    top: toRem(48);
+                }
+            }
+        }
+        .state-list {
+            height: toRem(50);
+            line-height: toRem(50);
+            font-size: toRem(20);
+            text-align: center;
+            .checkbox-box {
+                position: relative;
+                width: toRem(30);
+                height: toRem(30);
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 50%;
+                overflow: hidden;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 3;
+                    visibility: hidden;
+                }
+                input[type=checkbox]:checked+label {
+                    background: url("/assets/system/icon-gou2.png") no-repeat;
+                    background-size: contain;
+                }
+                label {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    background: url("/assets/system/icon-gou1.png") no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+    .cs-footer {
+        &>a {
+            color: $cell-value-color;
+            align-self: stretch;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color-white;
+        }
+        .cancel {
+            background: #aabbc3;
+            flex: 0.5;
+        }
+        .Send-out {
+            background: $color-blue;
+            flex: 1;
+        }
+    }
+}

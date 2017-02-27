@@ -1,0 +1,54 @@
+<transition :name="transitionName">
+    <cs-page class="cs-greadesMul common-style-1" :class="{ 'top-layer':topLayer }">
+        <cs-header title="全校">
+            <router-link to="/Main" slot="left">
+                <cs-button icon="fa fa-remove "></cs-button>
+            </router-link>
+            <router-link to="/" slot="right">
+                <cs-button icon="fa fa-search"></cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <ul class="content-box">
+                    <li class="content">
+                        <div class="show-img">
+                            <img src="/assets/system/icon-student01.png" alt="">
+                            <span class="score score1">-30</span>
+                            <span class="score score2">+30</span>
+                        </div>
+                        <div class="state-list">
+                            <span class="checkbox-box">
+                                <input type="checkbox" value="1" id="checkboxFourInput1" name="subbox" />
+                            <label for="checkboxFourInput1"></label>
+                            </span> 2015级
+                        </div>
+
+                    </li>
+                    <li class="content">
+                        <div class="show-img">
+                            <img src="/assets/system/icon-student01.png" alt="">
+                            <span class="score score1">-30</span>
+                            <span class="score score2">+30</span>
+                        </div>
+                        <div class="state-list">
+                            <span class="checkbox-box">
+                                <input type="checkbox" value="1" id="checkboxFourInput2" name="subbox" />
+                            <label for="checkboxFourInput2"></label>
+                            </span> 2015级
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </cs-contenter>
+        <cs-footer>
+            <router-link to="/Main/Greades" class="cancel">
+                取消
+            </router-link>
+            <router-link to="/Main/Greades" class="Send-out">
+                发送评价（已选<i>7</i>人）
+            </router-link>
+        </cs-footer>
+    </cs-page>
+</transition>
