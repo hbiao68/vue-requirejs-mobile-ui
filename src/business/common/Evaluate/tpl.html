@@ -6,11 +6,11 @@
         </h1>
         <div>
             <div class="cs-evaluate-bar">
-                <span v-for="(item, index) in EvaluateStudentSource" :key="item.id" :class="[selectIndex == index ? 'active':'']" @click="toggle(index)" v-text="item.name"></span>
+                <span v-for="(item, index) in EvaluateSource" :key="item.id" :class="[selectIndex == index ? 'active':'']" @click="toggle(index)" v-text="item.name"></span>
                 <span @click="toggle(-1)" :class="[selectIndex == -1 ? 'active': '']">文字评价</span>
             </div>
             <div class="cs-evaluate-content">
-                <div class="cs-evaluate-tab" v-for="(source, index) in EvaluateStudentSource" :key="source.id" v-show="selectIndex == index">
+                <div class="cs-evaluate-tab" v-for="(source, index) in EvaluateSource" :key="source.id" v-show="selectIndex == index">
                     <div class="row">
                         <h2><i class="icon-by"></i>表扬</h2>
                         <div class="cs-evaluate-item-container">
