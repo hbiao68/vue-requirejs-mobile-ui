@@ -1,0 +1,73 @@
+.cs-student {
+    .section-container {
+        .content-box {
+            .content {
+                width: 25%;
+                padding: toRem(10);
+                float: left;
+            }
+            .show-img {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                .score {
+                    width: toRem(36);
+                    height: toRem(36);
+                    line-height: toRem(36);
+                    text-align: center;
+                    border-radius: 50%;
+                    display: block;
+                    position: absolute;
+                    right: toRem(4);
+                    font-size: toRem(12);
+                }
+                .score1 {
+                    background: #b6ebdb;
+                    color: #45937b;
+                    top: toRem(4);
+                }
+                .score2 {
+                    background: #fae0d3;
+                    color: #bc4644;
+                    top: toRem(48);
+                }
+            }
+        }
+        .state-list {
+            height: toRem(50);
+            line-height: toRem(50);
+            font-size: toRem(20);
+            text-align: center;
+        }
+    }
+    .cs-footer {
+        border-top: 1px $border-color solid;
+        &>a {
+            color: $cell-value-color;
+            flex: 1;
+            img {
+                height: toRem(40);
+                width: auto;
+            }
+            span {
+                display: block;
+            }
+        }
+    }
+    .cs-actionsheet {
+        padding: toRem(12);
+        background: none;
+    }
+    .cs-actionsheet-list {
+        margin-bottom: 0!important;
+        border-radius: toRem(12) toRem(12) 0 0 !important;
+        overflow: hidden;
+    }
+    .cs-actionsheet-button {
+        background: $color-blue;
+        color: $color-white;
+        border-radius: 0 0 toRem(12) toRem(12) !important;
+    }
+}

@@ -1,0 +1,28 @@
+.cs-search {
+    .section-container {
+        .search-box {
+            display: flex;
+            height: toRem(80);
+            line-height: toRem(80);
+            .input-box {
+                flex: 1;
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    border: 1px $border-color solid;
+                    border-radius: toRem(8);
+                    text-indent: toRem(8);
+                    font-size: toRem(24);
+                    font-family: tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1";
+                }
+            }
+            .submit-btn {
+                flex: none;
+                width: toRem(80);
+                text-align: right;
+                color: $cell-value-color;
+            }
+        }
+    }
+}

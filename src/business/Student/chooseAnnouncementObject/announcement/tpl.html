@@ -1,0 +1,40 @@
+<transition :name="transitionName">
+    <cs-page class="cs-announcement common-style-1" :class="{ 'top-layer':topLayer }">
+        <cs-header title="发布公告">
+            <router-link to="/Main/Student/chooseAnnouncementObject" slot="left">
+                <cs-button icon="fa fa-remove "></cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="section-container">
+                <div class="big-title">
+                    <div class="title-name">发送对象：</div>
+                    <div class="content">
+                        <span>张三</span>、
+                        <span>李四</span>、
+                        <span>王五</span>、
+                        <span>张三</span>、
+                        <span>李四</span>、
+                        <span>王五</span>、
+                        <span>等7人</span>
+                        <router-link to="/Main/chooseAnnouncementObject" slot="left">
+                            <cs-button icon="fa fa-plus" class="addbtn"></cs-button>
+                        </router-link>
+                    </div>
+                </div>
+                <div class="big-title">
+                    <div class="title-name">公告标题：</div>
+                </div>
+                <textarea class="textarea textarea1" placeholder="输入公告标题"></textarea>
+                <div class="big-title">
+                    <div class="title-name">公告内容：</div>
+                </div>
+                <textarea class="textarea textarea2" placeholder="输入公告内容"></textarea>
+
+                <router-link to="/Main/Student" slot="left">
+                    <cs-button size="large" type="primary" class="submit-btn">发布</cs-button>
+                </router-link>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

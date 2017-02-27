@@ -1,0 +1,85 @@
+.cs-Greades {
+    .section-container {
+        .big-title {
+            height: toRem(100);
+            line-height: toRem(100);
+            font-size: toRem(24);
+            img {
+                width: toRem(56);
+                height: toRem(48);
+            }
+        }
+        .content-box {
+            .content {
+                width: 50%;
+                padding: toRem(20);
+                float: left;
+            }
+            .show-img {
+                position: relative;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+                .state {
+                    height: toRem(26);
+                    line-height: toRem(26);
+                    border-radius: toRem(13);
+                    padding: 0 toRem(10);
+                    position: absolute;
+                    top: toRem(14);
+                    right: toRem(14);
+                    color: $color-white;
+                    font-size: toRem(14);
+                }
+            }
+        }
+        .state1 {
+            background: $color-blue;
+        }
+        .state2 {
+            background: $warning-color;
+        }
+        .state3 {
+            background: $cell-value-color;
+        }
+        .state-list {
+            height: toRem(60);
+            line-height: toRem(60);
+            font-size: toRem(16);
+            display: flex;
+            span {
+                flex: .3;
+            }
+            .Progress-bar {
+                flex: 1;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .cs-footer {
+        border-top: 1px $border-color solid;
+        .line {
+            width: 1px;
+            height: toRem(70);
+            background: $border-color;
+            display: inline-block;
+        }
+        &>a {
+            color: $cell-value-color;
+            flex: 1;
+            align-self: stretch;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                height: toRem(44);
+                width: auto;
+                margin-right: toRem(20);
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.cs-announcement {
+    color: #323f48;
+    .section-container {
+        .big-title {
+            display: flex;
+            line-height: toRem(60);
+            margin-bottom: toRem(10);
+            font-size: toRem(26);
+            .title-name {
+                flex: none;
+                width: toRem(145);
+            }
+            .content {
+                flex: 1;
+                .addbtn {
+                    width: toRem(80);
+                    height: toRem(40);
+                    line-height: toRem(40);
+                    font-size: toRem(22);
+                    margin-left: toRem(20);
+                }
+            }
+        }
+        .textarea {
+            width: 100%;
+            resize: none;
+            border: 1px $border-color solid;
+            padding: toRem(10);
+            font-size: toRem(24);
+            font-family: tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1";
+        }
+        .textarea1 {
+            height: toRem(130);
+        }
+        .textarea2 {
+            height: toRem(350);
+        }
+        .submit-btn {
+            margin-top: toRem(110);
+        }
+    }
+}
