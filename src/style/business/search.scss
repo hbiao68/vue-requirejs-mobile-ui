@@ -6,6 +6,7 @@
             line-height: toRem(80);
             .input-box {
                 flex: 1;
+                position: relative;
                 input {
                     width: 100%;
                     height: 100%;
