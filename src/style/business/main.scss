@@ -9,6 +9,8 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: none;
             .user-panel {
                 flex: 1;
                 display: flex;

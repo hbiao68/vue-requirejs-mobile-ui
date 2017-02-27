@@ -4,6 +4,7 @@ define(['__component__', 'vue-popup', 'text!./tpl.html'], function(component, Po
         mixins: [Popup],
 
         props: {
+            background: String,
             modal: {
                 default: true
             },

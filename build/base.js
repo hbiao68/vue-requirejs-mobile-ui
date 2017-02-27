@@ -12,6 +12,7 @@ var fs = require('fs'),
     position = require('postcss-position'),
     clearfix = require('postcss-clearfix'),
     size = require('postcss-size'),
+    position = require('postcss-short-position'),
     bem = require('postcss-bem'),
     nested = require('postcss-nested'),
 
@@ -29,6 +30,7 @@ var fs = require('fs'),
         nested,
         clearfix,
         size,
+        position,
         autoprefixer({
             browsers: [
                 'last 2 versions',

@@ -126,6 +126,11 @@ q:after {
     content: none;
 }
 a{ text-decoration: none; outline: none;}
+
+::-webkit-scrollbar{
+    width: 3px;
+    height: 3px;
+}
 // a {
 //     color: #06f
 //     text-decoration: none;

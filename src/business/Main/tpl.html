@@ -6,7 +6,7 @@
             </router-link>
         </cs-header>
         <cs-contenter>
-            <div class="section-container">
+            <div class="section-container" @click="showModal">
                 <h1><i class="fa fa-cubes"></i>Components Classify</h1>
             </div>
             <div class="section-container content">
@@ -27,5 +27,6 @@
                 </div>
             </div>
         </cs-contenter>
+        <cs-evaluate-student ref="modal"></cs-evaluate-student>
     </cs-page>
 </transition>
