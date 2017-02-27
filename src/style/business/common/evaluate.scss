@@ -1,0 +1,192 @@
+.cs-evaluate{
+    size: toRem(670) toRem(700);
+    background: white;
+    border-radius: toRem(15);
+    position: relative;
+    h1{
+        position: relative;
+        height: toRem(90);
+        margin: 0 toRem(40);
+        border-bottom: 1px dashed #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        b{
+            position: relative;
+            font-size: toRem(30);
+            color: white;
+            background: #f09e43;
+            width: 80%;
+            line-height: toRem(65);
+            height: toRem(65);
+            align-self: flex-end;
+            text-align: center;
+            display: block;
+            &:before,&:after{
+                content:'';
+                height: 0;
+                width: 0;
+                font-size: 0;
+                position: absolute;
+                display: block;
+                top: 0;
+            }
+            &:before{
+                border-width:toRem(32.5) 0 toRem(32.5) toRem(16);
+                border-color:transparent transparent transparent white;
+                border-style: solid;
+                left: 0;
+            }
+            &:after{
+                border-width:toRem(32.5) toRem(16) toRem(32.5) 0;
+                border-color:transparent white transparent transparent;
+                border-style: solid;
+                right: 0;
+            }
+        }
+        span{
+            color: white;
+            position: absolute;
+            top:-100%;
+            right: toRem(-40);
+            width: toRem(67);
+            height: toRem(67);
+            background: url('../assets/system/icon-modal-close.png') no-repeat center;
+            background-size: contain;
+            &:after{
+                content: '';
+                width: 2px;
+                height: toRem(22);
+                background: #cdd3d5;
+                position: absolute;
+                top:toRem(67);
+                left: toRem(31.5);
+            }
+        }
+    }
+    &>div{
+        position: absolute;
+        top: toRem(90);
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .cs-evaluate-bar{
+        margin:0 toRem(17);
+        line-height: toRem(100);
+        //height: toRem(140);
+        white-space: nowrap;
+        overflow-y:hidden;
+        -webkit-overflow-scrolling: touch;
+        span{
+            min-width: toRem(130);
+            height: toRem(60);
+            line-height: toRem(55);
+
+            margin:0 toRem(8);
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            color:#608891;
+            border:1px solid #a6b2b7;
+            border-radius: toRem(20);
+
+            &.active{
+                background: #3cb4f1;
+                border-color:#3cb4f1;
+                color:white;
+            }
+        }
+    }
+    .cs-evaluate-content{
+        position: absolute;
+        top: toRem(100);
+        bottom:0;
+        left:0;
+        right:0;
+        background: #ebf2f3;
+        border-bottom-left-radius: toRem(15);
+        border-bottom-right-radius: toRem(15);
+    }
+
+    .cs-evaluate-tab{
+        padding: 0 toRem(15) toRem(15) toRem(15);
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        textarea{
+            margin: 3rem 0;
+            border-color: #a5aeb2;
+            border-style: solid;
+        }
+        .row{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            h2{
+                line-height: toRem(55);
+                font-size:toRem(25);
+                color: #4a6d7d;
+                .icon-by,.icon-dgj{
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: toRem(30);
+                    width: toRem(30);
+                    margin-right: toRem(10);
+                }
+                .icon-by{
+                    background: url(../assets/system/icon-by.png) repeat center;
+                    background-size: contain;
+                }
+                .icon-dgj{
+                    background: url(../assets/system/icon-dgj.png) repeat center;
+                    background-size: contain;
+                }
+            }
+            .cs-evaluate-item-container{
+                height: toRem(175);
+                flex: 1;
+                overflow: hidden;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                .cs-evaluate-item{
+                    text-align: center;
+                    height: 100%;
+                    display: inline-block;
+                    padding-right:toRem(40);
+                    white-space: nowrap;
+                    img{
+                        margin-top:35%;
+                        size: toRem(120);
+                    }
+                    h3{
+                        margin-top:toRem(15);
+                        font-size:toRem(25);
+                        line-height: 1;
+                        color: #224758;
+                    }
+                    span{
+                        position:relative;
+                        top: toRem(-180);
+                        left: toRem(60);
+                        background: #49be9b;
+                        border:1px solid white;
+                        display: inline-block;
+                        size: toRem(50);
+                        border-radius: toRem(25);
+                        line-height: toRem(50);
+                        color: white; 
+                    }
+                    &.is-improve span{
+                        background: #ff7765;
+                    }
+                }
+            }
+        }
+    }
+}

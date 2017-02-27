@@ -7,7 +7,14 @@ body {
 
 .section-container {
     padding: toRem(30);
-    &.rbl {
+    h1{
+        color: $_base_color;
+        font-size: toRem(36);
+        i{
+            margin-right: toRem(20);
+        }
+    }
+    &.rbl{
         padding: 0 toRem(30) toRem(30) toRem(30);
     }
     &.tbl {
@@ -27,6 +34,7 @@ body {
     }
 }
 
+@import './business/common/evaluate';
 @import './business/login';
 @import './business/main';
 @import './business/common-style-x';

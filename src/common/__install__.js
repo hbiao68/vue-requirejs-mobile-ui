@@ -25,7 +25,12 @@ define([
     'components/TabItem/index',
     'components/TabBar/index',
     'components/Spinner/index',
-    'components/LoadMore/index'
+    'components/LoadMore/index',
+
+    //公用业务模块
+    'business/common/EvaluateStudent/index',
+    'business/common/EvaluateRoom/index',
+    'business/common/EvaluateClass/index',
 ], function(Vue, Toast, MessageBox, Indicator, InfiniteScroll) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;

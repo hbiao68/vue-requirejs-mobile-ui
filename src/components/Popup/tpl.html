@@ -1,5 +1,5 @@
 <transition :name="currentTransition">
-    <div v-show="currentValue" class="cs-popup" :class="[position ? 'cs-popup-' + position : '']">
+    <div v-show="currentValue" class="cs-popup" :class="[position ? 'cs-popup-' + position : '']" :style="{background:background?background:''}">
         <slot></slot>
     </div>
 </transition>

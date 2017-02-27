@@ -48,7 +48,7 @@ $z-index-normal: 1;
 /* function and mixin*/
 
 @function toRem($number) {
-    @return ( $number * $_scale_ / 12)+rem
+    @return ( $number * $_scale_ / 12) + rem
 }
 
 @mixin txtHidden {
