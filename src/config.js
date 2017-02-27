@@ -16,7 +16,7 @@
             { route: '/Main/Student', name: 'Main_Student', path: 'Student' },
             { route: '/Main/Student/StudentMul', name: 'Main_Student_StudentMul', path: 'Student/StudentMul' },
             { route: '/Main/Student/chooseAnnouncementObject', name: 'Main_Student_chooseAnnouncementObject', path: 'Student/chooseAnnouncementObject' },
-            { route: '/Main/Student/announcement', name: 'Main_Student_announcement', path: 'Student/announcement' },
+            { route: '/Main/Student/chooseAnnouncementObject/announcement', name: 'Main_Student_chooseAnnouncementObject_announcement', path: 'Student/chooseAnnouncementObject/announcement' },
 
             { route: '/Main/Bedroom', name: 'Main_Bedroom', path: 'Bedroom' },
             { route: '/Main/Greades', name: 'Main_Greades', path: 'Greades' }
