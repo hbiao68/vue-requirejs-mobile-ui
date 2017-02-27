@@ -46,7 +46,7 @@ define(function() {
             ]
         },
         getters: {
-            EvaluateStudentSource: function(state) {
+            EvaluateSource: function(state) {
                 return state.source;
             }
         },

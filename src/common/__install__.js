@@ -28,9 +28,8 @@ define([
     'components/LoadMore/index',
 
     //公用业务模块
-    'business/common/EvaluateStudent/index',
-    'business/common/EvaluateRoom/index',
-    'business/common/EvaluateClass/index',
+    'business/common/Evaluate/index',
+    'business/common/EvaluateClass/index'
 ], function(Vue, Toast, MessageBox, Indicator, InfiniteScroll) {
     var _ = [];
     Vue.$toast = Vue.prototype.$toast = Toast;

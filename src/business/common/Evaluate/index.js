@@ -1,7 +1,7 @@
 define(['__component__', 'text!./tpl.html', 'vuex'], function(component, template, Vuex) {
     var InstanceResolve = null;
     var InstanceReject = null;
-    return component('cs-evaluate-student', {
+    return component('cs-evaluate', {
         template: template,
         props: {
             height: { type: Number, default: 28.44 }
@@ -14,7 +14,7 @@ define(['__component__', 'text!./tpl.html', 'vuex'], function(component, templat
                 textVal: ""
             }
         },
-        computed: Vuex.mapGetters(['EvaluateStudentSource']),
+        computed: Vuex.mapGetters(['EvaluateSource']),
         mounted: function() {
             this.$el.addEventListener('touchmove', function(e) {
                 e.stopPropagation();
