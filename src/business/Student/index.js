@@ -10,7 +10,13 @@ define(function() {
             },
             methods: {
                 itemclick: function() { console.log('itemclick'); },
-                action1: function() { this.sheet1.sheetVisible = true; }
+                action1: function() { this.sheet1.sheetVisible = true; },
+                showModal: function() {
+                    this.$refs.modal.show().then(
+                        function(data) { console.log(data); },
+                        function() {}
+                    );
+                }
             }
 
         }
