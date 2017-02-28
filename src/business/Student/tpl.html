@@ -21,7 +21,7 @@
         <cs-contenter>
             <div class="section-container">
                 <ul class="content-box">
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="state-list">李狗蛋</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="state-list">李狗蛋</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="state-list">李狗蛋</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="state-list">李狗蛋</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -61,23 +61,7 @@
                         </div>
                         <div class="state-list">李狗蛋</div>
                     </li>
-                    <li class="content">
-                        <div class="show-img">
-                            <img src="/assets/system/icon-student01.png" class="msg" alt="">
-                            <span class="score score1">-30</span>
-                            <span class="score score2">+30</span>
-                        </div>
-                        <div class="state-list">李狗蛋</div>
-                    </li>
-                    <li class="content">
-                        <div class="show-img">
-                            <img src="/assets/system/icon-student01.png" class="msg" alt="">
-                            <span class="score score1">-30</span>
-                            <span class="score score2">+30</span>
-                        </div>
-                        <div class="state-list">李狗蛋</div>
-                    </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -116,5 +100,6 @@
                             name: '寝室评价',
                             method: itemclick
                         }]" v-model="sheet1.sheetVisible"></cs-actionsheet>
+        <cs-evaluate ref="modal"></cs-evaluate>
     </cs-page>
 </transition>

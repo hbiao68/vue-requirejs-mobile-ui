@@ -1,30 +1,39 @@
 <transition :name="transitionName">
     <cs-page class="cs-main" :class="{ 'top-layer':topLayer }">
-        <cs-header title="Components Classify">
+        <cs-header title="我的身份">
             <router-link to="/" slot="right">
                 <cs-button icon="fa fa-sign-out"></cs-button>
             </router-link>
         </cs-header>
         <cs-contenter>
             <div class="section-container">
-                <h1><i class="fa fa-cubes"></i>Components Classify</h1>
+                <h1><i class="fa fa-group"></i>请选择您的身份</h1>
             </div>
             <div class="section-container content">
-                <div class="user-panel">
-                    <router-link to="/Main/Greades" class="user-panel__admin">
-                        <span>班级评价</span>
-                    </router-link>
-                </div>
-                <div class="user-panel">
-                    <router-link to="/Main/Student" class="user-panel__teacher">
-                        <span>学生评价</span>
-                    </router-link>
-                </div>
-                <div class="user-panel">
-                    <router-link to="/Main/Bedroom" class="user-panel__parent">
-                        <span>寝室评价</span>
-                    </router-link>
-                </div>
+                <router-link to="/Main/Greades">
+                    <div class="user-panel user-panel__admin">
+                        <div class="identity">
+                            <img src="/assets/system/identity1.png" alt="">
+                        </div>
+                        <div class="identity-title">德育管理员</div>
+                    </div>
+                </router-link>
+                <router-link to="/Main/Student">
+                    <div class="user-panel user-panel__teacher">
+                        <div class="identity">
+                            <img src="/assets/system/identity2.png" alt="">
+                        </div>
+                        <div class="identity-title">班主任<br/>（2015级1班）</div>
+                    </div>
+                </router-link>
+                <router-link to="/Main/Bedroom">
+                    <div class="user-panel user-panel__parent">
+                        <div class="identity">
+                            <img src="/assets/system/identity3.png" alt="">
+                        </div>
+                        <div class="identity-title">家长<br/>（2015级1班）</div>
+                    </div>
+                </router-link>
             </div>
         </cs-contenter>
     </cs-page>

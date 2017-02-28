@@ -1,43 +1,50 @@
-.cs-main {
-    .cs-contenter {
-        display: flex;
-        flex-direction: column;
-    }
-    .section-container {
-        &.content {
-            padding-top: 0;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: none;
-            .user-panel {
-                flex: 1;
-                display: flex;
-                padding: toRem(20);
-                padding-bottom: toRem(40);
-                padding-top: 0;
-                .user-panel__admin,
-                .user-panel__teacher,
-                .user-panel__parent {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: green;
-                    border-radius: toRem(20);
-                    box-shadow: toRem(2) toRem(2) toRem(5) #ccc;
+                .cs-main {
+                    .cs-contenter {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .section-container {
+                        &.content {
+                            .user-panel {
+                                width: 100%;
+                                height: auto;
+                                min-height: toRem(310);
+                                margin-bottom: toRem(30);
+                                border-radius: toRem(20);
+                                box-shadow: toRem(2) toRem(2) toRem(5) #ccc;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .identity,
+                                .identity-title {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    text-align: center;
+                                    font-size: toRem(34);
+                                    color: #224758;
+                                    img {
+                                        width: toRem(193);
+                                        height: auto;
+                                    }
+                                }
+                                .identity {
+                                    flex: 1;
+                                }
+                                .identity-title {
+                                    flex: 1;
+                                    padding-right: toRem(60);
+                                }
+                            }
+                            .user-panel__admin {
+                                background: #e1f6ff;
+                            }
+                            .user-panel__teacher {
+                                background: #daf7f4;
+                            }
+                            .user-panel__parent {
+                                background: #f7f4dd;
+                            }
+                        }
+                    }
                 }
-                .user-panel__admin {
-                    background: #e1f6ff;
-                }
-                .user-panel__teacher {
-                    background: #daf7f4;
-                }
-                .user-panel__parent {
-                    background: #f7f4dd;
-                }
-            }
-        }
-    }
-}
