@@ -32,7 +32,8 @@
                                     flex: 1;
                                 }
                                 .identity-title {
-                                    flex: 0.9;
+                                    flex: 1;
+                                    padding-right: toRem(60);
                                 }
                             }
                             .user-panel__admin {
