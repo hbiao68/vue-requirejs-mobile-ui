@@ -26,17 +26,23 @@
             routes: routes,
         })
         var goto = function(to, from, next) {
-            const toDepth = to.path.split('/').length;
-            const fromDepth = from.path.split('/').length;
+            var toDepth = to.path.split('/').length;
+            var fromDepth = from.path.split('/').length;
+            toDepth += (to.path == '/' ? -1 : 0);
+            fromDepth += (from.path == '/' ? -1 : 0);
             var direction = toDepth - fromDepth;
-            store.dispatch('transition', {
-                direction: direction,
-                to: to.path,
-                from: from.path
-            });
-            window.setTimeout(function() {
-                next();
-            })
+            if (direction >= 2) {
+                next({ path: '/' });
+            } else {
+                store.dispatch('transition', {
+                    direction: direction,
+                    to: to.path,
+                    from: from.path
+                });
+                window.setTimeout(function() {
+                    next();
+                });
+            }
         }
         router.beforeEach(function(to, from, next) {
             var args = arguments;
