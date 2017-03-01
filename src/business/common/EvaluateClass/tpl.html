@@ -1,4 +1,46 @@
-<h1>标题class<span>X</span></h1>
-<div>
-    内容
-</div>
+<cs-popup v-model="popupVisible" background="transparent" popup-transition="popup-fade">
+    <div class="cs-evaluate" :style="{ height: height?height + 'rem' : '' }">
+        <h1>
+            <b>{{ title }}</b>
+            <span @click="close"></span>
+        </h1>
+        <div>
+            <div class="cs-evaluate-content-class">
+                <h2>
+                    <i class="fa fa-leaf"></i>
+                    <span class="title">{{ EvaluateClassSource.name }}</span>
+                    <b>（共{{ EvaluateClassSource.list.length }}项指标，总分35分）</b>
+                    <span class="score">
+                        得分：<i>{{score}}分</i>
+                    </span>
+                </h2>
+                <div class="row-container" ref="rowContainer">
+                    <div class="row" v-for="(row,index) in EvaluateClassSource.list" :key="row.id">
+                        <h3>
+                            <i class="icon-number" v-text="index + 1"></i>{{ row.name }}
+                            <a href="javascript:;" class="icon-plus" :class="[result[index].images.length < 5 ?'':'disabled']" @click="addfile(result[index])"></a>
+                        </h3>
+                        <div class="column-container" ref="columnContainer">
+                            <div class="column" v-for="item in row.items" :key="item.id">
+                                <img src="assets/system/set_0.png" alt="">
+                                <h3 v-text="item.name"></h3>
+                                <span :class="[item.value>0?'':'is-reduce']" v-text="(item.value>0?'+':'-') + Math.abs(item.value)"></span>
+                                <input type="radio" :value="item" v-model="result[index].value">
+                                <div class="background"></div>
+                            </div>
+                        </div>
+                        <div class="images-container">
+                            <div class="img-container" v-for="(image,resultIndex) in result[index].images" :key="image.id">
+                                <img :src="image.src" alt="">
+                                <span @click="removefile(resultIndex,result[index])"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-button-group">
+                        <cs-button type="primary" size="large" @click="close(result)">完成</cs-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</cs-popup>

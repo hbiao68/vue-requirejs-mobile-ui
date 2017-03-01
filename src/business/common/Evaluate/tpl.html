@@ -17,7 +17,7 @@
                             <div class="cs-evaluate-item" v-for="item in source.commend" @click="close(item)">
                                 <img src="assets/system/set_0.png" alt="">
                                 <h3 v-text="item.name"></h3>
-                                <span v-text="(~~item.value >= 0 ? '+':'') + item.value"></span>
+                                <span v-text="(item.value>0?'+':'-') + Math.abs(item.value)"></span>
                             </div>
                         </div>
                     </div>

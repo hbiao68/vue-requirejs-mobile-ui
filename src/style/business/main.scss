@@ -17,7 +17,9 @@
                                 align-items: center;
                                 .identity,
                                 .identity-title {
-                                    flex: 1;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     text-align: center;
                                     font-size: toRem(34);
                                     color: #224758;
@@ -25,6 +27,13 @@
                                         width: toRem(193);
                                         height: auto;
                                     }
+                                }
+                                .identity {
+                                    flex: 1;
+                                }
+                                .identity-title {
+                                    flex: 1;
+                                    padding-right: toRem(60);
                                 }
                             }
                             .user-panel__admin {
