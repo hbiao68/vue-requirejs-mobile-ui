@@ -11,7 +11,7 @@ define(function() {
                     btnName: [{
                         name: '班级评价',
                         method: function() {
-                            this.$router.push('/Main/Greades/class');
+                            this.$router.push('/Main/Greades');
                         }
                     }, {
                         name: '学生评价',

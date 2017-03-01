@@ -1,6 +1,6 @@
 <transition :name="transitionName">
     <cs-page class="cs-student common-style-1" :class="{ 'top-layer':topLayer }">
-        <cs-header title="学生评价">
+        <cs-header title="学生评价" v-show="!searchState">
             <router-link to="/Main/Student/MyMessage" slot="left">
                 <div class="img-header">
                     <img src="/assets/system/icon-Greades01.png" class="header" alt="">
@@ -8,16 +8,13 @@
                     <div class="msg-box">1</div>
                 </div>
             </router-link>
-            <router-link to="/Main/search" slot="right">
-                <cs-button icon="fa fa-search"></cs-button>
-            </router-link>
-            <router-link to="/" slot="right">
-                <cs-button class="line"></cs-button>
-            </router-link>
+            <cs-button slot="right" icon="fa fa-search" @click="searchState = !searchState"></cs-button>
+            <cs-button slot="right" class="line"></cs-button>
             <router-link to="" slot="right">
                 <cs-button icon="fa fa-bars" @click.native="action1"></cs-button>
             </router-link>
         </cs-header>
+        <cs-search v-model="search" v-show="searchState" ref="search"></cs-search>
         <cs-contenter>
             <div class="section-container">
                 <ul class="content-box">
