@@ -90,16 +90,7 @@
                 <span>发布公告</span>
             </router-link>
         </cs-footer>
-        <cs-actionsheet :actions="[{
-                            name: '班级评价',
-                            method: itemclick
-                        }, {
-                            name: '学生评价',
-                            method: itemclick
-                        },{
-                            name: '寝室评价',
-                            method: itemclick
-                        }]" v-model="sheet1.sheetVisible"></cs-actionsheet>
+        <cs-actionsheet :actions="btnName" v-model="sheet1.sheetVisible"></cs-actionsheet>
         <cs-evaluate ref="modal"></cs-evaluate>
     </cs-page>
 </transition>
