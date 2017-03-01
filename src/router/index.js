@@ -24,14 +24,16 @@
         var router = new VueRouter({
             mode: 'hash',
             routes: routes,
-        })
+        });
+        var firstLoad = true;
         var goto = function(to, from, next) {
             var toDepth = to.path.split('/').length;
             var fromDepth = from.path.split('/').length;
             toDepth += (to.path == '/' ? -1 : 0);
             fromDepth += (from.path == '/' ? -1 : 0);
             var direction = toDepth - fromDepth;
-            if (direction >= 2) {
+            if (firstLoad && toDepth > 0) {
+                firstLoad = false;
                 next({ path: '/' });
             } else {
                 store.dispatch('transition', {
@@ -42,6 +44,7 @@
                 window.setTimeout(function() {
                     next();
                 });
+                firstLoad = false;
             }
         }
         router.beforeEach(function(to, from, next) {
