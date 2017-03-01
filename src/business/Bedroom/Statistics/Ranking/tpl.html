@@ -1,19 +1,21 @@
 <transition :name="transitionName">
     <cs-page class="cs-ranking" :class="{ 'top-layer':topLayer }">
         <cs-header title="排行榜">
-            <router-link to="/Main/Bedroom/Statistics" slot="left">
+            <router-link to="Main//Bedroom/Statistics" slot="left">
                 <cs-button icon="fa fa-chevron-left">返回</cs-button>
             </router-link>
             <router-link to="" slot="right">
-                <cs-button icon="fa lcz-date"></cs-button>
+                <cs-button icon="fa lcz-date" @click="menuChange"></cs-button>
             </router-link>
         </cs-header>
         <cs-contenter>
+            <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
             <div class="top-bar">
-                <p>姓名</p>
-                <p class="font-blue">总分</p>
-                <p class="font-green">表扬分</p>
-                <div class="font-red">改进分</div>
+                
+                <div class="percent1">姓名</div>
+                <div class="percent2 font-blue">总分</div>
+                <div class="percent2">表扬分</div>
+                <div class="percent2">改进分</div>
                 <div class="menu">
                     <ul>
                         <li>今天</li>
@@ -24,27 +26,24 @@
                     </ul>
                 </div>
             </div>
-            <div class="main-box">
-                <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-                    <ul>
-
-                        <li v-for="tmp in list">
-                            <div>
-                                <i>
-                                    <img :src=tmp.img alt="">
-                                </i>
-                                <span>{{tmp.name}}</span>
-                            </div>
-                            <div class="bg-blue font-blue">{{tmp.all}}</div>
-                            <div class="bg-green font-green">{{tmp.add}}</div>
-                            <div class="bg-red font-red">{{tmp.reduce}}</div>
-                        </li>
-
-                    </ul>
-                </cs-loadmore>
+            <div class="top-bar" v-for="tmp in list">
+                <div class="percent1">
+                    <div class="box">
+                        <div class="percent3">
+                            <img :src=tmp.img class="portrait">
+                        </div>
+                        <div class=" name"><span>{{tmp.name}}</span></div>
+                    </div>
+                </div>
+                <div class="percent2"><span class="font bg-blue font-blue">{{tmp.all}}</span></div>
+                <div class="percent2"><span class="font bg-green font-green">{{tmp.add}}</span></div>
+                <div class="percent2"><span class="font bg-green font-green">{{tmp.reduce}}</span></div>
             </div>
+   
 
+          
 
+ </cs-loadmore>
         </cs-contenter>
     </cs-page>
 </transition>

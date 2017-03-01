@@ -74,6 +74,15 @@ define(function () {
                         this.$refs.loadmorebottom.onBottomLoaded();
                     }.bind(this), 2500);
                 },
+               menuChange:function(){
+                    var dis=$(".menu").css("display");
+                    if(dis=="block"){
+                        $(".menu").css("display","none");
+                    }else{
+                        $(".menu").css("display","block");
+                    }
+                }
+                    
 
             }
         }//
