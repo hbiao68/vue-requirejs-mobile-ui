@@ -1,6 +1,6 @@
 <transition :name="transitionName">
     <cs-page class="cs-bedroom common-style-1" :class="{ 'top-layer':topLayer }">
-        <cs-header title="寝室评价">
+        <cs-header title="寝室评价" v-show="!searchState">
             <router-link to="/Main/Bedroom/MyMessage" slot="left">
                 <div class="img-header">
                     <img src="/assets/system/icon-Greades01.png" class="header" alt="">
@@ -8,20 +8,17 @@
                     <div class="msg-box">1</div>
                 </div>
             </router-link>
-            <router-link to="/" slot="right">
-                <cs-button icon="fa fa-search"></cs-button>
-            </router-link>
-            <router-link to="/" slot="right">
-                <cs-button class="line"></cs-button>
-            </router-link>
-            <router-link to="/" slot="right">
-                <cs-button icon="fa fa-bars"></cs-button>
+            <cs-button slot="right" icon="fa fa-search" @click="searchState = !searchState"></cs-button>
+            <cs-button slot="right" class="line"></cs-button>
+            <router-link to="" slot="right">
+                <cs-button icon="fa fa-bars" @click.native="action1"></cs-button>
             </router-link>
         </cs-header>
+        <cs-search v-model="search" v-show="searchState" ref="search"></cs-search>
         <cs-contenter>
             <div class="section-container">
                 <ul class="content-box">
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -29,7 +26,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -37,7 +34,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -45,7 +42,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -53,7 +50,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -61,7 +58,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -69,7 +66,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -77,7 +74,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -85,7 +82,7 @@
                         </div>
                         <div class="state-list">101</div>
                     </li>
-                    <li class="content">
+                    <li class="content" @click="showModal">
                         <div class="show-img">
                             <img src="/assets/system/icon-bedroom01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -110,5 +107,7 @@
                 <span>统计分析</span>
             </router-link>
         </cs-footer>
+        <cs-actionsheet :actions="btnName" v-model="sheet1.sheetVisible"></cs-actionsheet>
+        <cs-evaluate ref="modal"></cs-evaluate>
     </cs-page>
 </transition>

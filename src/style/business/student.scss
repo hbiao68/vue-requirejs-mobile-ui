@@ -56,18 +56,4 @@
             }
         }
     }
-    .cs-actionsheet {
-        padding: toRem(12);
-        background: none;
-    }
-    .cs-actionsheet-list {
-        margin-bottom: 0!important;
-        border-radius: toRem(12) toRem(12) 0 0 !important;
-        overflow: hidden;
-    }
-    .cs-actionsheet-button {
-        background: $color-blue;
-        color: $color-white;
-        border-radius: 0 0 toRem(12) toRem(12) !important;
-    }
 }
