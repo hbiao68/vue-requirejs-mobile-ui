@@ -1,7 +1,5 @@
 @component-namespace cs {
     @component search {
-      height: 100%;
-      height: 100vh;
       overflow: hidden;
     }
 
@@ -11,21 +9,25 @@
       background-color: $color-grey;
       box-sizing: border-box;
       display: flex;
-      padding: 8px 10px;
+      padding: toRem(9 * 1.8) toRem(10 * 1.8);
       z-index: 1;
+      height: toRem($_header_height);
 
       @descendent inner {
         align-items: center;
+        align-self: stretch;
         background-color: $color-white;
-        border-radius: 2px;
+        border-radius: toRem(2 * 1.8);
         display: flex;
         flex: 1;
-        height: 28px;
-        padding: 4px 6px;
-
-        .mintui-search {
-          font-size: 12px;
+        padding: toRem(4 * 1.8) toRem(6 * 1.8);
+        input{
+          flex: 1;
+        }
+        .fa-search {
+          font-size: toRem(12 * 1.8);
           color: $color-grey;
+          margin-right: toRem(10);
         }
       }
 
@@ -41,25 +43,25 @@
         align-items: center;
         color: #9b9b9b;
         display: flex;
-        font-size: 12px;
+        font-size: toRem(12 * 1.8);
         justify-content: center;
         position: absolute 0 0 0 0;
 
-        .mintui-search {
-          font-size: 12px;
+        .fa-search {
+          font-size: toRem(12 * 1.8);
         }
       }
 
       @descendent cancel {
         color: $color-blue;
-        margin-left: 10px;
+        margin-left: toRem(10 * 1.8);
         text-decoration: none;
       }
     }
 
     @component search-list {
       overflow: auto;
-      padding-top: 44px;
+      padding-top: toRem(44 * 1.8);
       position: absolute 0 0 0 0;
     }
   }

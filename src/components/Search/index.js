@@ -32,9 +32,18 @@ define(['__component__', 'text!./tpl.html', 'components/Cell/index'], function(c
             },
             result: Array
         },
-
-        mounted() {
-            this.autofocus && this.$refs.input.focus();
+        watch: {
+            show: function(ov, nv) {
+                if (nv) this.$nextTick(function() {
+                    this.autofocus && this.$refs.input.focus();
+                })
+            }
+        },
+        methods: {
+            cancel: function() {
+                this.visible = false;
+                if (this.canceled) this.canceled();
+            }
         }
     })
 })

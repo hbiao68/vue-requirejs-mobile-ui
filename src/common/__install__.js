@@ -26,6 +26,7 @@ define([
     'components/TabBar/index',
     'components/Spinner/index',
     'components/LoadMore/index',
+    'components/Search/index',
 
     //公用业务模块
     'business/common/Evaluate/index',

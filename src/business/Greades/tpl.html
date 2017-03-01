@@ -1,13 +1,12 @@
 <transition :name="transitionName">
     <cs-page class="cs-student common-style-1" :class="{ 'top-layer':topLayer }">
-        <cs-header title="全校">
+        <cs-header v-show="!searchState" title="全校">
             <router-link to="/Main" slot="left">
                 <cs-button icon="fa fa-remove "></cs-button>
             </router-link>
-            <router-link to="/" slot="right">
-                <cs-button icon="fa fa-search"></cs-button>
-            </router-link>
+            <cs-button slot="right" icon="fa fa-search" @click="searchState = !searchState"></cs-button>
         </cs-header>
+        <cs-search v-model="search" :show="searchState" ref="search"></cs-search>
         <cs-contenter>
             <div class="section-container">
                 <ul class="content-box">

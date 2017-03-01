@@ -22,9 +22,15 @@ define(function() {
 
     return function(content, params) {
         if (params.direction > 0) {
-            //从高级跳至低级
-            content.dispatch(toUpperCase(params.to) + '_IN_RIGHT');
-            content.dispatch(toUpperCase(params.from) + '_OUT_LEFT');
+
+            if (params.from == '/') {
+                content.dispatch(toUpperCase(params.to) + '_IN_BOTTOM');
+                content.dispatch(toUpperCase(params.from) + '_OUT_TOP');
+            } else {
+                //从高级跳至低级
+                content.dispatch(toUpperCase(params.to) + '_IN_RIGHT');
+                content.dispatch(toUpperCase(params.from) + '_OUT_LEFT');
+            }
         } else if (params.direction < 0) {
             //从低级跳至高级
             if (params.to == '/') {
