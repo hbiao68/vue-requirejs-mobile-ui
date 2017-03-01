@@ -1,7 +1,7 @@
 <transition :name="transitionName">
     <cs-page class="cs-announcement common-style-1" :class="{ 'top-layer':topLayer }">
         <cs-header title="发布公告">
-            <router-link to="/Main/Student/chooseAnnouncementObject" slot="left">
+            <router-link to="/Main/Greades/chooseAnnouncementObject" slot="left">
                 <cs-button icon="fa fa-remove "></cs-button>
             </router-link>
         </cs-header>
@@ -17,7 +17,7 @@
                         <span>李四</span>、
                         <span>王五</span>、
                         <span>等7人</span>
-                        <router-link to="/Main/Student/chooseAnnouncementObject" slot="left">
+                        <router-link to="/Main/Greades/chooseAnnouncementObject" slot="left">
                             <cs-button icon="fa fa-plus" class="addbtn"></cs-button>
                         </router-link>
                     </div>
@@ -31,7 +31,7 @@
                 </div>
                 <textarea class="textarea textarea2" placeholder="输入公告内容"></textarea>
 
-                <router-link to="/Main/Student" slot="left">
+                <router-link to="/Main/Greades" slot="left">
                     <cs-button size="large" type="primary" class="submit-btn">发布</cs-button>
                 </router-link>
             </div>

@@ -23,7 +23,6 @@ define(['__component__', 'text!./tpl.html', 'components/Cell/index'], function(c
         props: {
             value: String,
             autofocus: Boolean,
-            show: Boolean,
             cancelText: {
                 default: '取消'
             },
