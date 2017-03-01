@@ -1,0 +1,53 @@
+.cs-notice{
+  .box ul{
+      width:90%;
+      margin:0 auto;
+  }
+  .group{
+      height: toRem(150);
+      border-bottom:1px solid #ddd;
+      display: flex;
+  }
+  .getMessage{
+      box-sizing: border-box;
+      width:toRem(88);
+      height: toRem(75);
+      align-self: center;
+      background-size: contain;
+  }
+  .getMessage img{
+      width:toRem(88);
+      height: toRem(75);
+  }
+  .group div:nth-child(2){
+      box-sizing: border-box;
+      height:toRem(150);
+      flex: 1;
+      padding-left: toRem(40);
+      padding-top: toRem(30);
+      position:relative;
+  }
+  .name{
+      position: absolute;
+      color:rgb(144,159,167);
+      bottom:toRem(28);
+      left:toRem(35);
+  }
+  .date{
+      position: absolute;
+      bottom: toRem(28);
+      right: toRem(35);
+      color:rgb(144,159,167);
+  }
+   .noMessage{
+      box-sizing: border-box;
+      width:toRem(88);
+      height: toRem(75);
+      align-self: center;
+      background: url("/assets/system/noNews.png") no-repeat;
+      background-size: contain;
+  }
+  .group div:nth-child(2) p{
+      color: rgb(34,71,88);
+  }
+}

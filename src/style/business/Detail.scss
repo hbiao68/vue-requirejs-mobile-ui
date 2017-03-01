@@ -1,0 +1,54 @@
+.cs-detail{
+    .header{
+        font-size: toRem(35);
+        p span{
+            display: inline-block;
+            line-height: toRem(47);
+        }
+        i{
+            display: inline-block;
+            width: toRem(40);
+            height: toRem(47);
+            background: url("/assets/system/tongzhi.png") no-repeat;
+            background-size: contain;
+            margin-left: toRem(12);
+            padding-right: toRem(5);
+        }
+    }
+    .title{
+        padding-left: toRem(65);
+        padding-top: toRem(40);
+        color: rgb(116,127,131);
+        font-size: toRem(25);
+        div:nth-child(1){
+            float: left;
+        }
+        div:nth-child(2){
+            float: left;
+            margin-left: toRem(125);
+        }
+    }
+    .title:after{
+        content:"";
+		display:block;
+		clear:both;
+    }
+    .send-obj{
+        padding-top: toRem(30);
+        padding-right: toRem(70);
+        clear: both;
+    }
+    .objs{  
+        display: inline-block;
+        width: toRem(480);
+        vertical-align: top;
+    }
+    .main{
+        padding-left: toRem(65);
+        padding-top:toRem(45);
+        padding-right: toRem(50);
+        color: rgb(116,127,131);
+        font-size:toRem(20);
+    }
+
+}

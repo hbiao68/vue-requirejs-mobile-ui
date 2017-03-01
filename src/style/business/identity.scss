@@ -1,0 +1,24 @@
+.cs-id{
+    .name{
+       padding: toRem(25) toRem(12);
+        .cs-button{
+        padding-left:toRem(30);
+        text-align: left;
+        margin-top: toRem(30);
+    }
+    }
+    .name input{
+        box-sizing: border-box;
+        width: 100%;
+        height: toRem(90);
+        border-radius: toRem(10);
+        border:toRem(1) solid rgb(212,212,212);
+        padding-left: toRem(30);  
+    }
+    .change{
+        padding-top: toRem(30);
+        color: rgb(184,193,197);
+        font-size: toRem(20);
+    }
+
+}

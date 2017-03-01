@@ -1,0 +1,129 @@
+.cs-message{
+    .l-header{
+        height: toRem(175);
+        position: relative;
+
+        &>.cs-cell-title > img{
+            height: toRem(40);
+            width: toRem(40);
+            margin-right: toRem(20);
+            margin-left:toRem(38);
+        }
+
+        &>.cs-cell-value > img{
+            height: toRem(112);
+            width: toRem(112);
+            margin-right: toRem(30);
+        }
+    }
+        .lcz{
+            width:43px;
+            height:toRem(40);
+        }
+        .lcz-pen{
+            background:url("/assets/system/pen.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+    }
+        .lcz-student{
+            background:url("/assets/system/student.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+    }
+        .lcz-shcool{
+            background:url("/assets/system/scholl_03.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lcz-class{
+            background:url("/assets/system/class_03.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lcz-id{
+            background:url("/assets/system/id_03.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lcz-new{
+            background:url("/assets/system/new_03.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lcz-home{
+            background:url("/assets/system/home_03.png") no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .group-6 .cs-cell-value span{
+            width:toRem(40);
+            height:toRem(37);
+            background:rgb(254,108,103);
+            border-radius: 50%;
+            text-align: center;
+            line-height: toRem(39);
+            color:white;
+        }
+        .main .cs-cell-title{
+            flex: 0.6;
+
+        }
+        .main .cs-cell-value{
+            width:toRem(500);
+            flex: 1;
+        }
+        .group-height{
+            height:toRem(90);
+        }
+        .footer-height{
+            height:toRem(90);
+        }
+        .setname{
+            position: absolute;
+            height: toRem(90);
+            line-height: toRem(90);
+            margin-top: toRem(8);
+            width: 90%;
+            background: rgb(255,255,255);
+            top: 0;
+            left: 5%;
+            display: none;
+        }
+        .setname input,.setid input{
+            box-sizing: border-box;
+            width: 90%;
+            border: none;
+            height: toRem(90);
+            width: 100%;
+            border: toRem(1) solid rgb(212,212,212);
+            border-radius: toRem(10);
+            padding-left: toRem(30);
+            font-size: toRem(30);
+        }
+        .setid{
+            position: absolute;
+            margin-top: toRem(8);
+            width: 90%;
+            background: rgb(255,255,255);
+            top: 0;
+            left: 5%;
+            display: none;
+        }
+        .setid div{
+            box-sizing: border-box;
+            width: 100%;
+            height: toRem(90) !important;
+            background-color: rgb(60,180,241);
+            border-radius: toRem(10);
+            margin-top: toRem(22);
+            color: white;
+            padding-left: toRem(30);
+            line-height: toRem(90);
+        }
+        .footer{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+}

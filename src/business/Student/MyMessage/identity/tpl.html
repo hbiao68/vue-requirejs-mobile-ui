@@ -1,0 +1,19 @@
+<transition :name="transitionName">
+    <cs-page class="cs-id" :class="{ 'top-layer':topLayer }">
+        <cs-header title="身份">
+            <router-link to="/Main/Student/MyMessage" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+            <router-link to="/Main" slot="right">
+                <cs-button icon="fa lcz lcz-home"></cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="name">
+                 <cs-button size="large" type="default">系统管理员</cs-button>
+                 <cs-button size="large" type="primary">班主任</cs-button>
+                 <p class="change">*点击切换你的身份</p>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>
