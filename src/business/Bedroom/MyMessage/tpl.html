@@ -1,0 +1,41 @@
+<transition :name="transitionName">
+    <cs-page class="cs-message" :class="{ 'top-layer':topLayer }">
+        <cs-header title="我的信息">
+            <router-link to="/Main/Bedroom" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+            <router-link to="/Main" slot="right">
+                <cs-button icon="fa lcz lcz-home"></cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="cs-cell-group">
+                <a class="cs-cell l-header">
+                    <!--<div class="cs-cell-left"></div>-->
+                    <div class="cs-cell-wrapper l-header">
+                        <div class="cs-cell-title">
+                            <img src="/assets/system/header.png" alt=""><span class="cs-cell-text">头像</span>
+                        </div>
+                        <div class="cs-cell-value is-link">
+                            <img src="/assets/system/face_03.png" alt="">
+                        </div>
+                    </div>
+                    <div class="cs-cell-right"></div>
+                    <i class="cs-cell-allow-right"></i>
+                    <!--取名字-->
+                </a>
+            </div>
+            <div class="main">
+                <cs-cell title="姓名" icon="fa lcz lcz-pen" to="/Main/Bedroom/MyMessage/Name" is-link value="王大宝老师" class="group-height"></cs-cell>
+                <cs-cell title="学生" icon="fa lcz lcz-student" to="//www.baidu.com" is-link value="王大宝(150028247022225)" class="group-height"></cs-cell>
+                <cs-cell title="学校" icon="fa lcz lcz-shcool" to="//www.baidu.com" is-link value="成都十七中学" class="group-height"></cs-cell>
+                <cs-cell title="所在班级" icon="fa lcz lcz-class" to="//www.baidu.com" is-link value="2015级三班" class="group-height"></cs-cell>
+                <cs-cell title="身份" icon="fa lcz lcz-id" to="/Main/Bedroom/MyMessage/identity" is-link value="家长" class="group-height"></cs-cell>
+                <cs-cell title="通知公告" icon="fa lcz lcz-new" to="/Main/Bedroom/MyMessage/notice" is-link value="1" class="group-height group-6"></cs-cell>
+            </div>
+            <div class="footer">
+                <cs-button size="large" type="primary">退出登录</cs-button>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>

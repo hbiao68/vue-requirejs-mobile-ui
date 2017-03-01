@@ -1,0 +1,29 @@
+<transition :name="transitionName">
+    <cs-page class="cs-notice" :class="{ 'top-layer':topLayer }">
+        <cs-header title="通知公告">
+            <router-link to="/Main/Student/MyMessage" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="box">
+                <ul>
+                    <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
+                        <router-link to="/Main/Student/MyMessage/notice/Detail" v-for="tmp in list">
+                            <li class="group">
+                                <div class="getMessage">
+                                    <img :src=tmp.read alt="">
+                                </div>
+                                <div>
+                                    <p>{{tmp.title}}</p>
+                                    <span class="name">{{tmp.name}}</span>
+                                    <span class="date">{{tmp.date}}</span>
+                                </div>
+                            </li>
+                        </router-link>
+                    </cs-loadmore>
+                </ul>
+            </div>
+        </cs-contenter>
+    </cs-page>
+</transition>
