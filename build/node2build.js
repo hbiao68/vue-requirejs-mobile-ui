@@ -31,6 +31,7 @@ var base = {
         'vue-popup': 'libs/vue-popup/index',
         'jquery': "libs/jquery/jquery",
         'fastclick': "libs/fastclick/fastclick",
+        'wind-dom': 'libs/wind-dom/index',
         '__module__': 'common/__module__',
         '__component__': 'common/__component__',
         '__install__': 'common/__install__',
@@ -38,6 +39,8 @@ var base = {
         'detector': 'common/detector',
         'calc': 'common/calculate',
         'emitter': 'common/mixins/emitter',
+        'clickoutside': 'common/utils/clickoutside',
+        'isvisible': 'common/utils/isvisible',
         'install': 'components/install'
     },
     map: {
@@ -58,7 +61,9 @@ var base = {
             'calc',
             'fastclick',
             'libs/require-text/text',
-            'store/transition'
+            'store/transition',
+            'store/modules/common/Evaluate/store',
+            'store/modules/common/EvaluateClass/store'
         ],
         exclude: [
             'store/index',
@@ -67,14 +72,14 @@ var base = {
     }]
 }
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
-    return 'store/modules/' + o.name;
+    return 'store/modules/' + o.path + '/store';
 }));
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
-    return 'business/' + o.name + '/index';
+    return 'business/' + o.path + '/index';
 }));
 
 base.modules[0].include = base.modules[0].include.concat(__config__.map(o => {
-    return 'libs/require-text/text!business/' + o.name + '/tpl.html';
+    return 'libs/require-text/text!business/' + o.path + '/tpl.html';
 }))
 
 fs.writeFileSync('build/b.js', '(' + JSON.stringify(base) + ')');
@@ -95,7 +100,7 @@ node2build.on('exit', function(code, signal) {
     //合并代码
     var entrance = fs.readFileSync(todir + '/entrance.js', 'utf-8');
     var router = fs.readFileSync(todir + '/router/index.js', 'utf-8');
-    router = router.replace(/(define\()(e,function)/, '$1\"router/index\",$2');
+    router = router.replace(/(define\()(t,function)/, '$1\"router/index\",$2');
     var store = fs.readFileSync(todir + '/store/index.js', 'utf-8');
     store = store.replace(/(define\()(e,function)/, '$1\"store/index\",$2');
     entrance = entrance.replace(/(define\("application")/, router + store + '$1');

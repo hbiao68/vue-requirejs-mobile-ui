@@ -1,8 +1,8 @@
+;
 (function() {
     var storeModules = [
         'vue',
         'vuex',
-        'common/plugins/modulestore',
         './transition',
         'store/modules/common/Evaluate/store',
         'store/modules/common/EvaluateClass/store'
@@ -13,10 +13,9 @@
         return 'store/modules/base/' + module;
     }));
 
-    define(storeModules, function(Vue, Vuex, ModuleStore, transition, Evaluate, EvaluateClass) {
+    define(storeModules, function(Vue, Vuex, transition, Evaluate, EvaluateClass) {
         Vue.use(Vuex);
-        Vue.use(ModuleStore);
-        var m = [].slice.call(arguments, 6);
+        var m = [].slice.call(arguments, 5);
         var modules = {
             Evaluate: Evaluate,
             EvaluateClass: EvaluateClass,

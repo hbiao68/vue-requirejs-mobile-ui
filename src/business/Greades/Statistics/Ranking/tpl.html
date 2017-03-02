@@ -10,40 +10,40 @@
         </cs-header>
         <cs-contenter>
             <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-            <div class="top-bar">
-                
-                <div class="percent1">姓名</div>
-                <div class="percent2 font-blue">总分</div>
-                <div class="percent2">表扬分</div>
-                <div class="percent2">改进分</div>
-                <div class="menu">
-                    <ul>
-                        <li>今天</li>
-                        <li class="font-blue">本周</li>
-                        <li>上周</li>
-                        <li>本月</li>
-                        <li>全部</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="top-bar" v-for="tmp in list">
-                <div class="percent1">
-                    <div class="box">
-                        <div class="percent3">
-                            <img :src=tmp.img class="portrait">
-                        </div>
-                        <div class=" name"><span>{{tmp.name}}</span></div>
+                <div class="top-bar">
+
+                    <div class="percent1">姓名</div>
+                    <div class="percent2 font-blue">总分</div>
+                    <div class="percent2">表扬分</div>
+                    <div class="percent2">改进分</div>
+                    <div class="menu" v-show="menuState">
+                        <ul>
+                            <li>今天</li>
+                            <li class="font-blue">本周</li>
+                            <li>上周</li>
+                            <li>本月</li>
+                            <li>全部</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="percent2"><span class="font bg-blue font-blue">{{tmp.all}}</span></div>
-                <div class="percent2"><span class="font bg-green font-green">{{tmp.add}}</span></div>
-                <div class="percent2"><span class="font bg-green font-green">{{tmp.reduce}}</span></div>
-            </div>
-   
+                <div class="top-bar" v-for="tmp in list">
+                    <div class="percent1">
+                        <div class="box">
+                            <div class="percent3">
+                                <img :src=tmp.img class="portrait">
+                            </div>
+                            <div class=" name"><span>{{tmp.name}}</span></div>
+                        </div>
+                    </div>
+                    <div class="percent2"><span class="font bg-blue font-blue">{{tmp.all}}</span></div>
+                    <div class="percent2"><span class="font bg-green font-green">{{tmp.add}}</span></div>
+                    <div class="percent2"><span class="font bg-green font-green">{{tmp.reduce}}</span></div>
+                </div>
 
-          
 
- </cs-loadmore>
+
+
+            </cs-loadmore>
         </cs-contenter>
     </cs-page>
 </transition>

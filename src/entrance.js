@@ -51,9 +51,6 @@ require(['fastclick', 'application'], function(FastClick, application) {
     if (!document.addEventListener) return;
     window.addEventListener(resizeEvt, recalc, false);
     document.addEventListener('DOMContentLoaded', recalc, false);
-    /*消除移动端click事件的延时*/
     FastClick.attach(document.body);
-
-    /*应用程序 初始加载*/
     application.run();
 });

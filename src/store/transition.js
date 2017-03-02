@@ -1,3 +1,4 @@
+;
 define(function() {
     var toUpperCase = function(str) {
         return str.replace(/\//g, '_').toLocaleUpperCase();

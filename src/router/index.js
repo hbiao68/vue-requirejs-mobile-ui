@@ -1,3 +1,4 @@
+;
 (function() {
     var businessModules = [
         'vue',
