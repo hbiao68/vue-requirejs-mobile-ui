@@ -158,11 +158,13 @@
     left: 0;
     top:toRem(90);
     background-color: rgba(248,248,248,0.8);
+    box-shadow: 0 0 5px #ccc;
     ul li{
         height: toRem(90);
         line-height: toRem(90) !important;
         text-align: center;
         font-size: toRem(30);
+        border-bottom: 1px solid #ddd;
     }
 }
 .font-blue{

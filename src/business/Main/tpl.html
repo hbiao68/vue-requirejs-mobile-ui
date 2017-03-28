@@ -10,7 +10,7 @@
                 <h1><i class="fa fa-group"></i>请选择您的身份</h1>
             </div>
             <div class="section-container content">
-                <router-link to="/Main/Greades">
+                <router-link :to="{ path:'/Main/Greades'}">
                     <div class="user-panel user-panel__admin">
                         <div class="identity">
                             <img src="/assets/system/identity1.png" alt="">
@@ -18,7 +18,7 @@
                         <div class="identity-title">班级</div>
                     </div>
                 </router-link>
-                <router-link to="/Main/Student">
+                <router-link :to="{ path:'/Main/Student'}">
                     <div class="user-panel user-panel__teacher">
                         <div class="identity">
                             <img src="/assets/system/identity2.png" alt="">
