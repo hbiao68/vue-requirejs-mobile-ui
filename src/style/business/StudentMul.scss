@@ -2,7 +2,8 @@
     .section-container {
         .content-box {
             .content {
-                width: 25%;
+                width: 33.3%;
+                height: toRem(267);
                 padding: toRem(10);
                 float: left;
             }
@@ -11,23 +12,24 @@
                 img {
                     width: 100%;
                     height: auto;
+                    min-height: toRem(217);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                 }
                 .score {
-                    width: toRem(36);
-                    height: toRem(36);
-                    line-height: toRem(36);
+                    width: 100%;
+                    height: toRem(217);
+                    line-height: toRem(217);
                     text-align: center;
-                    border-radius: 50%;
                     position: absolute;
-                    right: toRem(3);
-                    top: toRem(3);
+                    right: toRem(0);
+                    top: toRem(0);
                     font-size: toRem(12);
-                    background: #b6ebdb;
                     .checkbox-box {
                         position: relative;
                         width: 100%;
                         height: 100%;
-                        border-radius: 50%;
                         overflow: hidden;
                         input {
                             width: 100%;
@@ -36,7 +38,7 @@
                             top: 0;
                             left: 0;
                             z-index: 3;
-                            visibility: hidden;
+                            opacity: 0;
                         }
                         input[type=checkbox]:checked+label {
                             background: url("/assets/system/icon-gou2.png") no-repeat;
@@ -44,12 +46,12 @@
                         }
                         label {
                             display: block;
-                            width: 100%;
-                            height: 100%;
+                            width: toRem(50);
+                            height: toRem(50);
                             cursor: pointer;
                             position: absolute;
-                            top: 0;
-                            left: 0;
+                            top: toRem(8);
+                            right: toRem(8);
                             z-index: 1;
                             background: url("/assets/system/icon-gou1.png") no-repeat;
                             background-size: contain;

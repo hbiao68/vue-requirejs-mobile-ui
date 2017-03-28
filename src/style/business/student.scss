@@ -2,7 +2,8 @@
     .section-container {
         .content-box {
             .content {
-                width: 25%;
+                width: 33.3%;
+                height: toRem(267);
                 padding: toRem(10);
                 float: left;
             }
@@ -11,11 +12,12 @@
                 img {
                     width: 100%;
                     height: auto;
+                    min-height: toRem(217);
                 }
                 .score {
-                    width: toRem(36);
-                    height: toRem(36);
-                    line-height: toRem(36);
+                    width: toRem(50);
+                    height: toRem(50);
+                    line-height: toRem(50);
                     text-align: center;
                     border-radius: 50%;
                     display: block;
@@ -31,7 +33,7 @@
                 .score2 {
                     background: #fae0d3;
                     color: #bc4644;
-                    top: toRem(48);
+                    top: toRem(65);
                 }
             }
         }
