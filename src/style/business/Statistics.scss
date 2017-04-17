@@ -199,23 +199,34 @@
     .font-blue {
         color: rgb(41, 143, 196) !important;
     }
-}
-.fixed-header{
+    .fixed-header{
     background:none;
 }
-.cs-header .top{
-    width:100%;
-}
-.Situation .cs-cell-value{
-    width:100%;
-    height:toRem(163);
-}
-.Situation .cs-cell:last-child{
-    background-image:none
-}
-.Situation .cs-cell-wrapper{
-    background-image:none
-}
-.Situation .cs-cell-swipe-button{
-    line-height:toRem(163);
+    .cs-header .top{
+        width:100%;
+    }
+    .Situation .cs-cell-value{
+        width:100%;
+        height:toRem(163);
+    }
+    .Situation .cs-cell:last-child{
+        background-image:none
+    }
+    .Situation .cs-cell-wrapper{
+        background-image:none
+    }
+    .Situation .cs-cell-swipe-button{
+        line-height:toRem(163);
+    }
+    .X{
+        width:toRem(40);
+        height:toRem(40) !important;
+        background:rgb(203,213,214);
+        border-radius:50%;
+        text-align:center;
+        line-height:toRem(38);
+        color:white;
+        position:absolute !important;
+        right:0;
+    }
 }
