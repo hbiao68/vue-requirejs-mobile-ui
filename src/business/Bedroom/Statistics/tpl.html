@@ -8,54 +8,64 @@
                 <cs-button icon="fa rank"></cs-button>
             </router-link>
         </cs-header>
+        <div class="cs-header top-header-bar fixed-header">
+            <div class="top">
+                <div class="top-left" @click="menuChange">
+                    <div>
+                        <i class="datelist"></i>
+                        <span>本周</span>
+                        <i class="tobottom"></i>
+                    </div>
+                </div>
+                <div class="top-right">
+                    <div>
+                        <p class="add">
+                            <i><img src="/assets/system/greenface_03.png" alt=""></i>
+                            <span>+1分</span>
+                        </p>
+                        <p class="reduce">
+                            <i><img src="/assets/system/redface_03.png" alt=""></i>
+                            <span>-1分</span>
+                        </p>
+                    </div>
+                </div>
+                <!--菜单-->
+                <div class="menu" v-show="menuState">
+                    <ul>
+                        <li>今天</li>
+                        <li class="font-blue">本周</li>
+                        <li>上周</li>
+                        <li>本月</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
         <cs-contenter>
             <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-                <div class="top">
-                    <div class="top-left" @click="menuChange">
-                        <div>
-                            <i class="datelist"></i>
-                            <span>本周</span>
-                            <i class="tobottom"></i>
-                        </div>
-                    </div>
-                    <div class="top-right">
-                        <div>
-                            <p class="add">
-                                <i><img src="/assets/system/greenface_03.png" alt=""></i>
-                                <span>+1分</span>
-                            </p>
-                            <p class="reduce">
-                                <i><img src="/assets/system/redface_03.png" alt=""></i>
-                                <span>-1分</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!--菜单-->
-                    <div class="menu" v-show="menuState">
-                        <ul>
-                            <li>今天</li>
-                            <li class="font-blue">本周</li>
-                            <li>上周</li>
-                            <li>本月</li>
-                        </ul>
-                    </div>
-
-                </div>
                 <div class="circle-box">
                     <div class="circle"></div>
                     <p class="week">本周</p>
+
                     <div class="Situation" v-for="tmp in list">
-                        <div class="Situation-reduce">
-                            <div>
-                                <img src="/assets/system/situation_03.png" alt="">
-                                <i class="count-reduce">
-                                {{tmp.point}}
-                            </i>
-                                <i class="x">×</i>
+                        <cs-cell-swipe :right="[{
+                            content: '删除',
+                            style: { background: 'red', color: '#fff' },
+                            handler:a
+                        }]">
+                            <div class="Situation-reduce">
+                                <div>
+                                    <img src="/assets/system/situation_03.png">
+                                    <i class="add">+1</i>
+                                </div>
+                                <p class="reason">
+                                    -1分 因为上课走神
+                                </p>
+                              <p class="action">
+                                  昨天14:20由陈老师发送给刘二狗
+                              </p>
                             </div>
-                            <span class="reason">{{tmp.reason}}</span>
-                            <span class="action">{{tmp.action}}</span>
-                        </div>
+                        </cs-cell-swipe>
                     </div>
                 </div>
             </cs-loadmore>

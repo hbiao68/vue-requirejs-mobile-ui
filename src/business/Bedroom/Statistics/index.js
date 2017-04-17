@@ -27,6 +27,9 @@ define(function() {
                 }
             },
             methods: {
+                a:function(){
+                    alert(1);
+                },
                 loadMore: function() {
                     this.loading = true;
                     setTimeout(function() {
