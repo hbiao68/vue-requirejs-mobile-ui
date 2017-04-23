@@ -8,10 +8,8 @@
                 <cs-button icon="fa lcz-date" @click="menuChange"></cs-button>
             </router-link>
         </cs-header>
-        <cs-contenter>
-            <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-                <div class="top-bar">
-
+          <div class="cs-header top-header-bar fixed-header">
+               <div class="top-bar">
                     <div class="percent1">姓名</div>
                     <div class="percent2 font-blue">总分</div>
                     <div class="percent2">表扬分</div>
@@ -26,6 +24,11 @@
                         </ul>
                     </div>
                 </div>
+
+          </div>
+
+        <cs-contenter>
+            <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
                 <div class="top-bar" v-for="tmp in list">
                     <div class="percent1">
                         <div class="box">
@@ -39,9 +42,6 @@
                     <div class="percent2"><span class="font bg-green font-green">{{tmp.add}}</span></div>
                     <div class="percent2"><span class="font bg-green font-green">{{tmp.reduce}}</span></div>
                 </div>
-
-
-
 
             </cs-loadmore>
         </cs-contenter>
