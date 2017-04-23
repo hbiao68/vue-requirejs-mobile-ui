@@ -77,45 +77,45 @@
     }
     .Situation {
         border-bottom: 1px solid #ddd;
-        padding-top: toRem(20);
     }
     .Situation-reduce {
         height: toRem(140);
         position: relative;
-        width:100%;
+        width: 100%;
         &>div {
             position: relative;
-            height:100%;
-            float:left;
-            .add{
-                position:absolute;
-                background:rgb(255,103,108);
-                left:toRem(110);
-                top:toRem(-12);
-                width:toRem(40);
-                height:toRem(40);
-                border-radius:50%;
-                text-align:center;
-                line-height:toRem(40);
-                color:white;
+            height: 100%;
+            float: left;
+            .add {
+                position: absolute;
+                background: rgb(255, 103, 108);
+                left: toRem(110);
+                top: toRem(-12);
+                width: toRem(40);
+                height: toRem(40);
+                border-radius: 50%;
+                text-align: center;
+                line-height: toRem(40);
+                color: white;
             }
         }
         & img {
             width: toRem(126);
             height: toRem(121);
         }
-        .reason,.action{
-            float:left;
-            width:70%;
-            margin-left:toRem(30);
-            color:black;
-            overflow:hidden;
-            text-overflow:ellipsis;
-            white-space:nowrap;
+        .reason,
+        .action {
+            float: left;
+            width: 70%;
+            margin-left: toRem(30);
+            color: black;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        .action{
-            color:rgb(157,157,157);
-            margin-top:toRem(60);
+        .action {
+            color: rgb(157, 157, 157);
+            margin-top: toRem(60);
         }
     }
     // .reason {
@@ -199,34 +199,35 @@
     .font-blue {
         color: rgb(41, 143, 196) !important;
     }
-    .fixed-header{
-    background:none;
-}
-    .cs-header .top{
-        width:100%;
+    .fixed-header {
+        background: none;
     }
-    .Situation .cs-cell-value{
-        width:100%;
-        height:toRem(163);
+    .cs-header .top {
+        width: 100%;
     }
-    .Situation .cs-cell:last-child{
-        background-image:none
+    .Situation .cs-cell-value {
+        width: 100%;
+        height: toRem(163);
+        padding-top: 10px;
     }
-    .Situation .cs-cell-wrapper{
-        background-image:none
+    .Situation .cs-cell:last-child {
+        background-image: none
     }
-    .Situation .cs-cell-swipe-button{
-        line-height:toRem(163);
+    .Situation .cs-cell-wrapper {
+        background-image: none
     }
-    .X{
-        width:toRem(40);
-        height:toRem(40) !important;
-        background:rgb(203,213,214);
-        border-radius:50%;
-        text-align:center;
-        line-height:toRem(38);
-        color:white;
-        position:absolute !important;
-        right:0;
+    .Situation .cs-cell-swipe-button {
+        line-height: toRem(163);
+    }
+    .X {
+        width: toRem(40);
+        height: toRem(40) !important;
+        background: rgb(203, 213, 214);
+        border-radius: 50%;
+        text-align: center;
+        line-height: toRem(38);
+        color: white;
+        position: absolute !important;
+        right: 0;
     }
 }
