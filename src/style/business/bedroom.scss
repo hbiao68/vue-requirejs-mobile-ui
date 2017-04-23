@@ -2,17 +2,20 @@
     .section-container {
         .content-box {
             .content {
-                width: 33.3%;
-                height: toRem(267);
+                width: 25%;
+                height: toRem(247);
                 padding: toRem(10);
                 float: left;
             }
             .show-img {
                 position: relative;
+                height: toRem(167);
+                line-height: toRem(167);
+                background: #f2f9ff;
+                text-align: center;
                 img {
-                    width: 100%;
-                    height: auto;
-                    min-height: toRem(217);
+                    width: toRem(94);
+                    height: toRem(109);
                 }
                 .score {
                     width: toRem(50);
@@ -38,8 +41,8 @@
             }
         }
         .state-list {
-            height: toRem(50);
-            line-height: toRem(50);
+            height: toRem(60);
+            line-height: toRem(70);
             font-size: toRem(20);
             text-align: center;
         }

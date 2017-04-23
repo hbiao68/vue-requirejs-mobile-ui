@@ -1,54 +1,64 @@
-.cs-detail{
-    .header{
+.cs-detail {
+    .header {
         font-size: toRem(35);
-        p span{
-            display: inline-block;
-            line-height: toRem(47);
-        }
-        i{
-            display: inline-block;
-            width: toRem(40);
-            height: toRem(47);
-            background: url("/assets/system/tongzhi.png") no-repeat;
-            background-size: contain;
-            margin-left: toRem(12);
-            padding-right: toRem(5);
+        padding: 0 toRem(20);
+        p {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            i {
+                img {
+                    width: toRem(40);
+                    height: toRem(47);
+                    margin-right: toRem(10);
+                }
+            }
+            span {
+                flex: 1;
+                line-height: toRem(47);
+                word-break: break-all;
+                white-space: normal;
+            }
         }
     }
-    .title{
-        padding-left: toRem(65);
-        padding-top: toRem(40);
-        color: rgb(116,127,131);
+    .title {
+        padding: toRem(40) toRem(40) 0 toRem(40);
+        color: rgb(116, 127, 131);
         font-size: toRem(25);
-        div:nth-child(1){
-            float: left;
-        }
-        div:nth-child(2){
-            float: left;
-            margin-left: toRem(125);
+        .title1 {
+            display: flex;
+            div:nth-child(1) {
+                float: left;
+            }
+            div:nth-child(2) {
+                float: left;
+                margin-left: toRem(125);
+            }
         }
     }
-    .title:after{
-        content:"";
-		display:block;
-		clear:both;
-    }
-    .send-obj{
+    .send-obj {
         padding-top: toRem(30);
-        padding-right: toRem(70);
-        clear: both;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .name {
+            width: 130px;
+        }
+        img {
+            width: toRem(30);
+            height: auto;
+        }
+        .objs {
+            height: toRem(30);
+            overflow: hidden;
+        }
     }
-    .objs{  
-        display: inline-block;
-        width: toRem(480);
-        vertical-align: top;
+    .main {
+        padding: toRem(40) toRem(40);
+        color: rgb(116, 127, 131);
+        font-size: toRem(20);
+        word-break: break-all;
+        white-space: normal;
+        text-align: justify;
     }
-    .main{
-        padding-left: toRem(65);
-        padding-top:toRem(45);
-        padding-right: toRem(50);
-        color: rgb(116,127,131);
-        font-size:toRem(20);
-    }
-
 }

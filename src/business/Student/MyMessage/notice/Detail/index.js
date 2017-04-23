@@ -11,6 +11,17 @@ define(function() {
                 }
             },
             methods: {
+                show: function() {
+                    $jiantou = $('.jiantou')
+                    console.log($jiantou.attr("src"))
+                    if ($jiantou.attr("src") == "/assets/system/jiantou1.png") {
+                        $jiantou.attr({ src: "/assets/system/jiantou2.png" })
+                        $(".objs").css("height", "auto")
+                    } else {
+                        $jiantou.attr({ src: "/assets/system/jiantou1.png" })
+                        $(".objs").css("height", "1rem")
+                    }
+                },
                 loadMore: function() {
                     this.loading = true;
                     setTimeout(function() {
@@ -30,7 +41,6 @@ define(function() {
                         this.$refs.loadmoretop.onTopLoaded();
                     }.bind(this), 2500);
                 },
-
                 loadBottom: function() {
                     setTimeout(function() {
                         this.list += this.list2;
@@ -39,6 +49,6 @@ define(function() {
                 },
 
             }
-        } //
+        }
     }
 })
