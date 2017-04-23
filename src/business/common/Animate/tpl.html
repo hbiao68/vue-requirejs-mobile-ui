@@ -1,0 +1,10 @@
+<cs-popup v-model="popupVisible" :closeOnClickModal="false" background="transparent" popup-transition="popup-fade">
+    <div class="cs-animate">
+        <img :src="images[playIndex]" alt="">
+        <div class="cs-animate-content">
+            <h1 v-text="params.content"></h1>
+            <h2 :class="[isPlus?'plus':'sub']" v-text="(isPlus?'+':'') + params.score"></h2>
+            <h3 v-text="params.name"></h3>
+        </div>
+    </div>
+</cs-popup>
