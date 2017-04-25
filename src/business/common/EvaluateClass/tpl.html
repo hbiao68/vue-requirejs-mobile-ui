@@ -18,7 +18,7 @@
                     <div class="row" v-for="(row,index) in EvaluateClassSource.list" :key="row.id">
                         <h3>
                             <i class="icon-number" v-text="index + 1"></i>{{ row.name }}
-                            <a href="javascript:;" class="icon-plus" :class="[result[index].images.length < 5 ?'':'disabled']" @click="addfile(result[index])"></a>
+                            <a href="javascript:;" class="icon-plus-button" :class="[result[index].images.length < 5 ?'':'disabled']" @click="addfile(result[index])">上传图片</a>
                         </h3>
                         <div class="column-container" ref="columnContainer">
                             <div class="column" v-for="item in row.items" :key="item.id">

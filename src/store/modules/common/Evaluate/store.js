@@ -8,6 +8,10 @@ define(function() {
                         { id: '0', name: '按时到校', value: 1 },
                         { id: '1', name: '积极发言', value: 2 },
                         { id: '2', name: '完成作业', value: 1 },
+                        { id: '3', name: '完成作业', value: 1 },
+                        { id: '4', name: '完成作业', value: 1 },
+                        { id: '5', name: '完成作业', value: 1 },
+                        { id: '6', name: '完成作业', value: 1 },
                     ],
                     improve: [
                         { id: '0', name: '迟到', value: -1 },

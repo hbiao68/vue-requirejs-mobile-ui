@@ -70,7 +70,7 @@
         })
 
         return {
-            tpl: '<div><router-view></router-view><cs-animate ref="animate"></cs-animate></div>',
+            tpl: '<router-view></router-view>',
             router: router
         }
     })
