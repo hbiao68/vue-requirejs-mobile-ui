@@ -1,5 +1,5 @@
 define([
-    '__component__', 'text!./tpl.html', 'vuex'
+    '__component__', 'text!./tpl.html'
 ], function (component, template, Vuex) {
     var InstanceResolve = null;
     var InstanceReject = null;

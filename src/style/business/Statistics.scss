@@ -65,7 +65,7 @@
         height: toRem(35);
     }
     .circle-box {
-        margin-left: toRem(33);
+        // margin-left: toRem(33);
     }
     .circle {
         height: toRem(760);
@@ -73,6 +73,7 @@
     .week {
         color: rgb(161, 160, 160);
         font-size: toRem(30);
+        text-indent: toRem(30);
         padding-bottom: toRem(30);
     }
     .Situation {
