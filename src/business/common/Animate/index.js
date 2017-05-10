@@ -45,7 +45,7 @@ define([
         },
         methods: {
             start:function(){
-                timer = window.setTimeout(()=>this.animate(),this.interval);
+                timer = window.setTimeout(function(){this.animate()}.bind(this),this.interval);
             },
             stop:function(){
                 window.clearTimeout(timer);

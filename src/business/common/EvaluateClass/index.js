@@ -1,6 +1,7 @@
-define(['__component__', 'text!./tpl.html', 'vuex', 'vue'], function(component, template, Vuex, Vue) {
+define(['__component__', 'text!./tpl.html', 'vuex', 'vue'], function(component, template, Vuex, Vue ) {
     var InstanceResolve = null;
     var InstanceReject = null;
+    var viewer ;
     return component('cs-evaluate-class', {
         template: template,
         props: {
@@ -29,6 +30,16 @@ define(['__component__', 'text!./tpl.html', 'vuex', 'vue'], function(component, 
         },
         methods: {
             //初始化返回数据
+            viewer:function(){
+                viewer.show(
+                    [
+                            'assets/system/logo.png',
+                            'assets/system/portrait2.png',
+                            'assets/system/portrait3.png',
+                            'assets/system/portrait4.png'
+                        ]
+                );
+            },
             reset: function() {
                 var that = this;
                 var result = [];
@@ -48,11 +59,22 @@ define(['__component__', 'text!./tpl.html', 'vuex', 'vue'], function(component, 
                 this.reset();
                 params = params || {};
                 this.title = params.title || '班级评价';
+                viewer = params.viewer;
                 this.popupVisible = true;
                 this.$nextTick(function() {
                     this.$refs.rowContainer.scrollTop = 0;
                     if (this.$refs.columnContainer) this.$refs.columnContainer.forEach(function(o) { o.scrollLeft = 0; });
                 }.bind(this))
+                
+                var stopPropagation = function(e) {
+                    e = e || window.event;
+                    if (e.stopPropagation)
+                        e.stopPropagation();
+                }
+                this.$refs.rowContainer.ontouchmove = stopPropagation;
+                this.$refs.rowContainer.onmousewheel = stopPropagation;
+                this.$refs.rowContainer.onwheel = stopPropagation;
+                // this.$refs.rowContainer.addEventListener('DOMMouseScroll', preventDefault, false);
                 return new Promise(function(resolve, reject) {
                     InstanceResolve = resolve;
                     InstanceReject = reject;

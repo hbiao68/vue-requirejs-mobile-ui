@@ -8,7 +8,7 @@ define(function() {
             },
             methods: {
                 showModal: function() {
-                    this.$refs.modal.show().then(
+                    this.$refs.modal.show({ viewer : this.$refs.viewer}).then(
                         function(data) { console.log(data); },
                         function() {}
                     );

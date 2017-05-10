@@ -1,8 +1,8 @@
 (function(factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-        typeof define === 'function' && define.amd ? define(['vue', 'wind-dom'], factory) :
+        typeof define === 'function' && define.amd ? define(['vue', 'wind-dom','common/plugins/scrollHandler'], factory) :
         (global.Popup = factory(Vue, WindDom));
-})(function(Vue, WindDom) {
+})(function(Vue, WindDom,scrollHandler) {
 
     var addClass = WindDom.addClass,
         removeClass = WindDom.removeClass;
@@ -21,6 +21,7 @@
             } else {
                 hasModal = false;
                 modalDom = document.createElement('div');
+                $(modalDom).scroll(function(){return false;})
                 PopupManager.modalDom = modalDom;
 
                 modalDom.addEventListener('touchmove', function(event) {
@@ -421,6 +422,7 @@
                 if (!this.transition) {
                     this.doAfterOpen();
                 }
+                if(PopupManager.modalStack.length == 0) scrollHandler.disableScroll();
             },
 
             doAfterOpen: function() {
@@ -472,6 +474,7 @@
                 if (!this.transition) {
                     this.doAfterClose();
                 }
+                if(PopupManager.modalStack.length == 0) scrollHandler.enableScroll();
             },
 
             doAfterClose: function() {

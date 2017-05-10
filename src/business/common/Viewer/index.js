@@ -34,7 +34,7 @@ define([
                     'background-image':'url(' + item + ')'
                 }
             },
-            scroll(isleft){
+            scroll:function(isleft){
                 this.direction = isleft ? 1 : 2;
                 if(isleft){
                     if(this.pageIndex == 0)
