@@ -5,9 +5,11 @@
       .route
       .replace(/\/:[^\\/]*/g, '')
       .replace(/\//g, '_')
-    var func = ";define('business/base/" + module + "',['__module__','business/" + o.path + "/index','text!business/" + o.path + "/tpl.html'],function(factory,businessModule,template){ return factory('" + module + "', businessModule('" + module + "'),template)})"
-    __config__.dynamic(func)
-    return 'business/base/' + module
+    if (o.sync) {
+      var func = ";define('business/base/" + module + "',['__module__','business/" + o.path + "/index','text!business/" + o.path + "/tpl.html'],function(factory,businessModule,template){ return factory('" + module + "', businessModule('" + module + "'),template)})"
+      __config__.dynamic(func)
+      return 'business/base/' + module
+    }
   }))
   define(businessModules, function (Vue, store, VueRouter) {
     Vue.use(VueRouter)
@@ -23,7 +25,13 @@
       delete clone.store
       clone.path = clone.route
       delete clone.route
-      clone.component = m[i]
+      clone.component = clone.sync
+        ? m[i]
+        : function (resolve) {
+          require(['__module__', 'business/' + o.path + '/index', 'text!business/' + o.path + '/tpl.html'], function (factory, businessModule, template) {
+            resolve(factory(clone.name, businessModule(clone.name), template))
+          })
+        }
       return clone
     })
     var router = new VueRouter({mode: 'hash', routes: routes})
