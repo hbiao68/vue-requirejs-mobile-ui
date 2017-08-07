@@ -23,6 +23,51 @@ define(function() {
                             { id: '1', name: '桌面无损坏', value: 1 },
                             { id: '2', name: '桌面无涂写', value: 1 }
                         ]
+                    },
+                    {
+                        id: '1',
+                        name: '桌面清洁度',
+                        items: [
+                            { id: '0', name: '无书籍摆放', value: 2 },
+                            { id: '1', name: '桌面无损坏', value: 1 },
+                            { id: '2', name: '桌面无涂写', value: 1 }
+                        ]
+                    },
+                    {
+                        id: '1',
+                        name: '桌面清洁度',
+                        items: [
+                            { id: '0', name: '无书籍摆放', value: 2 },
+                            { id: '1', name: '桌面无损坏', value: 1 },
+                            { id: '2', name: '桌面无涂写', value: 1 }
+                        ]
+                    },
+                    {
+                        id: '1',
+                        name: '桌面清洁度',
+                        items: [
+                            { id: '0', name: '无书籍摆放', value: 2 },
+                            { id: '1', name: '桌面无损坏', value: 1 },
+                            { id: '2', name: '桌面无涂写', value: 1 }
+                        ]
+                    },
+                    {
+                        id: '1',
+                        name: '桌面清洁度',
+                        items: [
+                            { id: '0', name: '无书籍摆放', value: 2 },
+                            { id: '1', name: '桌面无损坏', value: 1 },
+                            { id: '2', name: '桌面无涂写', value: 1 }
+                        ]
+                    },
+                    {
+                        id: '1',
+                        name: '桌面清洁度',
+                        items: [
+                            { id: '0', name: '无书籍摆放', value: 2 },
+                            { id: '1', name: '桌面无损坏', value: 1 },
+                            { id: '2', name: '桌面无涂写', value: 1 }
+                        ]
                     }
                 ]
             }

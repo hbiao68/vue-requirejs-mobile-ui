@@ -31,7 +31,7 @@
                         </div>
                         <div class="images-container">
                             <div class="img-container" v-for="(image,resultIndex) in result[index].images" :key="image.id">
-                                <img :src="image.src" alt="">
+                                <img :src="image.src" @click="viewer" alt="">
                                 <span @click="removefile(resultIndex,result[index])"></span>
                             </div>
                         </div>

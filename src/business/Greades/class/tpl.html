@@ -11,39 +11,7 @@
         <cs-contenter>
             <div class="section-container">
                 <ul class="content-box">
-                    <li class="content" @click="showModal">
-                        <div class="show-img">
-                            <img src="/assets/system/icon-student01.png" class="msg" alt="">
-                            <span class="score score1">-30</span>
-                            <span class="score score2">+30</span>
-                        </div>
-                        <div class="state-list">2015级1班</div>
-                    </li>
-                    <li class="content" @click="showModal">
-                        <div class="show-img">
-                            <img src="/assets/system/icon-student01.png" class="msg" alt="">
-                            <span class="score score1">-30</span>
-                            <span class="score score2">+30</span>
-                        </div>
-                        <div class="state-list">2015级1班</div>
-                    </li>
-                    <li class="content" @click="showModal">
-                        <div class="show-img">
-                            <img src="/assets/system/icon-student01.png" class="msg" alt="">
-                            <span class="score score1">-30</span>
-                            <span class="score score2">+30</span>
-                        </div>
-                        <div class="state-list">2015级1班</div>
-                    </li>
-                    <li class="content" @click="showModal">
-                        <div class="show-img">
-                            <img src="/assets/system/icon-student01.png" class="msg" alt="">
-                            <span class="score score1">-30</span>
-                            <span class="score score2">+30</span>
-                        </div>
-                        <div class="state-list">2015级1班</div>
-                    </li>
-                    <li class="content" @click="showModal">
+                    <li class="content" @click="showModal" v-for="item in 50">
                         <div class="show-img">
                             <img src="/assets/system/icon-student01.png" class="msg" alt="">
                             <span class="score score1">-30</span>
@@ -69,5 +37,6 @@
             </router-link>
         </cs-footer>
         <cs-evaluate-class ref="modal"></cs-evaluate-class>
+        <cs-viewer ref="viewer"></cs-viewer>
     </cs-page>
 </transition>

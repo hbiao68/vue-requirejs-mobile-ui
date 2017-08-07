@@ -15,11 +15,6 @@ define(['__component__', 'text!./tpl.html', 'vuex'], function(component, templat
             }
         },
         computed: Vuex.mapGetters(['EvaluateSource']),
-        mounted: function() {
-            this.$el.addEventListener('touchmove', function(e) {
-                e.stopPropagation();
-            }, false)
-        },
         methods: {
             toggle: function(index) {
                 this.selectIndex = index;
@@ -30,6 +25,17 @@ define(['__component__', 'text!./tpl.html', 'vuex'], function(component, templat
                 this.selectIndex = 0;
                 this.textVal = "";
                 this.popupVisible = true;
+                var stopPropagation = function(e) {
+                    e = e || window.event;
+                    if (e.stopPropagation)
+                        e.stopPropagation();
+                    if(e.preventDefault){
+                        e.preventDefault();
+                    }
+                }
+                this.$el.ontouchmove = stopPropagation;
+                this.$el.onmousewheel = stopPropagation;
+                this.$el.onwheel = stopPropagation;
                 return new Promise(function(resolve, reject) {
                     InstanceResolve = resolve;
                     InstanceReject = reject;
