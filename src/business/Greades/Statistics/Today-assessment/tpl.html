@@ -1,0 +1,76 @@
+<transition :name="transitionName">
+    <cs-page class="cs-Today-assessment common-style-1" :class="{ 'top-layer':topLayer }">
+        <cs-header title="2015级1班">
+            <router-link to="/Main/Greades/Statistics" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+            <cs-button slot="right" icon="fa fa-file-text"></cs-button>
+            <cs-button slot="right" class="line"></cs-button>
+            <router-link to="" slot="right">
+                <cs-button icon="fa fa-th-large"></cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="chose-type">
+                <cs-button class="menu" @click.native="action1">
+                    <i class="fa fa-pencil-square left-icon"></i>班级评价
+                    <i class="fa fa-chevron-down righy-icon"></i>
+                </cs-button>
+                <span class="line"></span>
+                <router-link to="/Main/Greades/Statistics/Select-date">
+                    <i class="fa fa-calendar left-icon"></i>今日
+                    <i class="fa fa-chevron-down righy-icon"></i>
+                </router-link>
+            </div>
+
+            <div class="state-box">
+                <div class="state section-container lr">
+                    <div class="state-title">2017-08-08<span class="all-state">总评</span></div>
+                    <div class="state-result">
+                        <div class="excellent">优</div>
+                        <div class="No-result">暂无结果</div>
+                    </div>
+                </div>
+                <ul class="section-container lr">
+                    <li v-for="item in evaluateList">
+                        <div class="state" @click="item.open=!item.open">
+                            <div>
+                                <img v-bind:src="item.iconImg" alt="" class="title-icon">
+                                <span>{{item.title}}</span>
+                            </div>
+                            <div class="state-result">
+                                <div class="type" v-bind:class="[item.typeB]">{{item.status}}</div>
+                                <i class="down-icon fa" :class="[item.open ? 'fa-chevron-up':'fa-chevron-down']"></i>
+                            </div>
+                        </div>
+                        <div class="details-box section-container lr" v-show="item.open">
+                            <ul class="section-container lr">
+                                <li class="state" v-for="itemList in item.list">
+                                    <div>
+                                        {{itemList.listText}}
+                                    </div>
+                                    <div class="state-result">
+                                        <div>{{itemList.listType}}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="section-container tb">
+                                <div class="section-container lr">
+                                    <img v-bind:src="itemImgShow.showImg" alt="" class="show-pic" v-for="itemImgShow in item.showImgList">
+                                </div>
+                                <p class="section-container lr Remarks">
+                                    备注：备注备注备注备注备注备注备注备注备注备注备注备注备注
+                                </p>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </cs-contenter>
+        <cs-actionsheet :actions="btnName" v-model="sheet1.sheetVisible"></cs-actionsheet>
+    </cs-page>
+</transition>

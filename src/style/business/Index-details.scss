@@ -1,0 +1,49 @@
+.cs-Index-details {
+    font-size: toRem(30);
+    .chose-type {
+        height: toRem(100);
+        line-height: toRem(100);
+        background: #ffffff;
+        margin-bottom: toRem(10);
+    }
+    .Statistics-box {
+        background: #ffffff;
+        padding-bottom: toRem(200);
+        .Statistics-title {
+            height: toRem(100);
+            color: #585858;
+            border-bottom: 1px #eeeeee solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &.Statistics-list {
+                color: #000000;
+                .time {
+                    text-align: left;
+                    padding-left: toRem(0);
+                }
+            }
+            .time {
+                text-align: left;
+                padding-left: toRem(110);
+                .calendar-icon {
+                    color: #7d9096;
+                    padding-right: toRem(22);
+                }
+            }
+            .result {
+                width: toRem(180);
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .result-type {
+                    width: toRem(60);
+                    height: toRem(60);
+                    line-height: toRem(60);
+                    border-radius: 50%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

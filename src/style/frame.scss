@@ -7,14 +7,14 @@ body {
 
 .section-container {
     padding: toRem(30);
-    h1{
+    h1 {
         color: $_base_color;
         font-size: toRem(36);
-        i{
+        i {
             margin-right: toRem(20);
         }
     }
-    &.rbl{
+    &.rbl {
         padding: 0 toRem(30) toRem(30) toRem(30);
     }
     &.tbl {
@@ -45,7 +45,6 @@ body {
 @import './business/search';
 @import './business/bedroom';
 @import './business/greadesMul';
-
 @import './business/Statistics';
 @import './business/Ranking';
 @import './business/notice';
@@ -53,3 +52,7 @@ body {
 @import './business/MyMessage';
 @import './business/identity';
 @import './business/Detail';
+@import './business/Today-assessment';
+@import './business/Select-date';
+@import './business/statistical-indicators';
+@import './business/Index-details';
