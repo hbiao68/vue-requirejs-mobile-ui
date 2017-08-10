@@ -86,7 +86,7 @@
             min-width: toRem(130);
             height: toRem(60);
             line-height: toRem(55);
-
+            padding: 0 toRem(20);
             margin:0 toRem(8);
             text-align: center;
             display: inline-block;
@@ -149,7 +149,6 @@
                 }
             }
             .cs-evaluate-item-container{
-                height: toRem(175);
                 flex: 1;
                 overflow: hidden;
                 overflow-x: auto;
@@ -158,6 +157,7 @@
                 .cs-evaluate-item{
                     text-align: center;
                     height: 100%;
+                    overflow: hidden;
                     display: inline-block;
                     padding-right:toRem(40);
                     white-space: nowrap;
@@ -262,6 +262,7 @@
                 line-height: toRem(70);
                 font-size: toRem(20);
                 color: #3a9bdd;
+                position: relative;
                 i.icon-number{
                     size: toRem(33);
                     background:#6bb4e6;
@@ -296,12 +297,28 @@
                         background: #d0d8dc;
                     }
                     &:before{
-                        size:toRem(2) toRem(12);
+                        size:1px toRem(12);
                     }
                     &:after{
-                        size:toRem(12) toRem(2);
+                        size:toRem(12) 1px;
                      }                       
 
+                }
+                a.icon-plus-button{
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    margin-top: toRem(-20);
+                    width: toRem(120);
+                    height: toRem(40);
+                    background: #26a2ff;
+                    border-radius: toRem(5);
+                    color:white;
+                    line-height: toRem(40);
+                    text-align: center;
+                    &.disabled{
+                        opacity: .1;
+                    }
                 }
             }
             .images-container{

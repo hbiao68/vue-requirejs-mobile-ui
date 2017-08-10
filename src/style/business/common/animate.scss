@@ -1,0 +1,33 @@
+.cs-animate {
+    width: toRem(903);
+    position: relative;
+    top: toRem(-100);
+    img {
+        width: 100%;
+    }
+    .cs-animate-content {
+        position: absolute;
+        top: 0;
+        top: 50%;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-42%) translateY(10%);
+        h1 {
+            color: #ffa937;
+            font-size: toRem(30);
+            line-height: 2;
+        }
+        h2 {
+            &.plus{
+                color: #02c36a;
+            }
+            &.sub{
+                color: #ff7765;
+            }
+        }
+        h3 {
+            margin-top: 7.5%;
+            color: white;
+        }
+    }
+}

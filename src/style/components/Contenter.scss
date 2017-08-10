@@ -4,4 +4,8 @@
     z-index: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    &.no-scroll{
+        overflow-y:hidden;
+        -webkit-overflow-scrolling:none;
+    }
 }

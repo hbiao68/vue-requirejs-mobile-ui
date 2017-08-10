@@ -1,5 +1,7 @@
 $_animate_time: .3s;
+$_animate_easing: cubic-bezier(.62,.09,.96,.46);
 @import './fade';
+@import './fade-zoom';
 @import './slide-left';
 @import './slide-right';
 @import './slide-bottom';

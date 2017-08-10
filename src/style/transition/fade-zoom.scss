@@ -1,0 +1,23 @@
+.fade-zoom-enter-active {
+    transition: opacity $_animate_time $_animate_easing, transform $_animate_time $_animate_easing;
+    opacity: 1;
+    transform: scale3d(1,1,1);
+}
+
+.fade-zoom-enter,
+{
+    opacity: 0;
+    transform: scale3d(0,0,1);
+}
+
+.fade-zoom-active {
+    transition: opacity $_animate_time $_animate_easing, transform $_animate_time $_animate_easing;
+    opacity: 0;
+    transform: scale3d(0,0,1);
+}
+
+.fade-zoom-leave,
+{
+    opacity: 1;
+    transform: scale3d(1,1,1);
+}
