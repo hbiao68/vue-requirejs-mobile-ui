@@ -1,0 +1,41 @@
+<transition :name="transitionName">
+    <cs-page class="cs-Select-date" :class="{ 'top-layer':topLayer }">
+        <cs-header title="选择日期">
+            <router-link to="/Main/Greades/Statistics/Today-assessment" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="select-box">
+                <ul class="info-box section-container tb ">
+                    <li class="list">
+                        <div class="name">开始时间</div>
+                        <div class="date">
+                            <div class="date-box">
+                                <cs-button @click.native="picker1" class="choose-btn">{{ fmDate1}}</cs-button>
+                                <i class="fa fa-calendar calendar-icon">
+                            </div>
+                                
+                        </div>
+                    </li>
+                    <li class="list">
+                        <div class="name">结束时间</div>
+                        <div class="date">
+                            <div class="date-box">
+                                <cs-button @click.native="picker2" class="choose-btn">{{ fmDate2}}</cs-button>
+                                <i class="fa fa-calendar calendar-icon">
+                            </div>
+                                
+                        </div>
+                    </li>
+                </ul>
+                <router-link to="/Main/Greades/Statistics/statistical-indicators">
+                <cs-button size="large" type="primary">确定</cs-button>
+                </router-link>
+
+            </div>
+        </cs-contenter>
+         <cs-datetime-picker ref="picker1" type="date" v-model="pickerValue1"></cs-datetime-picker>
+         <cs-datetime-picker ref="picker2" type="date" v-model="pickerValue2"></cs-datetime-picker>
+    </cs-page>
+</transition>

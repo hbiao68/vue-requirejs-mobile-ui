@@ -10,29 +10,26 @@
         </cs-header>
         <cs-contenter>
             <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-                <div class="cs-cell-group">
-                    <div class="header">
                 <p>
                     <i></i>
                     <span>通知标题通知标题通知标题</span>
                 </p>
-            </div>
-
-            <div class="title">
-                <div>
-                    发布人:李斯
                 </div>
-                <div>
-                    发布时间:2012-5-01
+                <div class="title">
+                    <div>
+                        发布人:李斯
+                    </div>
+                    <div>
+                        发布时间:2012-5-01
+                    </div>
+                    <div class="send-obj">
+                        <span>发布对象:</span>
+                        <span class="objs">张三、李斯、王五、张三、李斯、王五、张三、李斯、王五、张三、李斯、王五、张三、李斯、王五</span>
+                    </div>
                 </div>
-                <div class="send-obj">
-                    <span>发布对象:</span>
-                    <span class="objs">张三、李斯、王五、张三、李斯、王五、张三、李斯、王五、张三、李斯、王五、张三、李斯、王五</span>
+                <div class="main">
+                    {{list}}
                 </div>
-            </div>
-            <div class="main">
-                   {{list}}
-            </div>
             </cs-loadmore>
 
         </cs-contenter>

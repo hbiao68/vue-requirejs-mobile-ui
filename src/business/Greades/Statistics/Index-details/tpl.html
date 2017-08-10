@@ -1,0 +1,31 @@
+<transition :name="transitionName">
+    <cs-page class="cs-Index-details common-style-1" :class="{ 'top-layer':topLayer }">
+        <cs-header title="2015级1班">
+            <router-link to="/Main/Greades/Statistics/statistical-indicators" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="chose-type section-container lr">
+                1、排队是否整齐？
+            </div>
+            <div class="Statistics-box">
+                <div class="Statistics-title section-container lr">
+                    <div class="time">日期</div>
+                    <div class="result">平均结果</div>
+                </div>
+                <ul class="Statistics-content section-container lr">
+                    <li v-for="item in StatisticsList">
+                        <router-link to="/Main/Greades/Statistics/Today-assessment" class="Statistics-title Statistics-list">
+                            <div class="time"><i class="fa fa-calendar calendar-icon"></i>{{item.time}}</div>
+                            <div class="result">
+                                <div class="result-type" v-bind:class="[item.typeB]">{{item.status}}</div>
+                            </div>
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+
+        </cs-contenter>
+    </cs-page>
+</transition>

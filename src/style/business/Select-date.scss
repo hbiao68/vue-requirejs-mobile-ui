@@ -1,0 +1,42 @@
+.cs-Select-date {
+    font-size: toRem(30);
+    .select-box {
+        padding: toRem(100);
+        .info-box {
+            padding-bottom: toRem(240);
+        }
+        .list {
+            height: toRem(80);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: toRem(60);
+            .name {
+                width: toRem(150);
+            }
+            .date {
+                border: 1px #d8d8d8 solid;
+                flex: 1;
+                height: 100%;
+                .date-box {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    .choose-btn {
+                        border: 0;
+                        height: 100%;
+                        text-align: left;
+                        flex: 1;
+                        background: rgba(255, 255, 255, 0);
+                        box-shadow: none;
+                    }
+                    .calendar-icon {
+                        margin-right: toRem(15);
+                        color: #9fd5f7;
+                    }
+                }
+            }
+        }
+    }
+}
