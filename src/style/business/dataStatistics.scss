@@ -1,5 +1,4 @@
-.cs-Statistics {
-    font-size: toRem(30);
+.cs-dataStatistics {
     .top {
         box-sizing: border-box;
         height: toRem(95);
@@ -8,19 +7,17 @@
     }
     .top-left {
         height: toRem(50);
-        width: 40%;
+        width: 50%;
         float: left;
         margin-top: toRem(25);
     }
     .top-right {
         height: toRem(50);
-        width: 60%;
+        width: 50%;
         float: left;
         margin-top: toRem(25);
-        font-size: toRem(25);
         line-height: toRem(50);
         text-align: center;
-        // color: rgb(225, 225, 225);
     }
     .top-left {
         border-right: 1px solid #ddd;
@@ -32,7 +29,7 @@
         margin: 0 auto;
         text-align: center;
         line-height: toRem(50);
-        // overflow: hidden;
+        overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
@@ -40,10 +37,13 @@
         display: inline-block;
         width: toRem(33);
         height: toRem(32);
-        background: url("/assets/system/datelist_03.png") no-repeat;
         background-size: contain;
         vertical-align: middle;
-        margin-right: toRem(10);
+        margin-right: toRem(5);
+    }
+    .top-right span {
+        display: inline-block;
+        vertical-align: middle;
     }
     .datelist {
         display: inline-block;
@@ -51,18 +51,18 @@
         height: toRem(32);
         background-size: contain;
         vertical-align: middle;
+        margin-right: toRem(5);
     }
     .classSay {
         display: inline-block;
         vertical-align: middle;
     }
     .tobottom {
-        width: toRem(25);
         display: inline-block;
+        color: #7d9096;
         background-size: contain;
         margin-left: toRem(20);
         vertical-align: middle;
-        color: #7d9096;
     }
     .top-right p {
         float: left;
@@ -86,11 +86,14 @@
                 white-space: nowrap;
             }
             .left {
-                border: 1px solid rgb(60, 180, 241);
-                color: rgb(60, 180, 241);
+                border: 1px solid rgb(212, 212, 212)
             }
             .right {
                 border: 1px solid rgb(212, 212, 212)
+            }
+            .in {
+                border: 1px solid rgb(60, 180, 241);
+                color: rgb(60, 180, 241);
             }
         }
         .situation {
@@ -109,31 +112,31 @@
         table.time {
             width: 100%;
             text-align: center;
-            box-sizing: border-box;
             thead {
                 tr {
                     border-bottom: 1px solid rgb(241, 241, 241);
                 }
                 td {
                     padding: toRem(15) 0;
-                    color: rgb(129, 144, 149);
                 }
                 td:nth-child(1) {
-                    // text-align: left;
-                    width: toRem(400);
+                    color: rgb(231, 231, 231);
+                    width: toRem(300);
                 }
             }
             tbody {
+                padding-left: toRem(30);
                 tr {
                     border-bottom: 1px solid rgb(241, 241, 241);
+                    padding-left: toRem(30);
                 }
                 td {
                     height: toRem(100);
                     line-height: toRem(100);
+                    min-width: toRem(100);
                 }
                 td:nth-child(1) {
-                    // text-align: left;
-                    width: toRem(400);
+                    width: toRem(300);
                 }
                 .timer {
                     span {
@@ -143,10 +146,10 @@
                     .icon {
                         display: inline-block;
                         width: toRem(33);
-                        height: toRem(32);
+                        height: toRem(39);
                         background-size: contain;
                         vertical-align: middle;
-                        margin-right: toRem(20);
+                        margin-right: toRem(15);
                     }
                 }
                 .circle {
@@ -161,7 +164,7 @@
             }
         }
     }
-    // color
+    // font backgound color
     .great {
         background: rgb(231, 245, 240);
         color: rgb(93, 191, 153);
@@ -178,11 +181,17 @@
         background: rgb(255, 232, 232);
         color: rgb(255, 102, 102);
     }
-}
-
-// common
-.cs-lczCommon {
-    .go {
-        color: black;
+    // fontcolor
+    .fgreat {
+        color: rgb(93, 191, 153);
+    }
+    .fgood {
+        color: rgb(60, 180, 241);
+    }
+    .fpassable {
+        color: rgb(240, 158, 67);
+    }
+    .fbad {
+        color: rgb(255, 102, 102);
     }
 }

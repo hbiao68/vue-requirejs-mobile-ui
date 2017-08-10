@@ -1,0 +1,110 @@
+.cs-Detailed {
+    .top {
+        box-sizing: border-box;
+        height: toRem(95);
+        border-bottom: 1px solid #ddd;
+        line-height: toRem(95);
+        padding: 0 toRem(40);
+        i {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        i:last-child {
+            margin-left: toRem(20);
+            min-width: toRem(90);
+            height: toRem(50);
+            text-align: center;
+            line-height: toRem(50);
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .container {
+        border-top: toRem(10) solid rgb(241, 241, 241);
+        table.time {
+            width: 100%;
+            text-align: center;
+            thead {
+                tr {
+                    border-bottom: 1px solid rgb(241, 241, 241);
+                }
+                td {
+                    padding: toRem(15) 0;
+                    color: rgb(166, 176, 179);
+                    height: toRem(70);
+                }
+                td:nth-child(1) {
+                    width: toRem(300);
+                }
+            }
+            tbody {
+                padding-left: toRem(30);
+                tr {
+                    border-bottom: 1px solid rgb(241, 241, 241);
+                    padding-left: toRem(30);
+                }
+                td {
+                    height: toRem(100);
+                    line-height: toRem(100);
+                    min-width: toRem(100);
+                }
+                td:nth-child(1) {
+                    width: toRem(300);
+                }
+                .timer {
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    .icon {
+                        display: inline-block;
+                        width: toRem(33);
+                        height: toRem(39);
+                        background-size: contain;
+                        vertical-align: middle;
+                        margin-right: toRem(15);
+                    }
+                }
+                .circle {
+                    display: inline-block;
+                    min-width: toRem(60);
+                    height: toRem(60);
+                    line-height: toRem(60);
+                    text-align: center;
+                    border-radius: 50%;
+                    padding: toRem(5);
+                }
+            }
+        }
+    }
+    // font backgound color
+    .great {
+        background: rgb(231, 245, 240);
+        color: rgb(93, 191, 153);
+    }
+    .good {
+        background: rgb(226, 244, 253);
+        color: rgb(60, 180, 241);
+    }
+    .passable {
+        background: rgb(253, 241, 227);
+        color: rgb(240, 158, 67);
+    }
+    .bad {
+        background: rgb(255, 232, 232);
+        color: rgb(255, 102, 102);
+    }
+    // fontcolor
+    .fgreat {
+        color: rgb(93, 191, 153);
+    }
+    .fgood {
+        color: rgb(60, 180, 241);
+    }
+    .fpassable {
+        color: rgb(240, 158, 67);
+    }
+    .fbad {
+        color: rgb(255, 102, 102);
+    }
+}

@@ -1,0 +1,58 @@
+.cs-evaluteRecord {
+    .title {
+        color: rgb(215, 215, 215);
+        padding: toRem(30);
+        border-bottom: 1px solid rgb(225, 225, 225);
+    }
+    .tab {
+        width: 100%;
+        td {
+            padding: toRem(10);
+            border-bottom: 1px solid rgb(225, 225, 225);
+            position: relative;
+            font-size: toRem(25);
+        }
+        td:nth-child(1) {
+            padding: toRem(10) toRem(10) toRem(10) toRem(20);
+            width: toRem(120);
+        }
+        .pic {
+            width: toRem(100);
+            height: toRem(100);
+        }
+        .picBox {
+            position: relative;
+        }
+        .sm {
+            min-width: toRem(30);
+            min-height: toRem(30);
+            line-height: toRem(30);
+            background: rgb(35, 255, 150);
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            padding: toRem(5);
+            position: absolute;
+            top: toRem(-8);
+            right: 0;
+        }
+        .msg-1 {
+            position: absolute;
+            top: toRem(10);
+            left: 0;
+            height: toRem(60);
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .msg-2 {
+            position: absolute;
+            bottom: toRem(10);
+            left: 0;
+            color: rgb(215, 215, 215);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

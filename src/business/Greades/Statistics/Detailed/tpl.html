@@ -1,0 +1,40 @@
+<transition :name="transitionName">
+    <cs-page class="cs-Detailed" :class="{ 'top-layer':topLayer }">
+        <cs-header title="2015级1班">
+            <router-link to="/Main/Greades" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <div class="top">
+                <i class="fgreat">22</i> <i>次总评为</i> <i class="great ">优</i>
+            </div>
+
+            <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
+
+                <div class="container">
+                    <table class="time">
+                        <thead>
+                            <tr>
+                                <td>日期</td>
+                                <td>评价结果</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in list">
+                                <td class="timer">
+                                    <img :src="item.icon" class="icon">
+                                    <span>{{item.date}}</span>
+                                </td>
+                                <td>
+                                    <i class="circle" :class="item.css">{{item.evalute}}</i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </cs-loadmore>
+        </cs-contenter>
+    </cs-page>
+</transition>

@@ -1,64 +1,154 @@
 <transition :name="transitionName">
-    <cs-page class="cs-Statistics" :class="{ 'top-layer':topLayer }">
+    <cs-page class="cs-Statistics cs-lczCommon" :class="{ 'top-layer':topLayer }">
         <cs-header title="2015级1班">
             <router-link to="/Main/Greades" slot="left">
                 <cs-button icon="fa fa-chevron-left">返回</cs-button>
             </router-link>
-            <router-link to="/Main/Greades/Statistics/Ranking" slot="right">
-                <cs-button icon="fa rank"></cs-button>
-            </router-link>
         </cs-header>
-        <cs-contenter>
-            <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-                <div class="top">
-                    <div class="top-left" @click="menuChange">
-                        <div>
-                            <i class="datelist"></i>
-                            <span>本周</span>
-                            <i class="tobottom"></i>
-                        </div>
+        <cs-contenter v-if="page_1">
+            <div class="top">
+                <div class="top-left" @click="menuChange">
+                    <div class="alertBox" @click="action1">
+                        <img src="../../../assets/system/allEvalute-pen.png" class="datelist">
+                        <span class="classSay">班级评价</span>
+                        <i class="tobottom fa fa-chevron-down"></i>
                     </div>
-                    <div class="top-right">
-                        <div>
-                            <p class="add">
-                                <i><img src="/assets/system/greenface_03.png" alt=""></i>
-                                <span>+1分</span>
-                            </p>
-                            <p class="reduce">
-                                <i><img src="/assets/system/redface_03.png" alt=""></i>
-                                <span>-1分</span>
-                            </p>
-                        </div>
-                    </div>
-                    <!--菜单-->
-                    <div class="menu" v-show="menuState">
-                        <ul>
-                            <li>今天</li>
-                            <li class="font-blue">本周</li>
-                            <li>上周</li>
-                            <li>本月</li>
-                        </ul>
-                    </div>
-
                 </div>
-                <div class="circle-box">
-                    <div class="circle"></div>
-                    <p class="week">本周</p>
-                    <div class="Situation" v-for="tmp in list">
-                        <div class="Situation-reduce">
-                            <div>
-                                <img src="/assets/system/situation_03.png" alt="">
-                                <i class="count-reduce">
-                                {{tmp.point}}
-                            </i>
-                                <i class="x">×</i>
-                            </div>
-                            <span class="reason">{{tmp.reason}}</span>
-                            <span class="action">{{tmp.action}}</span>
-                        </div>
-                    </div>
+                <div class="top-right">
+                    <img src="../../../assets/system/datelist_03.png" class="icon">
+                    <span>起：2017-08-11 至：2017-08-25</span>
+                </div>
+            </div>
+            <div class="middle">
+                <ul class="evaluate">
+                    <li class="left" @click="show(1)">总评统计</li>
+                    <li class="right" @click="show(2)">指标统计</li>
+                </ul>
+                <ul class="situation">
+                    <li class="great">优 58</li>
+                    <li class="good">良 78</li>
+                    <li class="passable">中 12</li>
+                    <li class="bad">差 0</li>
+                </ul>
+            </div>
+            <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
+
+                <div class="container">
+                    <table class="time">
+                        <thead>
+                            <tr>
+                                <td>日期</td>
+                                <td>评价结果</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in list">
+                                <td class="timer">
+                                    <img src="../../../assets/system/datelist_03.png" class="icon"> <span>{{item.date}}</span>
+                                </td>
+                                <td>
+                                    <i class="circle" :class="item.css">{{item.evalute}}</i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </cs-loadmore>
         </cs-contenter>
+
+
+
+        <!--page2-->
+        <cs-contenter v-if="page_2" class="cs-dataStatistics">
+            <div class="top">
+                <div class="top-left" @click="menuChange">
+                    <div @click="action02">
+                        <img src="../../../../assets/system/allEvalute-pen.png" class="datelist">
+                        <span class="classSay">班级评价</span>
+                        <i class="tobottom fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="top-right" @click="action03">
+                    <img src="../../../../assets/system/datelist_03.png" class="icon">
+                    <span class="classSay">班级评价</span>
+                    <i class="tobottom fa fa-chevron-down"></i>
+                </div>
+            </div>
+            <div class="middle">
+                <ul class="evaluate">
+                    <li class="left" @click="show(1)">总评统计</li>
+                    <li class="right in" @click="show(2)">指标统计</li>
+                </ul>
+                <ul class="situation">
+                    <li class="great">优 58</li>
+                    <li class="good">良 78</li>
+                    <li class="passable">中 12</li>
+                    <li class="bad">差 0</li>
+                </ul>
+            </div>
+            <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
+
+                <div class="container">
+                    <table class="time">
+                        <thead>
+                            <tr>
+                                <td>* 统计数据为次数</td>
+                                <td class="fgreat">优</td>
+                                <td class="fgood">良</td>
+                                <td class="fpassable">中</td>
+                                <td class="fbad">差</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in list_2">
+                                <td class="timer">
+                                    <img :src="item.icon" class="icon">
+                                    <span>{{item.class}}</span>
+                                </td>
+                                <td>
+                                    <i class="circle great">{{item.great}}</i>
+                                </td>
+                                <td>
+                                    <i class="circle good">{{item.good}}</i>
+                                </td>
+                                <td>
+                                    <i class="circle passable">{{item.passable}}</i>
+                                </td>
+                                <td>
+                                    <i class="circle bad">{{item.bad}}</i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </cs-loadmore>
+        </cs-contenter>
+
+
+        <!--alert-->
+        <cs-actionsheet :actions="[{
+                            name: '拍照',
+                            method: itemclick
+                        }, {
+                            name: '从相册中选取',
+                            method: itemclick
+                        }]" v-model="sheet1.sheetVisible"></cs-actionsheet>
+
+        <cs-actionsheet :actions="[{
+                            name: '拍照2',
+                            method: itemclick
+                        }, {
+                            name: '从相册中选取',
+                            method: itemclick
+                        }]" v-model="sheet2.sheetVisible"></cs-actionsheet>
+        <cs-actionsheet :actions="[{
+                            name: '拍照33',
+                            method: itemclick
+                        }, {
+                            name: '从相册中选取',
+                            method: itemclick
+                        }]" v-model="sheet3.sheetVisible"></cs-actionsheet>
+
+
     </cs-page>
 </transition>

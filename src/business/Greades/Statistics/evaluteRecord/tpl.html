@@ -1,0 +1,33 @@
+<transition :name="transitionName">
+    <cs-page class="cs-evaluteRecord cs-lczCommon" :class="{ 'top-layer':topLayer }">
+        <cs-header title="2015级1班">
+            <router-link to="/Main/Greades" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+        </cs-header>
+        <cs-contenter>
+            <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
+                <div class="container">
+                    <p class="title">全部</p>
+                </div>
+                <table class="tab">
+                    <tr v-for="item in list">
+                        <td>
+                            <div class="picBox">
+                                <img :src="item.pic" class="pic">
+                                <i class="sm">+1</i>
+                            </div>
+                        </td>
+                        <td>
+                            <router-link to="" class="go">
+                                <p class="msg-1">{{item.msg_1}}</p>
+                                <p class="msg-2">{{item.msg_2}}</p>
+                            </router-link>
+                        </td>
+
+                    </tr>
+                </table>
+            </cs-loadmore>
+        </cs-contenter>
+    </cs-page>
+</transition>
