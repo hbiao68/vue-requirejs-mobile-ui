@@ -8,19 +8,22 @@ define(function() {
                     loading: false,
                     loadingTop: false,
                     list: [{
-                            date: "2017-08-05",
-                            evalute: "100",
-                            icon: "../../../../assets/system/datelist_03.png"
+                            date: "2015级2班",
+                            evalute: "优",
+                            icon: "../../../../assets/system/lcz-icon.png",
+                            css: "great"
                         },
                         {
-                            date: "2017-08-05",
-                            evalute: "100",
-                            icon: "../../../../assets/system/datelist_03.png"
+                            date: "2015级2班",
+                            evalute: "优",
+                            icon: "../../../../assets/system/lcz-icon.png",
+                            css: "great"
                         },
                         {
-                            date: "2017-08-05",
-                            evalute: "100",
-                            icon: "../../../../assets/system/datelist_03.png"
+                            date: "2015级2班",
+                            evalute: "优",
+                            icon: "../../../../assets/system/lcz-icon.png",
+                            css: "great"
                         }
                     ]
                 }
@@ -33,13 +36,17 @@ define(function() {
                         this.loading = false;
                     }.bind(this), 2500);
                 },
+                go:function(){
+                     location.href="#/Main/Greades/Statistics/Today-assessment"
+                },
                 loadTop: function() {
                     setTimeout(function() {
                         for (var i = 0; i < 2; i++) {
                             this.list.push({
-                                date: "2017-08-05",
-                                evalute: "99",
-                                icon: "../../../../assets/system/datelist_03.png"
+                                date: "2015级2班",
+                                evalute: "优",
+                                icon: "../../../../assets/system/lcz-icon.png",
+                                css: "great"
                             })
                         }
                         this.$refs.loadmoretop.onTopLoaded();

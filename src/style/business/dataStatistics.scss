@@ -39,7 +39,7 @@
         height: toRem(32);
         background-size: contain;
         vertical-align: middle;
-        margin-right: toRem(5);
+        margin-right: toRem(10);
     }
     .top-right span {
         display: inline-block;
@@ -51,19 +51,19 @@
         height: toRem(32);
         background-size: contain;
         vertical-align: middle;
-        margin-right: toRem(5);
+        margin-right: toRem(10);
     }
     .classSay {
         display: inline-block;
         vertical-align: middle;
     }
-    .tobottom {
-        display: inline-block;
-        color: #7d9096;
-        background-size: contain;
-        margin-left: toRem(20);
-        vertical-align: middle;
-    }
+    // .tobottom {
+    //     display: inline-block;
+    //     color: #7d9096;
+    //     background-size: contain;
+    //     margin-left: toRem(20);
+    //     vertical-align: middle;
+    // }
     .top-right p {
         float: left;
         width: 50%;
@@ -86,7 +86,8 @@
                 white-space: nowrap;
             }
             .left {
-                border: 1px solid rgb(212, 212, 212)
+                border: 1px solid rgb(212, 212, 212);
+                color: black;
             }
             .right {
                 border: 1px solid rgb(212, 212, 212)
@@ -149,7 +150,7 @@
                         height: toRem(39);
                         background-size: contain;
                         vertical-align: middle;
-                        margin-right: toRem(15);
+                        margin-right: toRem(10);
                     }
                 }
                 .circle {

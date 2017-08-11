@@ -1,0 +1,105 @@
+<transition :name="transitionName">
+    <cs-page class="cs-history cs-lczCommon" :class="{ 'top-layer':topLayer }">
+        <cs-header title="2015级1班">
+            <router-link to="/Main/Greades/Statistics/Select-date" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+             <cs-button slot="right" icon="fa fa-search l-icon" @click="search"></cs-button>
+              <cs-button slot="right" class="line l-icon"></cs-button>
+              <cs-button slot="right" icon="fa fa-thumbs-up l-icon" @click="search"></cs-button>
+        </cs-header>
+        <cs-contenter>
+            <div class="top">
+                <div class="top-left" @click="menuChange">
+                    <div class="alertBox" @click="action1">
+                        <img src="../../../assets/system/allEvalute-pen.png" class="datelist">
+                        <span class="classSay">班级评价</span>
+                        <i class="tobottom fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="top-right">
+                    <img src="../../../assets/system/datelist_03.png" class="icon">
+                    <span class="classSay">起：2017-08-11 至：2017-08-15</span>
+
+                </div>
+            </div>
+            <div class="middle">
+                <div class="title">*统计数据为次数</div>
+            </div>
+             <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
+                <div class="container">
+                    <table class="time">
+                        <thead>
+                            <tr>
+                                <td>班级</td>
+                                <td class="fgreat">优</td>
+                                <td class="fgood">良</td>
+                                <td class="fpassable">中</td>
+                                <td class="fbad">差</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in list" @click="go">
+                                <td class="timer">
+                                    <img :src="item.icon" class="icon"> <span>{{item.class}}</span>
+                                </td>
+                                <td>
+                                    <i class="circle" :class="item.css">{{item.count1}}</i>
+                                </td>
+                                <td>
+                                    <i class="circle" :class="item.css">{{item.count2}}</i>
+                                </td>
+                                <td>
+                                    <i class="circle" :class="item.css">{{item.count3}}</i>
+                                </td>
+                                <td>
+                                    <i class="circle" :class="item.css">{{item.count4}}</i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </cs-loadmore> 
+
+            <!-- history-2 -->
+             <!-- <cs-loadmore :top-method="loadTop2" :top-all-loaded="loadingTop2" ref="loadmoretop">
+                <div class="container">
+                    <table class="time">
+                        <thead>
+                            <tr>
+                                <td>班级</td>
+                                <td>评价结果</td>
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in list2" @click="go">
+                                <td class="timer">
+                                    <img :src="item.icon" class="icon"> <span>{{item.class}}</span>
+                                </td>
+                                <td class="fgood">
+                                    {{item.cj}} <i class="ts">分</i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </cs-loadmore> -->
+        </cs-contenter>
+
+
+
+
+        <!--alert-->
+        <cs-actionsheet :actions="[{
+                            name: '拍照',
+                            method: itemclick
+                        }, {
+                            name: '从相册中选取',
+                            method: itemclick
+                        }]" v-model="sheet1.sheetVisible"></cs-actionsheet>
+
+
+
+    </cs-page>
+</transition>

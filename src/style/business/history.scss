@@ -1,4 +1,4 @@
-.cs-Statistics {
+.cs-history {
     font-size: toRem(30);
     .top {
         box-sizing: border-box;
@@ -8,13 +8,13 @@
     }
     .top-left {
         height: toRem(50);
-        width: 50%;
+        width: 40%;
         float: left;
         margin-top: toRem(25);
     }
     .top-right {
         height: toRem(50);
-        width: 50%;
+        width: 60%;
         float: left;
         margin-top: toRem(25);
         font-size: toRem(25);
@@ -54,14 +54,6 @@
         vertical-align: middle;
         margin-right: toRem(10);
     }
-    // .tobottom {
-    //     width: toRem(25);
-    //     display: inline-block;
-    //     background-size: contain;
-    //     margin-left: toRem(20);
-    //     vertical-align: middle;
-    //     color: #7d9096;
-    // }
     .top-right p {
         float: left;
         width: 50%;
@@ -70,6 +62,7 @@
     .middle {
         padding: toRem(30);
         border-top: toRem(10) solid rgb(241, 241, 241);
+        position: relative;
         .evaluate {
             text-align: center;
             font-size: 0;
@@ -104,6 +97,7 @@
         }
     }
     .container {
+        position: relative;
         table.time {
             width: 100%;
             text-align: center;
@@ -114,11 +108,11 @@
                 }
                 td {
                     padding: toRem(15) 0;
-                    color: rgb(129, 144, 149);
+                    // color: rgb(129, 144, 149);
                 }
                 td:nth-child(1) {
                     // text-align: left;
-                    width: toRem(400);
+                    width: toRem(350);
                 }
             }
             tbody {
@@ -131,7 +125,7 @@
                 }
                 td:nth-child(1) {
                     // text-align: left;
-                    width: toRem(400);
+                    width: toRem(350);
                 }
                 .timer {
                     span {
@@ -144,7 +138,7 @@
                         height: toRem(70);
                         background-size: contain;
                         vertical-align: middle;
-                        margin-right: toRem(10);
+                        margin-right: toRem(20);
                     }
                 }
                 .circle {
@@ -159,7 +153,28 @@
             }
         }
     }
-    // color
+    .classSay {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .title {
+        position: absolute;
+        color: rgb(225, 225, 225);
+        right: toRem(30);
+        top: toRem(10);
+        font-size: toRem(25);
+    }
+}
+
+// common
+.cs-lczCommon {
+    .go {
+        color: black;
+    }
+    .circle {
+        vertical-align: middle;
+        display: inline-block;
+    }
     .great {
         background: rgb(231, 245, 240);
         color: rgb(93, 191, 153);
@@ -176,27 +191,28 @@
         background: rgb(255, 232, 232);
         color: rgb(255, 102, 102);
     }
-    .classSay {
+    // font
+    .fgreat {
+        color: rgb(93, 191, 153);
+    }
+    .fgood {
+        color: rgb(60, 180, 241);
+    }
+    .fpassable {
+        color: rgb(240, 158, 67);
+    }
+    .fbad {
+        color: rgb(255, 102, 102);
+    }
+    .tobottom {
+        width: toRem(25);
         display: inline-block;
+        background-size: contain;
+        margin-left: toRem(10);
         vertical-align: middle;
+        color: #7d9096;
     }
-
-}
-// common
-.cs-lczCommon {
-    .go {
-        color: black;
-    }
-    .line .cs-button-text{
-        width: 1px;
-        height: toRem(52);
-        background: rgba(255,255,255,.6);
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .cs-header .cs-header-button .l-icon{
-        margin: 0 toRem(10);
-        font-size: toRem(40);
+    .ts{
+        font-size: toRem(25);
     }
 }
-

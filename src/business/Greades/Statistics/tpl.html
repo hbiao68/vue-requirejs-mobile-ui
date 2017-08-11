@@ -4,6 +4,10 @@
             <router-link to="/Main/Greades" slot="left">
                 <cs-button icon="fa fa-chevron-left">返回</cs-button>
             </router-link>
+             <cs-button slot="right" icon="fa fa-search l-icon" @click="search"></cs-button>
+              <cs-button slot="right" class="line l-icon"></cs-button>
+              <cs-button slot="right" icon="fa fa-thumbs-up l-icon" @click="search"></cs-button>
+             <!-- fa-thumbs-up  -->
         </cs-header>
         <cs-contenter v-if="page_1">
             <div class="top">
@@ -14,22 +18,23 @@
                         <i class="tobottom fa fa-chevron-down"></i>
                     </div>
                 </div>
-                <div class="top-right">
+                <div class="top-right" @click="action04">
                     <img src="../../../assets/system/datelist_03.png" class="icon">
-                    <span>起：2017-08-11 至：2017-08-25</span>
+                    <span class="classSay">今天</span>
+                    <i class="tobottom fa fa-chevron-down"></i>
                 </div>
             </div>
             <div class="middle">
                 <ul class="evaluate">
-                    <li class="left" @click="show(1)">总评统计</li>
-                    <li class="right" @click="show(2)">指标统计</li>
+                    <li class="left" @click="show(1)">班级统计</li>
+                    <li class="right" @click="show(2)">数据统计</li>
                 </ul>
-                <ul class="situation">
+                <!-- <ul class="situation">
                     <li class="great">优 58</li>
                     <li class="good">良 78</li>
                     <li class="passable">中 12</li>
                     <li class="bad">差 0</li>
-                </ul>
+                </ul> -->
             </div>
             <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
 
@@ -37,14 +42,14 @@
                     <table class="time">
                         <thead>
                             <tr>
-                                <td>日期</td>
-                                <td>评价结果</td>
+                                <td>班级</td>
+                                <td>总评</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in list">
+                            <tr v-for="item in list" @click="go">
                                 <td class="timer">
-                                    <img src="../../../assets/system/datelist_03.png" class="icon"> <span>{{item.date}}</span>
+                                    <img :src="item.icon" class="icon"> <span>{{item.class}}</span>
                                 </td>
                                 <td>
                                     <i class="circle" :class="item.css">{{item.evalute}}</i>
@@ -70,21 +75,16 @@
                 </div>
                 <div class="top-right" @click="action03">
                     <img src="../../../../assets/system/datelist_03.png" class="icon">
-                    <span class="classSay">班级评价</span>
+                    <span class="classSay">今天</span>
                     <i class="tobottom fa fa-chevron-down"></i>
                 </div>
             </div>
             <div class="middle">
                 <ul class="evaluate">
-                    <li class="left" @click="show(1)">总评统计</li>
-                    <li class="right in" @click="show(2)">指标统计</li>
+                    <li class="left" @click="show(1)">班级统计</li>
+                    <li class="right in" @click="show(2)">数据统计</li>
                 </ul>
-                <ul class="situation">
-                    <li class="great">优 58</li>
-                    <li class="good">良 78</li>
-                    <li class="passable">中 12</li>
-                    <li class="bad">差 0</li>
-                </ul>
+
             </div>
             <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
 
@@ -100,7 +100,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in list_2">
+                            <tr v-for="item in list_2" @click="go_2">
                                 <td class="timer">
                                     <img :src="item.icon" class="icon">
                                     <span>{{item.class}}</span>
@@ -148,6 +148,14 @@
                             name: '从相册中选取',
                             method: itemclick
                         }]" v-model="sheet3.sheetVisible"></cs-actionsheet>
+        <cs-actionsheet :actions="[{
+                            name: '拍照4',
+                            method: itemclick
+                        }, {
+                            name: '从相册中选取',
+                            method: itemclick
+                        }]" v-model="sheet4.sheetVisible"></cs-actionsheet>
+
 
 
     </cs-page>

@@ -56,6 +56,8 @@
             { route: '/Main/Greades/Statistics/Detailed', path: 'Greades/Statistics/Detailed' },
             { route: '/Main/Greades/Statistics/Detailed-2', path: 'Greades/Statistics/Detailed-2' },
             { route: '/Main/Greades/Statistics/evaluteRecord', path: 'Greades/Statistics/evaluteRecord' },
+            { route: '/Main/Greades/Statistics/history', path: 'Greades/Statistics/history' },
+            { route: '/Main/Greades/Statistics/Detailed-3', path: 'Greades/Statistics/Detailed-3' },
 
             { route: '/Main/Greades/MyMessage', path: 'Greades/MyMessage' },
             { route: '/Main/Greades/MyMessage/identity', path: 'Greades/MyMessage/identity' },

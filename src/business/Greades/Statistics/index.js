@@ -1,7 +1,7 @@
-define(function() {
+define(function () {
     return function module(moduleName) {
         return {
-            data: function() {
+            data: function () {
                 return {
                     active: 'tab-container1',
                     menuState: false,
@@ -18,71 +18,79 @@ define(function() {
                     sheet3: {
                         sheetVisible: false
                     },
+                    sheet4: {
+                        sheetVisible: false
+                    },
                     list: [{
-                            date: "2017-08-05",
-                            evalute: "优",
-                            css: "great"
-                        }, {
-                            date: "2017-08-05",
-                            evalute: "良",
-                            css: "good"
-                        },
-                        {
-                            date: "2017-08-05",
-                            evalute: "中",
-                            css: "passable"
-                        },
-                        {
-                            date: "2017-08-05",
-                            evalute: "差",
-                            css: "bad"
-                        }
+                        class: "2015级2班",
+                        evalute: "优",
+                        css: "great",
+                        icon: "../../../../assets/system/lcz-icon.png"
+                    },
+                    {
+                        class: "2015级2班",
+                        evalute: "良",
+                        css: "good",
+                        icon: "../../../../assets/system/lcz-icon.png"
+                    },
+                    {
+                        class: "2015级2班",
+                        evalute: "中",
+                        css: "passable",
+                        icon: "../../../../assets/system/lcz-icon.png"
+                    },
+                    {
+                        class: "2015级2班",
+                        evalute: "差",
+                        css: "bad",
+                        icon: "../../../../assets/system/lcz-icon.png"
+                    }
                     ],
                     list_2: [{
-                            class: "晨会",
-                            great: 12,
-                            good: 12,
-                            passable: 12,
-                            bad: 13,
-                            icon: "../../../../assets/system/dataSta-icon1.png"
-                        },
-                        {
-                            class: "早操",
-                            great: 12,
-                            good: 12,
-                            passable: 12,
-                            bad: 13,
-                            icon: "../../../../assets/system/dataSta-icon2.png"
-                        },
-                        {
-                            class: "早自习",
-                            great: 12,
-                            good: 12,
-                            passable: 12,
-                            bad: 13,
-                            icon: "../../../../assets/system/dataSta-icon3.png"
-                        },
-                        {
-                            class: "课间操",
-                            great: 12,
-                            good: 12,
-                            passable: 12,
-                            bad: 13,
-                            icon: "../../../../assets/system/dataSta-icon4.png"
-                        },
-                        {
-                            class: "课间操",
-                            great: 12,
-                            good: 12,
-                            passable: 12,
-                            bad: 13,
-                            icon: "../../../../assets/system/dataSta-icon5.png"
-                        }
+                        class: "晨会",
+                        great: 12,
+                        good: 12,
+                        passable: 12,
+                        bad: 13,
+                        icon: "../../../../assets/system/dataSta-icon1.png"
+                    },
+                    {
+                        class: "早操",
+                        great: 12,
+                        good: 12,
+                        passable: 12,
+                        bad: 13,
+                        icon: "../../../../assets/system/dataSta-icon2.png"
+                    },
+                    {
+                        class: "早自习",
+                        great: 12,
+                        good: 12,
+                        passable: 12,
+                        bad: 13,
+                        icon: "../../../../assets/system/dataSta-icon3.png"
+                    },
+                    {
+                        class: "课间操",
+                        great: 12,
+                        good: 12,
+                        passable: 12,
+                        bad: 13,
+                        icon: "../../../../assets/system/dataSta-icon4.png"
+                    },
+                    {
+                        class: "课间操",
+                        great: 12,
+                        good: 12,
+                        passable: 12,
+                        bad: 13,
+                        icon: "../../../../assets/system/dataSta-icon5.png"
+                    }
                     ]
                 }
             },
             methods: {
-                show: function(msg) {
+                show: function (msg) {
                     console.log(msg)
                     if (msg == 1) {
                         this.page_1 = true;
@@ -92,26 +100,37 @@ define(function() {
                         this.page_2 = true;
                     }
                 },
-                itemclick: function() { console.log('itemclick'); },
-                action1: function() { this.sheet1.sheetVisible = true; },
-                action02: function() { this.sheet2.sheetVisible = true; },
-                action03: function() { this.sheet3.sheetVisible = true; },
-                loadMore: function() {
+                go: function () {
+                    location.href="#/Main/Greades/Statistics/Today-assessment"
+                },
+                go_2:function(){
+                    location.href="#/Main/Greades/Statistics/Detailed-3"
+                },
+                search:function(){
+                  location.href="#/Main/Greades/Statistics/Select-date"  
+                },
+                itemclick: function () { console.log('itemclick'); },
+                action1: function () { this.sheet1.sheetVisible = true; },
+                action02: function () { this.sheet2.sheetVisible = true; },
+                action03: function () { this.sheet3.sheetVisible = true; },
+                action04: function () { this.sheet4.sheetVisible = true; },
+                loadMore: function () {
                     this.loading = true;
-                    setTimeout(function() {
+                    setTimeout(function () {
 
                         this.loading = false;
                     }.bind(this), 2500);
                 },
-                loadTop: function() {
-                    setTimeout(function() {
+                loadTop: function () {
+                    setTimeout(function () {
                         // page_1
                         if (this.page_1 == true) {
                             for (var i = 0; i < 2; i++) {
                                 this.list.push({
-                                    date: "2017-08-05",
-                                    evalute: "差",
-                                    css: "bad"
+                                    class: "2015级2班",
+                                    evalute: "优",
+                                    css: "great",
+                                    icon: "../../../../assets/system/lcz-icon.png"
                                 })
                             }
                         }
@@ -133,13 +152,13 @@ define(function() {
                     }.bind(this), 2500);
                 },
 
-                loadBottom: function() {
-                    setTimeout(function() {
+                loadBottom: function () {
+                    setTimeout(function () {
 
                         this.$refs.loadmorebottom.onBottomLoaded();
                     }.bind(this), 2500);
                 },
-                menuChange: function() {
+                menuChange: function () {
                     this.menuState = !this.menuState;
                 }
 

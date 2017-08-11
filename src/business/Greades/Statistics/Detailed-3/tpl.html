@@ -1,9 +1,10 @@
 <transition :name="transitionName">
-    <cs-page class="cs-Detailed-2" :class="{ 'top-layer':topLayer }">
-        <cs-header title="2015级1班">
-            <router-link to="/Main/Greades" slot="left">
+    <cs-page class="cs-Detailed-3" :class="{ 'top-layer':topLayer }">
+        <cs-header title="晨会">
+            <router-link to="/Main/Greades/Statistics" slot="left">
                 <cs-button icon="fa fa-chevron-left">返回</cs-button>
             </router-link>
+            <cs-button slot="right" class="line">2017-08-22</cs-button>
         </cs-header>
         <cs-contenter>
             <cs-loadmore :top-method="loadTop" :top-all-loaded="loadingTop" ref="loadmoretop">
@@ -11,20 +12,18 @@
                     <table class="time">
                         <thead>
                             <tr>
-                                <td>日期</td>
-                                <td>评价结果</td>
+                                <td>班级</td>
+                                <td>总评</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in list">
+                            <tr v-for="item in list" @click="go">
                                 <td class="timer">
                                     <img :src="item.icon" class="icon">
                                     <span>{{item.date}}</span>
                                 </td>
                                 <td>
-                                    <i class="fgood">{{item.evalute}}</i>
-
-                                    <i class="text fgood">分</i>
+                                    <i class="circle good">{{item.evalute}}</i>
                                 </td>
                             </tr>
                         </tbody>

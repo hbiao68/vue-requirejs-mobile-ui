@@ -147,7 +147,9 @@ define(function() {
             methods: {
                 itemclick: function(a) { console.log(a); },
                 action1: function() { this.sheet1.sheetVisible = true; },
-
+                go:function(){
+                    location.href="#/Main/Greades/Statistics/evaluteRecord"
+                }
             }
         }
     }
