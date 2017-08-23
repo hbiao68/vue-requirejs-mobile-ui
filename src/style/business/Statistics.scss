@@ -6,6 +6,241 @@
         border-bottom: 1px solid #ddd;
         display: flex;
     }
+    .top-left,
+    .top-right {
+        height: toRem(50);
+        width: 50%;
+        float: left;
+        margin-top: toRem(25);
+    }
+    .top-left {
+        border-right: 1px solid #ddd;
+    }
+    .top-left>div,
+    .top-right>div {
+        width: 100%;
+        height: toRem(50);
+        margin: 0 auto;
+        text-align: center;
+        line-height: toRem(50);
+    }
+    .datelist {
+        display: inline-block;
+        width: toRem(33);
+        height: toRem(32);
+        background: url("/assets/system/datelist_03.png") no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: toRem(20);
+    }
+    .tobottom {
+        width: toRem(25);
+        height: toRem(13);
+        display: inline-block;
+        background: url("/assets/system/tobottom.png") no-repeat;
+        background-size: contain;
+        margin-left: toRem(20);
+        vertical-align: middle;
+    }
+    .top-right p {
+        float: left;
+        width: 50%;
+        line-height: toRem(50);
+    }
+    .add {
+        text-align: right;
+    }
+    .add i {
+        display: inline-block;
+    }
+    .add i img {
+        width: toRem(35);
+        height: toRem(35);
+    }
+    .reduce i {
+        display: inline-block;
+    }
+    .reduce i img {
+        width: toRem(35);
+        height: toRem(35);
+    }
+    .circle-box {
+        // margin-left: toRem(33);
+    }
+    .circle {
+        height: toRem(760);
+    }
+    .week {
+        color: rgb(161, 160, 160);
+        font-size: toRem(30);
+        text-indent: toRem(30);
+        padding-bottom: toRem(30);
+    }
+    .Situation {
+        border-bottom: 1px solid #ddd;
+    }
+    .Situation-reduce {
+        height: toRem(140);
+        position: relative;
+        width: 100%;
+        &>div {
+            position: relative;
+            height: 100%;
+            float: left;
+            .add {
+                position: absolute;
+                background: rgb(255, 103, 108);
+                left: toRem(110);
+                top: toRem(-12);
+                width: toRem(40);
+                height: toRem(40);
+                border-radius: 50%;
+                text-align: center;
+                line-height: toRem(40);
+                color: white;
+            }
+        }
+        & img {
+            width: toRem(126);
+            height: toRem(121);
+        }
+        .reason,
+        .action {
+            float: left;
+            width: 70%;
+            margin-left: toRem(30);
+            color: black;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .action {
+            color: rgb(157, 157, 157);
+            margin-top: toRem(60);
+        }
+    }
+    // .reason {
+    //     position: absolute;
+    //     top: toRem(15);
+    //     left: toRem(140);
+    //     height: toRem(40);
+    //     overflow: hidden;
+    // }
+    // .action {
+    //     position: absolute;
+    //     left: toRem(140);
+    //     bottom: toRem(25);
+    //     color: rgb(161, 160, 160);
+    //     font-size: toRem(22);
+    // }
+    .box-footer {
+        margin-left: toRem(33);
+        margin-top: toRem(25);
+    }
+    .count-reduce {
+        position: absolute;
+        width: toRem(45);
+        height: toRem(40);
+        border-radius: 50%;
+        background-color: rgb(254, 108, 103);
+        left: toRem(100);
+        top: toRem(-12);
+        color: white;
+        font-size: toRem(20);
+        text-align: center;
+        line-height: toRem(41);
+    }
+    .count-add {
+        position: absolute;
+        width: toRem(45);
+        height: toRem(40);
+        border-radius: 50%;
+        background-color: rgb(35, 1194, 150);
+        left: toRem(100);
+        top: toRem(-12);
+        color: white;
+        font-size: toRem(20);
+        text-align: center;
+        line-height: toRem(41);
+    }
+    .x {
+        width: toRem(35);
+        height: toRem(35);
+        position: absolute;
+        border-radius: 50%;
+        text-align: center;
+        line-height: toRem(37);
+        right: 0;
+        top: toRem(10);
+        background: rgb(203, 212, 214);
+        color: white;
+    }
+    .rank {
+        width: toRem(40);
+        height: toRem(40);
+        background: url("/assets/system/rank.png") no-repeat;
+        background-size: contain;
+    }
+    .menu {
+        width: toRem(370);
+        z-index: 50;
+        position: absolute;
+        left: 0;
+        top: toRem(90);
+        background-color: rgba(248, 248, 248, 0.8);
+        box-shadow: 0 0 5px #ccc;
+        ul li {
+            height: toRem(90);
+            line-height: toRem(90) !important;
+            text-align: center;
+            font-size: toRem(30);
+            border-bottom: 1px solid #ddd;
+        }
+    }
+    .font-blue {
+        color: rgb(41, 143, 196) !important;
+    }
+    .fixed-header {
+        background: none;
+    }
+    .cs-header .top {
+        width: 100%;
+    }
+    .Situation .cs-cell-value {
+        width: 100%;
+        height: toRem(163);
+        padding-top: 10px;
+    }
+    .Situation .cs-cell:last-child {
+        background-image: none
+    }
+    .Situation .cs-cell-wrapper {
+        background-image: none
+    }
+    .Situation .cs-cell-swipe-button {
+        line-height: toRem(163);
+    }
+    .X {
+        width: toRem(40);
+        height: toRem(40) !important;
+        background: rgb(203, 213, 214);
+        border-radius: 50%;
+        text-align: center;
+        line-height: toRem(38);
+        color: white;
+        position: absolute !important;
+        right: 0;
+    }
+}
+
+.cs-Statistics-1 {
+    font-size: toRem(30);
+    .top {
+        box-sizing: border-box;
+        height: toRem(95);
+        border-bottom: 1px solid #ddd;
+        display: flex;
+    }
     .top-left {
         height: toRem(50);
         width: 50%;
