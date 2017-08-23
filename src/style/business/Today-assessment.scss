@@ -40,12 +40,25 @@
         background: #ffffff;
         padding-bottom: toRem(300);
         .state {
-            height: toRem(100);
+            min-height: toRem(100);
+            height: auto;
             color: #000000;
             border-bottom: 1px #eeeeee solid;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            &.state2{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .list-title{
+                min-height: toRem(90);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .liebiao{
+                    flex: 1;
+                    padding: toRem(20) toRem(20) toRem(20);
+                }
+            }
             .state-title {
                 color: #585858;
             }
@@ -121,6 +134,7 @@
             }
             .Remarks {
                 line-height: toRem(40);
+                padding-bottom: toRem(30);
             }
         }
     }

@@ -33,7 +33,7 @@
                 </div>
                 <ul class="section-container lr">
                     <li v-for="item in evaluateList">
-                        <div class="state" @click="item.open=!item.open">
+                        <div class="state state2" @click="item.open=!item.open">
                             <div>
                                 <img v-bind:src="item.iconImg" alt="" class="title-icon">
                                 <span>{{item.title}}</span>
@@ -43,25 +43,25 @@
                                 <i class="down-icon fa" :class="[item.open ? 'fa-chevron-up':'fa-chevron-down']"></i>
                             </div>
                         </div>
-                        <div class="details-box section-container lr" v-show="item.open">
-                            <ul class="section-container lr">
+                        <div class="details-box" v-show="item.open">
+                            <ul class="">
                                 <li class="state" v-for="itemList in item.list">
-                                    <div>
-                                        {{itemList.listText}}
+                                    <div class="list-title">
+                                        <div class="liebiao">{{itemList.listText}}</div>
+                                        <div class="state-result state-result2">{{itemList.listType}}</div>
                                     </div>
-                                    <div class="state-result">
-                                        <div>{{itemList.listType}}</div>
+                                    <div class="">
+                                        <div class="section-container lr">
+                                            <img v-bind:src="itemImgShow.showImg" alt="" class="show-pic" v-for="itemImgShow in item.showImgList">
+                                        </div>
+                                        <p class="section-container lr Remarks">
+                                            备注：备注备注备注备注备注备注备注备注备注备注备注备注备注
+                                        </p>
                                     </div>
+
                                 </li>
                             </ul>
-                            <div class="section-container tb">
-                                <div class="section-container lr">
-                                    <img v-bind:src="itemImgShow.showImg" alt="" class="show-pic" v-for="itemImgShow in item.showImgList">
-                                </div>
-                                <p class="section-container lr Remarks">
-                                    备注：备注备注备注备注备注备注备注备注备注备注备注备注备注
-                                </p>
-                            </div>
+
                         </div>
 
                     </li>
