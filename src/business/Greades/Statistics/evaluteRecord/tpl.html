@@ -10,7 +10,7 @@
                 <div class="container">
                     <p class="title">全部</p>
                 </div>
-                <table class="tab">
+                <!-- <table class="tab">
                     <tr v-for="item in list">
                         <td>
                             <div class="picBox">
@@ -26,7 +26,27 @@
                         </td>
 
                     </tr>
-                </table>
+                </table>  -->
+                <ul class="list">
+                    <li v-for="item in list">
+                        <cs-cell-swipe :right="[{
+                            content: '删除',
+                            style: { background: 'red', color: '#fff' },
+                            handler:a
+                        }]">
+                            <div class="messageBox">
+                                <div class="picBox">
+                                    <img :src="item.pic" class="pic">
+                                    <i class="sm">+1</i>
+                                </div>
+                                <div class="textBox">
+                                    <p class="msg-1">{{item.msg_1}}</p>
+                                    <p class="msg-2">{{item.msg_2}}</p>
+                                </div>
+                            </div>
+                        </cs-cell-swipe>
+                    </li>
+                </ul>
             </cs-loadmore>
         </cs-contenter>
     </cs-page>

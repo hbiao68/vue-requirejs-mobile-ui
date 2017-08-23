@@ -29,7 +29,7 @@ define(['__component__', './../Cell/index', 'clickoutside', 'wind-dom', 'text!./
             this.leftWrapElm = this.leftElm.parentNode;
             this.rightWrapElm = this.rightElm.parentNode;
             this.leftWidth = this.leftElm.getBoundingClientRect().width;
-            this.rightWidth = this.rightElm.getBoundingClientRect().width;
+            this.rightWidth = this.rightElm.getBoundingClientRect().width + 1;
 
             this.leftDefaultTransform = this.translate3d(-this.leftWidth - 1);
             this.rightDefaultTransform = this.translate3d(this.rightWidth);

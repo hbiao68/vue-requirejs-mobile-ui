@@ -55,4 +55,75 @@
             white-space: nowrap;
         }
     }
+    .list{
+        width: 100%;
+        li{
+            border-bottom: 1px solid rgb(225, 225, 225);
+            font-size: toRem(25);
+            position: relative;
+        }
+        .picBox{
+            display: inline-block;
+            position: relative;
+            &>.pic{
+                width: toRem(100);
+                height: toRem(100);
+            }
+            &>.sm {
+                min-width: toRem(30);
+                min-height: toRem(30);
+                line-height: toRem(30);
+                background: rgb(35, 255, 150);
+                border-radius: 50%;
+                text-align: center;
+                color: white;
+                padding: toRem(5);
+                position: absolute;
+                top: toRem(-8);
+                right: toRem(-20);
+            }
+        }
+        .textBox{
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: toRem(150);
+            bottom: 0;
+            right: 0;
+        }
+        .msg-1 {
+            position: absolute;
+            top: toRem(10);
+            left: 0;
+            height: toRem(60);
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .msg-2 {
+            position: absolute;
+            bottom: toRem(10);
+            left: 0;
+            color: rgb(215, 215, 215);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .cs-cell-value {
+        width: 100%;
+        height: toRem(100);
+        padding-top: toRem(10);
+        padding-bottom: toRem(10);
+    }
+    .cs-cell:last-child {
+        background-image: none
+    }
+    .cs-cell-wrapper {
+        background-image: none
+    }
+    .cs-cell-swipe-button {
+        line-height: toRem(120);
+    }
+    
 }

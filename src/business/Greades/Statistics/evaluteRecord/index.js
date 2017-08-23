@@ -32,6 +32,9 @@ define(function() {
                         this.loading = false;
                     }.bind(this), 2500);
                 },
+                a:function(){
+                    console.log("1")
+                },
                 loadTop: function() {
                     setTimeout(function() {
                         for (var i = 0; i < 2; i++) {
