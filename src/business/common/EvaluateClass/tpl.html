@@ -1,5 +1,5 @@
-<cs-popup v-model="popupVisible" background="transparent" popup-transition="popup-fade">
-    <div class="cs-evaluate" :style="{ height: height?height + 'rem' : '' }">
+<cs-popup v-model="popupVisible" background="transparent" position="bottom" :modal="false">
+    <div class="cs-evaluate">
         <h1>
             <b>{{ title }}</b>
             <span @click="close"></span>

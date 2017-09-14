@@ -1,11 +1,12 @@
 .cs-evaluate{
-    size: toRem(670) toRem(700);
+    size: 100vw 100vh; 
     background: white;
-    border-radius: toRem(15);
+    border-radius: none; 
     position: relative;
     h1{
         position: relative;
         height: toRem(90);
+        line-height: toRem(90);
         margin: 0 toRem(40);
         border-bottom: 1px dashed #ccc;
         box-sizing: border-box;
@@ -20,9 +21,8 @@
             width: 80%;
             line-height: toRem(65);
             height: toRem(65);
-            align-self: flex-end;
             text-align: center;
-            display: block;
+            display: inline-block;;
             &:before,&:after{
                 content:'';
                 height: 0;
@@ -48,21 +48,13 @@
         span{
             color: white;
             position: absolute;
-            top:-100%;
-            right: toRem(-40);
+            top: 50%;
+            transform: translateY(-48%);
+            right: toRem(-20);
             width: toRem(67);
             height: toRem(67);
             background: url('../assets/system/icon-modal-close.png') no-repeat center;
             background-size: contain;
-            &:after{
-                content: '';
-                width: 2px;
-                height: toRem(22);
-                background: #cdd3d5;
-                position: absolute;
-                top:toRem(67);
-                left: toRem(31.5);
-            }
         }
     }
     &>div{
@@ -125,7 +117,6 @@
             border-style: solid;
         }
         .row{
-            flex: 1;
             display: flex;
             flex-direction: column;
             h2{
