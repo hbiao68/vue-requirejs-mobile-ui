@@ -10,7 +10,7 @@
         </cs-header>
         <cs-contenter>
             <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
-                <div class="top-bar">
+                <!-- <div class="top-bar">
 
                     <div class="percent1">姓名</div>
                     <div class="percent2 font-blue">总分</div>
@@ -38,10 +38,41 @@
                     <div class="percent2"><span class="font bg-blue font-blue">{{tmp.all}}</span></div>
                     <div class="percent2"><span class="font bg-green font-green">{{tmp.add}}</span></div>
                     <div class="percent2"><span class="font bg-green font-green">{{tmp.reduce}}</span></div>
+                </div> -->
+                <div class="cs-date">
+                    <div class="menu" v-show="menuState">
+                        <ul>
+                            <li>今天</li>
+                            <li class="font-blue">本周</li>
+                            <li>上周</li>
+                            <li>本月</li>
+                            <li>全部</li>
+                        </ul>
+                    </div>
                 </div>
-
-
-
+                <ul class="list">
+                    <li class="list-item">
+                        <div class="title">姓名</div>
+                        <div>总分</div>
+                        <div>表扬分</div>
+                        <div>改进分</div>
+                    </li>
+                    <li class="list-item" v-for="tmp in list">
+                        <div class="msg">
+                            <img :src=tmp.img class="portrait">
+                            <span class="name">{{tmp.name}}</span>
+                        </div>
+                        <div>
+                            <span class="font bg-blue font-blue">{{tmp.all}}</span>
+                        </div>
+                        <div>
+                            <span class="font bg-green font-green">{{tmp.add}}</span>
+                        </div>
+                        <div>
+                            <span class="font bg-green font-green">{{tmp.reduce}}</span>
+                        </div>
+                    </li>
+                </ul>
 
             </cs-loadmore>
         </cs-contenter>
