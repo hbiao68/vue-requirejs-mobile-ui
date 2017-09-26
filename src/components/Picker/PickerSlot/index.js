@@ -1,4 +1,4 @@
-define(['__component__', './draggable', './translate', 'wind-dom', 'emitter', 'text!./tpl.html'], function(component, draggable, translateUtil, WindDom, emitter, template) {
+define(['__component__', 'common/draggable', './translate', 'wind-dom', 'emitter', 'text!./tpl.html'], function(component, draggable, translateUtil, WindDom, emitter, template) {
     var once = WindDom.once,
         addClass = WindDom.addClass,
         removeClass = WindDom.removeClass;

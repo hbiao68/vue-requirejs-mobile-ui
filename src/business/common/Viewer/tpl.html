@@ -1,14 +1,12 @@
-<cs-popup v-model="popupVisible" background="transparent" popup-transition="popup-fade">
-    <div class="cs-viewer">
-        <div>
-            <transition-group :name="animate">
-                <span class="viewer-container" v-for="(item, index) in images" :key="item" :style="uri(item)" v-show="pageIndex == index"></span>
-            </transition-group>
-            <!-- <a href="javascript:;" class="cs-viewer-left" @click="scroll(true)"></a>
-       <a href="javascript:;" class="cs-viewer-right" @click="scroll(false)"></a> -->
-            <div class="bar">
-                <span v-for="(item, index) in images" :class="[pageIndex == index ? 'current' : '']"></span>
-            </div>
+<cs-popup v-model="popupVisible" background="transparent" position="bottom">
+    <div class="cs-viewer" ref="csViewer">
+        <div class="cs-viewer-scroller" ref="viewerScroller" :data-index="pageIndex">
+            <span class="viewer-container last" :style="uri(pageIndex - 1)"></span>
+            <span class="viewer-container current" :style="uri(pageIndex)"></span>
+            <span class="viewer-container next" :style="uri(pageIndex + 1)"></span>
         </div>
-    </div> 
+        <div class="bar">
+            <span v-for="(item, index) in images" :class="[pageIndex == index ? 'current' : '']"></span>
+        </div>
+    </div>
 </cs-popup>

@@ -1,16 +1,34 @@
 .cs-viewer{
     position: relative;
-    width: toRem(650);
-    height: toRem(650);
+    width: 100vw;
+    max-width: toRem(750);
+    &:after{
+        content: '';
+        display: block;
+        height: toRem(30);
+    }
+    .cs-viewer-scroller{
+        position: relative;
+        width: toRem(750);
+        margin: 0 auto;
+        height: toRem(320);
+        overflow: hidden;
+    }
     span.viewer-container{
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
+        width: toRem(650);
+        height: toRem(320);
+        margin: 0 toRem(50);
         top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        &.last{
+            left: toRem(-750);
+        }
+        &.next{
+            right: toRem(-750);
+        }
     }
     a{
         position: absolute;
@@ -30,7 +48,7 @@
         height: toRem(30);
         line-height: toRem(30);
         text-align: center;
-        bottom: toRem(-40);
+        bottom: 0;
         width: 100%;
         span{
             display: inline-block;
