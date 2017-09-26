@@ -251,7 +251,7 @@
         .row{
             h3{
                 line-height: toRem(70);
-                font-size: toRem(20);
+                font-size: toRem(25);
                 color: #3a9bdd;
                 position: relative;
                 i.icon-number{
@@ -300,6 +300,7 @@
                     top: 50%;
                     right: 0;
                     margin-top: toRem(-20);
+                    font-size: toRem(20);
                     width: toRem(120);
                     height: toRem(40);
                     background: #26a2ff;
@@ -380,9 +381,9 @@
                     size:toRem(106);
                 }
                 h3{
-                    font-size: toRem(12);
+                    font-size: toRem(30);
                     line-height: 2.5;
-                    color:#224758;
+                    color:#224758
                 }
                 span{
                     top: toRem(8);
