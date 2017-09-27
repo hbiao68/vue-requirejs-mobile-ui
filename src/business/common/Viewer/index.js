@@ -14,7 +14,7 @@ define([
                 pageIndex: 0,
                 images: [],
                 popupVisible: false,
-                dragInited: false
+                dragInited: false,
             }
         },
         methods: {

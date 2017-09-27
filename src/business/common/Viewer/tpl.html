@@ -1,12 +1,25 @@
-<cs-popup v-model="popupVisible" background="transparent" position="bottom">
-    <div class="cs-viewer" ref="csViewer">
-        <div class="cs-viewer-scroller" ref="viewerScroller" :data-index="pageIndex">
-            <span class="viewer-container last" :style="uri(pageIndex - 1)"></span>
-            <span class="viewer-container current" :style="uri(pageIndex)"></span>
-            <span class="viewer-container next" :style="uri(pageIndex + 1)"></span>
+<cs-popup v-model="popupVisible" background="transparent" position="bottom" class="cs-view">
+    <div class="cs-viewer-top">
+        <!-- <h1>123123</h1> -->
+        <cs-header :title="(pageIndex+1)+'/'+images.length">
+            <router-link to="/Main/Bedroom" slot="left">
+                <cs-button icon="fa fa-chevron-left">返回</cs-button>
+            </router-link>
+            <router-link to="/Main/Bedroom/Statistics/Ranking" slot="right">
+                <cs-button icon="fa rank"></cs-button>
+            </router-link>
+        </cs-header>
+        <div class="cs-viewer" ref="csViewer">
+
+            <div class="cs-viewer-scroller" ref="viewerScroller" :data-index="pageIndex">
+                <span class="viewer-container last" :style="uri(pageIndex - 1)"></span>
+                <span class="viewer-container current" :style="uri(pageIndex)"></span>
+                <span class="viewer-container next" :style="uri(pageIndex + 1)"></span>
+            </div>
+
         </div>
-        <div class="bar">
-            <span v-for="(item, index) in images" :class="[pageIndex == index ? 'current' : '']"></span>
+        <div class="footer">
+            <img src="../../../assets/system/pic-2.png" alt="">
         </div>
     </div>
 </cs-popup>

@@ -1,129 +1,118 @@
 .cs-evaluteRecord {
-    .title {
-        color: rgb(215, 215, 215);
-        padding: toRem(30);
-        border-bottom: 1px solid rgb(225, 225, 225);
-    }
-    .tab {
-        width: 100%;
-        td {
-            padding: toRem(10);
-            border-bottom: 1px solid rgb(225, 225, 225);
-            position: relative;
-            font-size: toRem(25);
+    .cs-box{
+        padding-left: toRem(20);
+        .title{
+            line-height: toRem(80);
+            color: rgb(160,160,160);
+            border-bottom: 1px solid #ddd;
         }
-        td:nth-child(1) {
-            padding: toRem(10) toRem(10) toRem(10) toRem(20);
-            width: toRem(120);
-        }
-        .pic {
-            width: toRem(100);
-            height: toRem(100);
-        }
-        .picBox {
-            position: relative;
-        }
-        .sm {
-            min-width: toRem(30);
-            min-height: toRem(30);
-            line-height: toRem(30);
-            background: rgb(35, 255, 150);
-            border-radius: 50%;
-            text-align: center;
-            color: white;
-            padding: toRem(5);
-            position: absolute;
-            top: toRem(-8);
-            right: 0;
-        }
-        .msg-1 {
-            position: absolute;
-            top: toRem(10);
-            left: 0;
-            height: toRem(60);
-            width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .msg-2 {
-            position: absolute;
-            bottom: toRem(10);
-            left: 0;
-            color: rgb(215, 215, 215);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-    }
-    .list{
-        width: 100%;
-        li{
-            border-bottom: 1px solid rgb(225, 225, 225);
-            font-size: toRem(25);
-            position: relative;
-        }
-        .picBox{
-            display: inline-block;
-            position: relative;
-            &>.pic{
-                width: toRem(100);
-                height: toRem(100);
+        .list{
+            &>li{
+                border-bottom: 1px solid #ddd;
+                padding:toRem(30) 0;
+                &:after{
+                    content:"";
+                    display: block;
+                    clear: both;
+                }
+                .pic-title{
+                    float: left;
+                    width: toRem(120);
+                    height: toRem(120);
+                    margin-right: toRem(40);
+                    position: relative;
+                    &>img{
+                        width: 100%;
+                        height: auto;
+                    }
+                    .count{
+                        position: absolute;
+                        right: toRem(-20);
+                        top: toRem(-20);
+                        height: toRem(50);
+                        line-height: toRem(50);
+                        min-width: toRem(50);
+                        text-align: center;
+                        color: white;
+                        background: red;
+                        border-radius: 50%;
+                        &.add{
+                            background: rgb(237,117,109);
+                        }
+                        &.reduce{
+                            background: rgb(93,191,153);
+                        }
+                    }
+                }
+                .reason{
+                    float: left;
+                    vertical-align: top;
+                    width: toRem(500);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-size: toRem(30);
+                }
+                .msg{
+                    float: left;
+                    margin-top: toRem(10);
+                    .send{
+                        color: rgb(114,114,114);
+                        font-size: toRem(20);
+                        padding: toRem(5) 0;
+                    }
+                    .pic-arr{
+                        margin-top: toRem(20);
+                        width: toRem(550);
+                        float: left;
+                        font-size: 0;
+                        &>img{
+                            width: toRem(90);
+                            height: auto;
+                            margin-right: toRem(20);
+                            margin-bottom: toRem(20);
+                        }    
+                    }
+                    .time{
+                        color: rgb(114,114,114);
+                        margin-top: toRem(20);
+                        font-size: toRem(25);
+                    }
+                }
+                
             }
-            &>.sm {
-                min-width: toRem(30);
-                min-height: toRem(30);
-                line-height: toRem(30);
-                background: rgb(35, 255, 150);
-                border-radius: 50%;
-                text-align: center;
-                color: white;
-                padding: toRem(5);
-                position: absolute;
-                top: toRem(-8);
-                right: toRem(-20);
-            }
-        }
-        .textBox{
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: toRem(150);
-            bottom: 0;
-            right: 0;
-        }
-        .msg-1 {
-            position: absolute;
-            top: toRem(10);
-            left: 0;
-            height: toRem(60);
-            width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .msg-2 {
-            position: absolute;
-            bottom: toRem(10);
-            left: 0;
-            color: rgb(215, 215, 215);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
         }
     }
-    .cs-cell-value {
+    // 修改插件样式
+    .cs-cell-wrapper{
+        overflow: visible;
+        padding: 0;
+        background-image: none;
+    }
+    .cs-cell{
+        overflow: visible;
+    }
+    .cs-cell-value{
         width: 100%;
-        height: toRem(100);
-        padding-top: toRem(10);
-        padding-bottom: toRem(10);
+        display: block;
     }
-    .cs-cell:last-child {
-        background-image: none
+    .cs-cell-right{
+        height: auto; 
+        top:toRem(-30);
+        bottom: toRem(-30);
     }
-    .cs-cell-wrapper {
-        background-image: none
+    .cs-cell-swipe-button:before{
+        content:"";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: 1px;
     }
-    .cs-cell-swipe-button {
-        line-height: toRem(120);
+    .cs-cell-swipe-button{
+        white-space: nowrap;
+        text-align: center;
     }
-    
+    .cs-cell:last-child{
+        background-image: none;
+    }
 }

@@ -70,117 +70,6 @@
     .circle {
         height: toRem(760);
     }
-    .week {
-        color: rgb(161, 160, 160);
-        font-size: toRem(30);
-        text-indent: toRem(30);
-        padding-bottom: toRem(30);
-    }
-    .Situation {
-        border-bottom: 1px solid #ddd;
-    }
-    .Situation-reduce {
-        height: toRem(140);
-        position: relative;
-        width: 100%;
-        &>div {
-            position: relative;
-            height: 100%;
-            float: left;
-            .add {
-                position: absolute;
-                background: rgb(255, 103, 108);
-                left: toRem(110);
-                top: toRem(-12);
-                width: toRem(40);
-                height: toRem(40);
-                border-radius: 50%;
-                text-align: center;
-                line-height: toRem(40);
-                color: white;
-            }
-        }
-        & img {
-            width: toRem(126);
-            height: toRem(121);
-        }
-        .reason,
-        .action {
-            float: left;
-            width: 70%;
-            margin-left: toRem(30);
-            color: black;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .action {
-            color: rgb(157, 157, 157);
-            margin-top: toRem(60);
-        }
-    }
-    // .reason {
-    //     position: absolute;
-    //     top: toRem(15);
-    //     left: toRem(140);
-    //     height: toRem(40);
-    //     overflow: hidden;
-    // }
-    // .action {
-    //     position: absolute;
-    //     left: toRem(140);
-    //     bottom: toRem(25);
-    //     color: rgb(161, 160, 160);
-    //     font-size: toRem(22);
-    // }
-    .box-footer {
-        margin-left: toRem(33);
-        margin-top: toRem(25);
-    }
-    .count-reduce {
-        position: absolute;
-        width: toRem(45);
-        height: toRem(40);
-        border-radius: 50%;
-        background-color: rgb(254, 108, 103);
-        left: toRem(100);
-        top: toRem(-12);
-        color: white;
-        font-size: toRem(20);
-        text-align: center;
-        line-height: toRem(41);
-    }
-    .count-add {
-        position: absolute;
-        width: toRem(45);
-        height: toRem(40);
-        border-radius: 50%;
-        background-color: rgb(35, 1194, 150);
-        left: toRem(100);
-        top: toRem(-12);
-        color: white;
-        font-size: toRem(20);
-        text-align: center;
-        line-height: toRem(41);
-    }
-    .x {
-        width: toRem(35);
-        height: toRem(35);
-        position: absolute;
-        border-radius: 50%;
-        text-align: center;
-        line-height: toRem(37);
-        right: 0;
-        top: toRem(10);
-        background: rgb(203, 212, 214);
-        color: white;
-    }
-    .rank {
-        width: toRem(40);
-        height: toRem(40);
-        background: url("/assets/system/rank.png") no-repeat;
-        background-size: contain;
-    }
     .menu {
         width: toRem(370);
         z-index: 50;
@@ -206,30 +95,122 @@
     .cs-header .top {
         width: 100%;
     }
-    .Situation .cs-cell-value {
+    // 2
+    .cs-box{
+        padding-left: toRem(20);
+        .title{
+            line-height: toRem(80);
+            color: rgb(160,160,160);
+            border-bottom: 1px solid #ddd;
+        }
+        .list{
+            &>li{
+                border-bottom: 1px solid #ddd;
+                padding:toRem(30) 0;
+                &:after{
+                    content:"";
+                    display: block;
+                    clear: both;
+                }
+                .pic-title{
+                    float: left;
+                    width: toRem(120);
+                    height: toRem(120);
+                    margin-right: toRem(40);
+                    position: relative;
+                    &>img{
+                        width: 100%;
+                        height: auto;
+                    }
+                    .count{
+                        position: absolute;
+                        right: toRem(-20);
+                        top: toRem(-20);
+                        height: toRem(50);
+                        line-height: toRem(50);
+                        min-width: toRem(50);
+                        text-align: center;
+                        color: white;
+                        background: red;
+                        border-radius: 50%;
+                        &.add{
+                            background: rgb(237,117,109);
+                        }
+                        &.reduce{
+                            background: rgb(93,191,153);
+                        }
+                    }
+                }
+                .reason{
+                    float: left;
+                    vertical-align: top;
+                    width: toRem(500);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-size: toRem(30);
+                }
+                .msg{
+                    float: left;
+                    margin-top: toRem(10);
+                    .send{
+                        color: rgb(114,114,114);
+                        font-size: toRem(20);
+                        padding: toRem(5) 0;
+                    }
+                    .pic-arr{
+                        margin-top: toRem(20);
+                        width: toRem(550);
+                        float: left;
+                        font-size: 0;
+                        &>img{
+                            width: toRem(90);
+                            height: auto;
+                            margin-right: toRem(20);
+                            margin-bottom: toRem(20);
+                        }    
+                    }
+                    .time{
+                        color: rgb(114,114,114);
+                        margin-top: toRem(20);
+                        font-size: toRem(25);
+                    }
+                }
+                
+            }
+        }
+    }
+    // 修改插件样式
+    .cs-cell-wrapper{
+        overflow: visible;
+        padding: 0;
+        background-image: none;
+    }
+    .cs-cell{
+        overflow: visible;
+    }
+    .cs-cell-value{
         width: 100%;
-        height: toRem(163);
-        padding-top: 10px;
+        display: block;
     }
-    .Situation .cs-cell:last-child {
-        background-image: none
+    .cs-cell-right{
+        height: auto; 
+        top:toRem(-30);
+        bottom: toRem(-30);
     }
-    .Situation .cs-cell-wrapper {
-        background-image: none
+    .cs-cell-swipe-button:before{
+        content:"";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: 1px;
     }
-    .Situation .cs-cell-swipe-button {
-        line-height: toRem(163);
-    }
-    .X {
-        width: toRem(40);
-        height: toRem(40) !important;
-        background: rgb(203, 213, 214);
-        border-radius: 50%;
+    .cs-cell-swipe-button{
+        white-space: nowrap;
         text-align: center;
-        line-height: toRem(38);
-        color: white;
-        position: absolute !important;
-        right: 0;
+    }
+    .cs-cell:last-child{
+        background-image: none;
     }
 }
 

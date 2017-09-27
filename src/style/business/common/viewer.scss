@@ -1,98 +1,123 @@
-.cs-viewer{
-    position: relative;
-    width: 100vw;
-    max-width: toRem(750);
-    &:after{
-        content: '';
-        display: block;
-        height: toRem(30);
-    }
-    .cs-viewer-scroller{
-        position: relative;
-        width: toRem(750);
-        margin: 0 auto;
-        height: toRem(320);
-        overflow: hidden;
-    }
-    span.viewer-container{
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        width: toRem(650);
-        height: toRem(320);
-        margin: 0 toRem(50);
-        top: 0;
-        &.last{
-            left: toRem(-750);
-        }
-        &.next{
-            right: toRem(-750);
-        }
-    }
-    a{
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 50%;
-        &.cs-viewer-left{
-            left: 0;
-        }
-        &.cs-viewer-right{
-            right: 0;
-        }
-    }
-    .bar{
-        font-size: 0;
-        position: absolute;
-        height: toRem(30);
-        line-height: toRem(30);
-        text-align: center;
-        bottom: 0;
+.cs-viewer-top{
+    height:100vh;
+    background: rgb(236,236,236);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: nowrap;
+    .footer{
         width: 100%;
-        span{
-            display: inline-block;
+        height: toRem(180);
+        line-height: toRem(180);
+        background: white;
+        text-align: center;
+        &>img{
             vertical-align: middle;
-            width: toRem(20);
-            height: toRem(20);
-            border-radius: toRem(10);
-            background: #ccc;
-            margin:0 toRem(5);
-            opacity: .2;
-            &.current{
-                background: white;
-                opacity: 1;
+            width: toRem(60);
+            height: auto;
+        }
+    }
+
+    .cs-viewer{
+        position: relative;
+        width: 100vw;
+        max-width: toRem(750);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:after{
+            content: '';
+            display: block;
+            height: toRem(30);
+        }
+        .cs-viewer-scroller{
+            position: relative;
+            width: toRem(750);
+            margin: 0 auto;
+            height: toRem(320);
+            overflow: hidden;
+        }
+        span.viewer-container{
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            width: toRem(650);
+            height: toRem(320);
+            margin: 0 toRem(50);
+            top: 0;
+            &.last{
+                left: toRem(-750);
+            }
+            &.next{
+                right: toRem(-750);
             }
         }
-    }
-    .cs-viewer-side-left-enter-active{
-        transform: translate3d(0, 0, 0);
-        transition: transform $_animate_time ease-out;
-    }
-    .cs-viewer-side-left-enter{
-        transform: translate3d(-100%, 0, 0)
-    }
-    .cs-viewer-side-left-leave-active{
-        transform: translate3d(100%, 0, 0);
-        transition: transform $_animate_time ease-out;
-    }
-    .cs-viewer-side-left-leave{
-        transform: translate3d(0, 0, 0)
-    }
+        a{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            &.cs-viewer-left{
+                left: 0;
+            }
+            &.cs-viewer-right{
+                right: 0;
+            }
+        }
+        .bar{
+            font-size: 0;
+            position: absolute;
+            height: toRem(30);
+            line-height: toRem(30);
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            span{
+                display: inline-block;
+                vertical-align: middle;
+                width: toRem(20);
+                height: toRem(20);
+                border-radius: toRem(10);
+                background: #ccc;
+                margin:0 toRem(5);
+                opacity: .2;
+                &.current{
+                    background: white;
+                    opacity: 1;
+                }
+            }
+        }
+        .cs-viewer-side-left-enter-active{
+            transform: translate3d(0, 0, 0);
+            transition: transform $_animate_time ease-out;
+        }
+        .cs-viewer-side-left-enter{
+            transform: translate3d(-100%, 0, 0)
+        }
+        .cs-viewer-side-left-leave-active{
+            transform: translate3d(100%, 0, 0);
+            transition: transform $_animate_time ease-out;
+        }
+        .cs-viewer-side-left-leave{
+            transform: translate3d(0, 0, 0)
+        }
 
 
-    .cs-viewer-side-right-enter-active{
-        transform: translate3d(0, 0, 0);
-        transition: transform $_animate_time ease-out;
-    }
-    .cs-viewer-side-right-enter{
-        transform: translate3d(100%, 0, 0)
-    }
-    .cs-viewer-side-right-leave-active{
-        transform: translate3d(-100%, 0, 0);
-        transition: transform $_animate_time ease-out;
-    }
-    .cs-viewer-side-right-leave{
-        transform: translate3d(0, 0, 0)
+        .cs-viewer-side-right-enter-active{
+            transform: translate3d(0, 0, 0);
+            transition: transform $_animate_time ease-out;
+        }
+        .cs-viewer-side-right-enter{
+            transform: translate3d(100%, 0, 0)
+        }
+        .cs-viewer-side-right-leave-active{
+            transform: translate3d(-100%, 0, 0);
+            transition: transform $_animate_time ease-out;
+        }
+        .cs-viewer-side-right-leave{
+            transform: translate3d(0, 0, 0)
+        }
     }
 }

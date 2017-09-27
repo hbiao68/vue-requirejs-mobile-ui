@@ -45,28 +45,93 @@
             <cs-loadmore :bottom-method="loadBottom" :bottom-all-loaded="loadingBottom" ref="loadmorebottom">
                 <div class="circle-box">
                     <div class="circle"></div>
-                    <p class="week">本周</p>
+                    <div class="cs-box">
+                        <div class="title">全部</div>
+                        <ul class="list">
+                            <li>
+                                <cs-cell-swipe :right="[{
+                                        content: '删除',
+                                        style: { background: 'red', color: '#fff' },
+                                        handler:a
+                                    }]">
+                                    <div class="pic-title">
+                                        <img src="../../../../assets/system/images/situation_03.png">
+                                        <span class="count add">+1</span>
+                                    </div>
+                                    <p class="reason">-1分 因为上课走神 </p>
+                                    <div class="msg">
+                                        <p class="send">由陈老师发送给刘发送给陈二狗</p>
+                                        <p class="send">由陈老师发送给刘发送给陈二狗</p>
+                                        <p class="send">由陈老师发送给刘发送给陈二狗</p>
+                                        <div class="pic-arr">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
 
-                    <div class="Situation" v-for="tmp in list">
-                        <cs-cell-swipe :right="[{
-                            content: '删除',
-                            style: { background: 'red', color: '#fff' },
-                            handler:a
-                        }]">
-                            <div class="Situation-reduce">
-                                <div>
-                                    <img src="/assets/system/situation_03.png">
-                                    <i class="add">+1</i>
-                                </div>
-                                <p class="reason">
-                                    -1分 因为上课走神
-                                </p>
-                              <p class="action">
-                                  昨天14:20由陈老师发送给刘二狗
-                              </p>
-                              <div class="X">x</div>
-                            </div>
-                        </cs-cell-swipe>
+                                        </div>
+                                        <p class="time">
+                                            昨天14:20由陈老师发送给刘二狗
+                                        </p>
+                                    </div>
+                                </cs-cell-swipe>
+                            </li>
+                            <li>
+                                <cs-cell-swipe :right="[{
+                                            content: '删除',
+                                            style: { background: 'red', color: '#fff' },
+                                            handler:a
+                                        }]">
+                                    <div class="pic-title">
+                                        <img src="../../../../assets/system/images/situation_03.png">
+                                        <span class="count reduce">+1</span>
+                                    </div>
+                                    <p class="reason">-1分 因为上课走神 </p>
+                                    <div class="msg">
+                                        <p class="send">yiwneihsdkfdhfhbkkhklsdfdsf</p>
+
+                                        <div class="pic-arr">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/images/pic-1.png" alt="">
+
+                                        </div>
+                                        <p class="time">
+                                            昨天14:20由陈老师发送给刘二狗
+                                        </p>
+                                    </div>
+                                </cs-cell-swipe>
+                            </li>
+                            <li>
+                                <cs-cell-swipe :right="[{
+                                                content: '删除',
+                                                style: { background: 'red', color: '#fff' },
+                                                handler:a
+                                            }]">
+                                    <div class="pic-title">
+                                        <img src="../../../../assets/system/situation_03.png">
+                                        <span class="count add">+1</span>
+                                    </div>
+                                    <p class="reason">-1分 因为上课走神 </p>
+                                    <div class="msg">
+                                        <div class="pic-arr">
+                                            <img src="../../../../assets/system/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/pic-1.png" alt="">
+                                            <img src="../../../../assets/system/pic-1.png" alt="">
+
+                                        </div>
+                                        <p class="time">
+                                            昨天14:20由陈老师发送给刘二狗
+                                        </p>
+                                    </div>
+                                </cs-cell-swipe>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </cs-loadmore>
