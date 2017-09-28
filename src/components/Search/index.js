@@ -34,7 +34,10 @@ define(['__component__', 'text!./tpl.html', 'components/Cell/index'], function (
         },
         props: {
             value: String,
-            autofocus: Boolean,
+            autofocus: {
+                type: Boolean,
+                default: true
+            },
             show: Boolean,
             cancelText: {
                 default: '取消'
