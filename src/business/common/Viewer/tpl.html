@@ -2,12 +2,9 @@
     <div class="cs-viewer-top">
         <!-- <h1>123123</h1> -->
         <cs-header :title="(pageIndex+1)+'/'+images.length">
-            <router-link to="/Main/Bedroom" slot="left">
+            <a href="javascript:;" slot="left" @click="close">
                 <cs-button icon="fa fa-chevron-left">返回</cs-button>
-            </router-link>
-            <router-link to="/Main/Bedroom/Statistics/Ranking" slot="right">
-                <cs-button icon="fa rank"></cs-button>
-            </router-link>
+            </a>
         </cs-header>
         <div class="cs-viewer" ref="csViewer">
 
