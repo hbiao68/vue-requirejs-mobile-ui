@@ -66,7 +66,6 @@
                     .pic-arr{
                         margin-top: toRem(20);
                         width: toRem(550);
-                        float: left;
                         font-size: 0;
                         &>img{
                             width: toRem(90);
@@ -79,6 +78,8 @@
                         color: rgb(114,114,114);
                         margin-top: toRem(20);
                         font-size: toRem(25);
+                        float: left;
+                        width: toRem(500);
                     }
                 }
                 
