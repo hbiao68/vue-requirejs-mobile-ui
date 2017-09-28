@@ -14,7 +14,7 @@
                 <cs-button icon="fa fa-bars" @click.native="action1"></cs-button>
             </router-link>
         </cs-header>
-        <cs-search v-model="search" v-show="searchState" ref="search"></cs-search>
+        <cs-search v-model="search" :autofocus="true" :show="searchState" v-show="searchState" ref="search"></cs-search>
         <cs-contenter>
             <div class="section-container">
                 <ul class="content-box">
@@ -29,7 +29,7 @@
                 </ul>
             </div>
         </cs-contenter>
-        <cs-footer>
+        <cs-footer v-show="!searchState || search!=''">
             <router-link to="/Main/Bedroom/bedroomMul">
                 <img src="/assets/system/icon-Greades09.png" alt="">
                 <span>多选评价</span>

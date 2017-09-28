@@ -1,8 +1,9 @@
-<div class="cs-search">
+<div class="cs-search" :class="{'is-empty': isEmpty}">
     <div class="cs-searchbar">
         <div class="cs-searchbar-inner">
             <i class="fa fa-search" v-show="visible"></i>
-            <input ref="input" @click="visible = true" type="search" v-model="currentValue" :placeholder="visible ? placeholder : ''" class="cs-searchbar-core">
+            <input ref="input" @click="visible = true" type="search" v-model="currentValue" :placeholder="visible ? placeholder : ''"
+                class="cs-searchbar-core">
         </div>
         <a class="cs-searchbar-cancel" @click="cancel" v-show="visible" v-text="cancelText">
         </a>
@@ -11,4 +12,5 @@
         <span class="cs-searchbar-text" v-text="placeholder"></span>
       </label>
     </div>
+    <div class="cs-searchbar-mask" v-show="isEmpty"></div>
 </div>
