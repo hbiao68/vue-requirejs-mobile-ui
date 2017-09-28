@@ -29,6 +29,7 @@ define([
                 draggable(self.$refs.csViewer, {
                     start: function (e) {
                         isDragging = true
+                        o.dx = 0
                         o.x = e.clientX;
                     },
                     drag: function (e) {
@@ -45,7 +46,7 @@ define([
                         isDragging = false
                         var offsetWidth = self.$refs.viewerScroller.offsetWidth
                         o.d = o.dx / Math.abs(o.dx)
-                        if (o.dx !== 0) {
+                        if (o.dx) {
                             once(o.eles[0], 'webkitTransitionEnd', function () {
                                 forEach(o.eles, function (el) {
                                     el.style.transitionDuration = ''

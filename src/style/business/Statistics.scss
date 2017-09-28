@@ -213,7 +213,7 @@
         background-image: none;
     }
 }
-
+//***********************************************************
 .cs-Statistics-1 {
     font-size: toRem(30);
     .top {
@@ -324,6 +324,7 @@
             width: 100%;
             text-align: center;
             box-sizing: border-box;
+            table-layout: fixed;
             thead {
                 tr {
                     border-bottom: 1px solid rgb(241, 241, 241);
@@ -344,15 +345,24 @@
                 td {
                     height: toRem(100);
                     line-height: toRem(100);
+                    text-align: left;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .eva{
+                    text-align: center;
                 }
                 td:nth-child(1) {
                     // text-align: left;
                     width: toRem(400);
                 }
                 .timer {
+                    padding-left: toRem(40);
                     span {
                         display: inline-block;
                         vertical-align: middle;
+                        text-align: left;
                     }
                     .icon {
                         display: inline-block;
@@ -360,7 +370,7 @@
                         height: toRem(70);
                         background-size: contain;
                         vertical-align: middle;
-                        margin-right: toRem(10);
+                        margin-right: toRem(20);
                     }
                 }
                 .circle {
