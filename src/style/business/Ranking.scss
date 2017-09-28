@@ -109,6 +109,12 @@
             }
             .normal{
                 flex: 1;
+                .icon-de{
+                    width: toRem(20);
+                    height: toRem(20);
+                    position: relative;
+                    top: toRem(-5);
+                }
             }
             .longName{
                 width: toRem(300);
@@ -118,6 +124,12 @@
                 text-align: left;
                 padding-left: toRem(30);
                 display: flex;
+                position: relative;
+                .num{
+                    position: absolute;
+                    top: 0;
+                    left: toRem(60);
+                }
                 &>span{
                     display: inline-block;
                     // width: toRem(130);
