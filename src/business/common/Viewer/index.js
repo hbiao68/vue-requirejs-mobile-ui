@@ -17,6 +17,12 @@ define([
                 dragInited: false,
             }
         },
+        mounted: function () {
+            setTimeout(function () {
+                this.$refs.viewerTop.style.height = document.body.offsetHeight + 'px'
+                this.$refs.csViewer.style.width = document.body.offsetWidth + 'px'
+            }.bind(this));
+        },
         methods: {
             initDrage: function () {
                 var self = this;
@@ -37,7 +43,7 @@ define([
                             o.dx = e.clientX - o.x
                             o.eles = self.$refs.viewerScroller.querySelectorAll('.viewer-container')
                             forEach(o.eles, function (el) {
-                                el.style.transform = "translate(" + o.dx + "px, 0)"
+                                el.style.transform = "translate3d(" + o.dx + "px, 0, 0)"
                             })
                         }
                     },
@@ -61,18 +67,18 @@ define([
                                     } else self.pageIndex -= o.d
                                     self.$nextTick(function () {
                                         forEach(o.eles, function (el) {
-                                            el.style.transform = 'translate(0, 0)'
+                                            el.style.transform = 'translate3d(0, 0, 0)'
                                         })
                                     })
                                 }
                             });
-                            if (offsetWidth / 3 > Math.abs(o.dx)) {
+                            if (offsetWidth / 5 > Math.abs(o.dx)) {
                                 o.state = false
                                 forEach(o.eles, function (el) {
                                     el.style.transitionDuration = '0.2s'
                                     el.style.transitionDuration = 'ease'
                                     el.style.transitionProperty = 'transform'
-                                    el.style.transform = "translate(0, 0)";
+                                    el.style.transform = "translate3d(0, 0, 0)";
                                 })
                             } else {
                                 o.state = true
@@ -80,7 +86,7 @@ define([
                                     el.style.transitionDuration = '0.2s'
                                     el.style.transitionDuration = 'ease'
                                     el.style.transitionProperty = 'transform'
-                                    el.style.transform = "translate(" + (o.d * offsetWidth) + "px, 0)";
+                                    el.style.transform = "translate3d(" + (o.d * offsetWidth) + "px, 0, 0)";
                                 })
                             }
                         }
@@ -92,7 +98,7 @@ define([
                 var item = this.images[index < 0 ? this.images.length - 1 : index % this.images.length]
                 return {
                     'background-image': 'url(' + item + ')',
-                    'transform': 'translate(0, 0)'
+                    'transform': 'translate3d(0, 0, 0)'
                 }
             },
             show: function (images) {
