@@ -1,5 +1,4 @@
 .cs-evaluate{
-    size: 100vw 100vh; 
     background: white;
     border-radius: none; 
     position: relative;
@@ -22,7 +21,7 @@
             line-height: toRem(65);
             height: toRem(65);
             text-align: center;
-            display: inline-block;;
+            display: block;;
             &:before,&:after{
                 content:'';
                 height: 0;

@@ -14,6 +14,12 @@ define(['__component__', 'text!./tpl.html', 'vuex', 'vue'], function(component, 
                 result: [],
             }
         },
+        mounted:function(){
+            this.$nextTick(function(){
+                this.$refs.main.style.width = document.body.offsetWidth + 'px'
+                this.$refs.main.style.height = document.body.offsetHeight + 'px'
+            }.bind(this))
+        },
         computed: Object.assign(Vuex.mapGetters(['EvaluateClassSource']), {
             score: function() {
                 var score = 0;
