@@ -2,11 +2,13 @@ define([
     '__component__',
     'text!./tpl.html',
     'common/draggable',
-    'wind-dom'
-], function (component, template, draggable, windDom) {
+    'wind-dom',
+    'common/utils/cssPrefix'
+], function (component, template, draggable, windDom, cssPrefix) {
     var InstanceResolve = null;
     var InstanceReject = null;
     var once = windDom.once
+    var transform = cssPrefix('transform')
     return component('cs-viewer', {
         template: template,
         data: function () {
@@ -43,7 +45,7 @@ define([
                             o.dx = e.clientX - o.x
                             o.eles = self.$refs.viewerScroller.querySelectorAll('.viewer-container')
                             forEach(o.eles, function (el) {
-                                el.style.transform = "translate3d(" + o.dx + "px, 0, 0)"
+                                el.style[transform] = "translate3d(" + o.dx + "px, 0, 0)"
                             })
                         }
                     },
@@ -53,7 +55,7 @@ define([
                         var offsetWidth = self.$refs.viewerScroller.offsetWidth
                         o.d = o.dx / Math.abs(o.dx)
                         if (o.dx) {
-                            once(o.eles[0], 'webkitTransitionEnd', function () {
+                            once(o.eles[0], 'ontransitionend' in window ? 'transitionend' : 'webkitTransitionEnd', function () {
                                 forEach(o.eles, function (el) {
                                     el.style.transitionDuration = ''
                                     el.style.transitionDuration = ''
@@ -67,7 +69,7 @@ define([
                                     } else self.pageIndex -= o.d
                                     self.$nextTick(function () {
                                         forEach(o.eles, function (el) {
-                                            el.style.transform = 'translate3d(0, 0, 0)'
+                                            el.style[transform] = 'translate3d(0, 0, 0)';
                                         })
                                     })
                                 }
@@ -77,16 +79,16 @@ define([
                                 forEach(o.eles, function (el) {
                                     el.style.transitionDuration = '0.2s'
                                     el.style.transitionDuration = 'ease'
-                                    el.style.transitionProperty = 'transform'
-                                    el.style.transform = "translate3d(0, 0, 0)";
+                                    el.style.transitionProperty = transform
+                                    el.style[transform] = "translate3d(0, 0, 0)";
                                 })
                             } else {
                                 o.state = true
                                 forEach(o.eles, function (el) {
                                     el.style.transitionDuration = '0.2s'
                                     el.style.transitionDuration = 'ease'
-                                    el.style.transitionProperty = 'transform'
-                                    el.style.transform = "translate3d(" + (o.d * offsetWidth) + "px, 0, 0)";
+                                    el.style.transitionProperty = transform
+                                    el.style[transform] = "translate3d(" + (o.d * offsetWidth) + "px, 0, 0)";
                                 })
                             }
                         }
@@ -96,10 +98,11 @@ define([
             },
             uri: function (index) {
                 var item = this.images[index < 0 ? this.images.length - 1 : index % this.images.length]
-                return {
-                    'background-image': 'url(' + item + ')',
-                    'transform': 'translate3d(0, 0, 0)'
+                var result = {
+                    'background-image': 'url(' + item + ')'
                 }
+                result[transform] = 'translate3d(0, 0, 0)'
+                return result;
             },
             show: function (images) {
                 var self = this;

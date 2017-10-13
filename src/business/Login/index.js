@@ -12,13 +12,13 @@ define(['vue', 'vuex'], function(Vue, Vuex) {
                     'verify'
                 ]), {
                     sign: function() {
-                        // this.$refs.viewer.show([
-                        //     'assets/system/logo.png',
-                        //     'assets/system/portrait2.png',
-                        //     'assets/system/portrait3.png',
-                        //     'assets/system/portrait4.png'
-                        // ]);
-                        // return;
+                        this.$refs.viewer.show([
+                            'assets/system/logo.png',
+                            'assets/system/portrait2.png',
+                            'assets/system/portrait3.png',
+                            'assets/system/portrait4.png'
+                        ]);
+                        return;
                         var that = this;
                         this.verify({ username: this.username, password: this.password }).then(function() {
                             that.$router.push('/Main');
